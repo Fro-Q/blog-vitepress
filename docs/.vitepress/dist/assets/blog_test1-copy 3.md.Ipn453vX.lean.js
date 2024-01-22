@@ -1,0 +1,1 @@
+import{_ as t,c as e,o}from"./chunks/framework.lWP0zydM.js";const d=JSON.parse('{"title":"test2","description":"","frontmatter":{"title":"test2"},"headers":[],"relativePath":"blog/test1-copy 3.md","filePath":"blog/test1-copy 3.md"}'),s={name:"blog/test1-copy 3.md"};function a(c,r,n,p,_,i){return o(),e("div")}const m=t(s,[["render",a]]);export{d as __pageData,m as default};
