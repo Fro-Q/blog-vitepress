@@ -1,10 +1,17 @@
 <script setup>
 import { data as posts } from './posts.data.js'
 import { computed, ref } from 'vue'
+import { useData } from 'vitepress'
+
+const { page, site, frontmatter } = useData()
+
+const siteBase = site._value.base
+console.log(siteBase)
 
 // deal with long titles
 const postsComputed = computed(() => {
   return posts.map(post => {
+    post.url = siteBase + post.url
     const title = post.frontmatter.title
     const maxLength = 40
     if (title.length > maxLength) {
