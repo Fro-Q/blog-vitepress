@@ -5,6 +5,7 @@ export default defineConfig({
   title: "FroQ",
   description: "Write Something",
   lang: "zh-CN",
+  base: "/blog-vitepress/",
 
   themeConfig: {
   },
