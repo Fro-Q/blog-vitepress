@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>FroQ</title>
+        <link>https://fro-q.github.io</link>
+        <description>undefined</description>
+        <lastBuildDate>Tue, 23 Jan 2024 01:05:42 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[FroQ]]></title>
+            <link>https://fro-q.github.io/</link>
+            <guid>https://fro-q.github.io/</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+            <content:encoded><![CDATA[<p>您好。</p>
+<p>我是 FroQ，一位 _______。</p>
+<p>我不太擅长给自己贴标签，或许您可以在我的<span class="highlight">博客</span>中找到一些线索。</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[test1]]></title>
+            <link>https://fro-q.github.io/blog/api-examples.html</link>
+            <guid>https://fro-q.github.io/blog/api-examples.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+            <content:encoded><![CDATA[<h1 id="runtime-api-examples" tabindex="-1">Runtime API Examples <a class="header-anchor" href="#runtime-api-examples">¶</a></h1>
+<p>This page demonstrates usage of some of the runtime APIs provided by VitePress.</p>
+<p>The main <code>useData()</code> API can be used to access site, theme, and page data for the current page. It works in both <code>.md</code> and <code>.vue</code> files:</p>
+<div class="language-md vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">md</span><pre class="shiki shiki-themes github-light github-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;script setup></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">import { useData } from 'vitepress'</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">const { theme, page, frontmatter } = useData()</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/script></span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;--shiki-light-font-weight:bold;--shiki-dark-font-weight:bold">## Results</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;--shiki-light-font-weight:bold;--shiki-dark-font-weight:bold">### Theme Data</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;pre>{{ theme }}&#x3C;/pre></span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;--shiki-light-font-weight:bold;--shiki-dark-font-weight:bold">### Page Data</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;pre>{{ page }}&#x3C;/pre></span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;--shiki-light-font-weight:bold;--shiki-dark-font-weight:bold">### Page Frontmatter</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;pre>{{ frontmatter }}&#x3C;/pre></span></span></code></pre>
+<div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h2 id="results" tabindex="-1">Results <a class="header-anchor" href="#results">¶</a></h2>
+<h3 id="theme-data" tabindex="-1">Theme Data <a class="header-anchor" href="#theme-data">¶</a></h3>
+<pre>{{ theme }}</pre>
+<h3 id="page-data" tabindex="-1">Page Data <a class="header-anchor" href="#page-data">¶</a></h3>
+<pre>{{ page }}</pre>
+<h3 id="page-frontmatter" tabindex="-1">Page Frontmatter <a class="header-anchor" href="#page-frontmatter">¶</a></h3>
+<pre>{{ frontmatter }}</pre>
+<h2 id="more" tabindex="-1">More <a class="header-anchor" href="#more">¶</a></h2>
+<p>Check out the documentation for the <a href="https://vitepress.dev/reference/runtime-api#usedata" target="_blank" rel="noreferrer">full list of runtime APIs</a>.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[test1123]]></title>
+            <link>https://fro-q.github.io/blog/markdown-examples.html</link>
+            <guid>https://fro-q.github.io/blog/markdown-examples.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+            <content:encoded><![CDATA[<h1 id="markdown-extension-examples" tabindex="-1">Markdown Extension Examples <a class="header-anchor" href="#markdown-extension-examples">¶</a></h1>
+<p>This page demonstrates some of the built-in markdown extensions provided by VitePress.</p>
+<h2 id="syntax-highlighting" tabindex="-1">Syntax Highlighting <a class="header-anchor" href="#syntax-highlighting">¶</a></h2>
+<p>VitePress provides Syntax Highlighting powered by <a href="https://github.com/antfu/shikiji" target="_blank" rel="noreferrer">Shikiji</a>, with additional features like line-highlighting:</p>
+<p><strong>Input</strong></p>
+<div class="language-md vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">md</span><pre class="shiki shiki-themes github-light github-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">```js{4}</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> default</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">  data</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> () {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      msg: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'Highlighted!'</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">```</span></span></code></pre>
+<div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><strong>Output</strong></p>
+<div class="language-js vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki shiki-themes github-light github-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> default</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">  data</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> () {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line highlighted"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      msg: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'Highlighted!'</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+<div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="custom-containers" tabindex="-1">Custom Containers <a class="header-anchor" href="#custom-containers">¶</a></h2>
+<p><strong>Input</strong></p>
+<div class="language-md vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">md</span><pre class="shiki shiki-themes github-light github-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">::: info</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">This is an info box.</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:::</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">::: tip</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">This is a tip.</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:::</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">::: warning</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">This is a warning.</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:::</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">::: danger</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">This is a dangerous warning.</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:::</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">::: details</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">This is a details block.</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">:::</span></span></code></pre>
+<div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><p><strong>Output</strong></p>
+<div class="info custom-block"><p class="custom-block-title">INFO</p>
+<p>This is an info box.</p>
+</div>
+<div class="tip custom-block"><p class="custom-block-title">TIP</p>
+<p>This is a tip.</p>
+</div>
+<div class="warning custom-block"><p class="custom-block-title">WARNING</p>
+<p>This is a warning.</p>
+</div>
+<div class="danger custom-block"><p class="custom-block-title">DANGER</p>
+<p>This is a dangerous warning.</p>
+</div>
+<details class="details custom-block"><summary>Details</summary>
+<p>This is a details block.</p>
+</details>
+<h2 id="more" tabindex="-1">More <a class="header-anchor" href="#more">¶</a></h2>
+<p>Check out the documentation for the <a href="https://vitepress.dev/guide/markdown" target="_blank" rel="noreferrer">full list of markdown extensions</a>.</p>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[test323]]></title>
+            <link>https://fro-q.github.io/blog/test1-copy 2.html</link>
+            <guid>https://fro-q.github.io/blog/test1-copy 2.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[test2]]></title>
+            <link>https://fro-q.github.io/blog/test1-copy 3 copy 2.html</link>
+            <guid>https://fro-q.github.io/blog/test1-copy 3 copy 2.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[test2]]></title>
+            <link>https://fro-q.github.io/blog/test1-copy 3 copy 3.html</link>
+            <guid>https://fro-q.github.io/blog/test1-copy 3 copy 3.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[test2]]></title>
+            <link>https://fro-q.github.io/blog/test1-copy 3 copy 4.html</link>
+            <guid>https://fro-q.github.io/blog/test1-copy 3 copy 4.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[test2]]></title>
+            <link>https://fro-q.github.io/blog/test1-copy 3 copy 5.html</link>
+            <guid>https://fro-q.github.io/blog/test1-copy 3 copy 5.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[test2]]></title>
+            <link>https://fro-q.github.io/blog/test1-copy 3 copy 6.html</link>
+            <guid>https://fro-q.github.io/blog/test1-copy 3 copy 6.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[test2]]></title>
+            <link>https://fro-q.github.io/blog/test1-copy 3 copy 7.html</link>
+            <guid>https://fro-q.github.io/blog/test1-copy 3 copy 7.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[test2]]></title>
+            <link>https://fro-q.github.io/blog/test1-copy 3 copy.html</link>
+            <guid>https://fro-q.github.io/blog/test1-copy 3 copy.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[test2]]></title>
+            <link>https://fro-q.github.io/blog/test1-copy 3.html</link>
+            <guid>https://fro-q.github.io/blog/test1-copy 3.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[test1213]]></title>
+            <link>https://fro-q.github.io/blog/test1-copy.html</link>
+            <guid>https://fro-q.github.io/blog/test1-copy.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[test1213]]></title>
+            <link>https://fro-q.github.io/blog/test1.html</link>
+            <guid>https://fro-q.github.io/blog/test1.html</guid>
+            <pubDate>Mon, 22 Jan 2024 21:59:07 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[正在做一个 Obsidian 主题]]></title>
+            <link>https://fro-q.github.io/blog/making-an-obsidian-theme.html</link>
+            <guid>https://fro-q.github.io/blog/making-an-obsidian-theme.html</guid>
+            <pubDate>Fri, 07 Jul 2023 16:00:00 GMT</pubDate>
+            <description><![CDATA[
+虽然在我认识的人里面用 Obsidian 的寥寥无几，但是还是想记录一下最近在干的事情。
+
+]]></description>
+            <content:encoded><![CDATA[<p>虽然在我认识的人里面用 Obsidian 的寥寥无几，但是还是想记录一下最近在干的事情。</p>
+<hr>
+<div class="language-js vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">js</span><pre class="shiki shiki-themes github-light github-dark vp-code" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">export</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> default</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line"><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">  data</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> () {</span></span>
+<span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">    return</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>
+<span class="line highlighted"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">      msg: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'Highlighted!'</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">    }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  }</span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">}</span></span></code></pre>
+<div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><div class="info custom-block"><p class="custom-block-title">INFO</p>
+<p>This is an info box.</p>
+</div>
+<p>为什么突然想到自己做一个 theme 呢？</p>
+<h2 id="metion——初识-markdown" tabindex="-1">metion——初识 Markdown <a class="header-anchor" href="#metion——初识-markdown">¶</a></h2>
+<p>我用 <a href="https://obsidian.md/" target="_blank" rel="noreferrer">Obsidian</a> 快一年了，但是第一次接触它是在高考完的暑假。当时通过 <a href="https://apps.apple.com/cn/app/metion-%E4%B8%AD%E6%96%87%E5%86%99%E4%BD%9C%E8%80%85%E7%9A%84%E7%AC%94%E8%AE%B0%E5%B7%A5%E5%85%B7/id1530965242" target="_blank" rel="noreferrer">metion</a>（由于没找到官网所以放了 App Store 的链接）第一次接触到 <em>Markdown</em>，心想文本编辑还能这么玩？</p>
+<p><img src="./metion-for-mac-ui.png" alt=""></p>
+<blockquote>
+<p>metion 宣传为「<u>颜值高也好用，懂中文也懂 Markdown</u>」。它的确成功地为中文写作进行了很大程度的优化：它支持在中英文字词之间自动添加空格；它支持中文的词性分析；它使用左右 shift 键能够在不切换输入法的情况下键入不同的符号（如对于中文的左书名号键，使用 <code>左shift</code> 能够键入 <code>《</code> ，而使用 <code>右shift</code> 能够键入 <code>&gt;</code> ）；它支持将文本直接导出为公众号格式（懒得调格式的公众号作者福音）……</p>
+</blockquote>
+<p>在那之后，我陷入了一阵对 Markdown 的狂热。我在 iPad 上下载了一大批支持 Markdown 的笔记软件，其中就包括 <strong>Obsidian</strong>。但是当时由于不太会用，加上 iPadOS 端的 Obsidian 还存在一些 bug，导致当时<strong>没有能够成功使用</strong>。其他的诸如 <a href="https://bear.app/cn/" target="_blank" rel="noreferrer">Bear</a>、 <a href="https://www.notion.so/product?fredir=1" target="_blank" rel="noreferrer">Notion</a>、 <a href="https://agenda.com" target="_blank" rel="noreferrer"><em>Aganda</em></a>（严格意义上来说不算<strong>笔记</strong>软件）、 <a href="https://www.mweb.im/cn/index.html" target="_blank" rel="noreferrer">MWeb</a> 等等，我都进行了一定程度的体验。它们都是合格的 Markdown 编辑器，只是<u>我口味比较刁</u>。所以在一番尝试之后，我暂时还是用着 iPad 上的 metion 作为码字工具。</p>
+<h2 id="marktext——初识-css" tabindex="-1">MarkText——初识 CSS <a class="header-anchor" href="#marktext——初识-css">¶</a></h2>
+<p>metion 在很长一段时间内是我的主力写作工具，公众号前期的文章也都是用 metion 直接导出的格式。后来由于转战 Windows 平台，我又开始了一波试用和筛选，尝试了 <a href="https://typora.io/#download" target="_blank" rel="noreferrer">Typora</a>、 <a href="https://www.effie.co" target="_blank" rel="noreferrer">Effie</a>、 <a href="https://www.zybuluo.com/cmd/" target="_blank" rel="noreferrer">CMD Markdown</a> 等软件。后来由于 <u>Typora 收费与不开源</u>、<u>Effie 对 Markdown 的不完整的支持</u>、<u>CMD Markdown 不支持即时渲染</u>等原因，我选择了一款号称 <strong>Typora 平替</strong>的<strong>开源免费</strong>Markdown 编辑器： <a href="https://github.com/marktext/marktext" target="_blank" rel="noreferrer">MarkText</a>。</p>
+<p>作为一个免费的软件，MarkText 几乎是超出了我的预期。在将近半年的使用中，我感到相当的舒适。在主要的编辑功能中，它与 Typora 基本无异，至少我没发现什么特别残缺的功能与特别恶性的 bug。但是由于<u>失去了 metion 的「导出为公众号格式」</u>，我需要折腾文章的格式的再复制上去。这个时期我用到了两个 Markdown 转公众号格式的网页来帮我进行格式化： <a href="http://md.aclickall.com" target="_blank" rel="noreferrer">Md2All</a> 和 <a href="https://md.openwrite.cn" target="_blank" rel="noreferrer">openwrite</a>。Generally speaking，后者的默认格式更符合我的审美，但是其缺少了对部分 Markdown 语法的支持，如使用 <code>[TOC]</code> 来生成一个 TOC 的功能。所以在后期，我放弃了 openwrite，<strong>被迫</strong>学习了一部分 CSS 知识，用于在 Md2All 里对样式、排版等进行设计。</p>
+<p><img src="./css-in-md2all.png" alt=""></p>
+<h2 id="obsidian——now-we-re-talking" tabindex="-1">Obsidian——NOW WE'RE TALKING <a class="header-anchor" href="#obsidian——now-we-re-talking">¶</a></h2>
+<p>MarkText 说到底只是<strong>编辑器</strong>，而随着对笔记体系的逐渐完善，我开始产生对更高维度的功能的需求。恰逢此时，我接触到了 <em>Zettelkasten</em>。</p>
+<blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Zettelkasten" target="_blank" rel="noreferrer">Zettelkasten</a> 是德国社会学家 Niklas Luhmann 提出的概念，翻译成英语就是 Box of Notes，也即<strong>卡片盒笔记法</strong>，在这里不进行过多解释，感兴趣的朋友可以自己去了解。Obsidian 的理念与 Zettelkasten 非常兼容，它提供了<strong>双向链接</strong>、<strong>图谱视图</strong>、<strong>tag</strong>和<strong>搜索</strong>等功能，便于创建、连接和浏览笔记，从而建立<strong>知识网络</strong>并使其逐渐丰富。</p>
+</blockquote>
+<p>也正是这个时候，我开始<strong>正式地</strong>使用上了 Obsidian。不得不说，在接近两个学期的使用中，它确实为我提供了极大的帮助。虽然在初期，由于<u>插件社区</u>和<u>主题社区</u>生态过于优秀，我陷入过一阵疯狂捣鼓插件和主题的时期，不过后来由于精力不足，加之我逐渐了「形式主义」，便退烧了。</p>
+<p><img src="./theme-store-obsidian.png" alt=""></p>
+<h2 id="投身主题开发" tabindex="-1">投身主题开发 <a class="header-anchor" href="#投身主题开发">¶</a></h2>
+<p>退烧归退烧，<strong>需求</strong>还是有的。但我始终感觉用别人做的东西不太舒服。制作者毕竟很难无微不至地考虑到每一个客户端的需求。在刚萌生开发主题这个想法的时候，我的策略是<u>对已有的、相对较完善的主题 CSS 进行修改</u>，基于 <a href="https://github.com/mgmeyers/obsidian-style-settings" target="_blank" rel="noreferrer">Style Settings</a> 插件对其提供的设置接口进行调整，并增加我认为重要的、常用的设置选项。</p>
+<p><img src="./change-based-on-serenity.png" alt=""></p>
+<p>但是在一段时间后，我发现这样的方式极度依赖于原作者的代码，导致我对代码的理解能力与几乎没有进步，操作流程基本上是<u>注掉、看区别、适当修改</u>，效率极低且没有收益。所以再三思考后还是决定自己从头开始写一个，也当作学前端了。</p>
+<p><img src="./writing-css.png" alt=""></p>
+<p>目前整个开发还处于很前期的阶段，除了提供了一些配色更改的设置、对一些内置样式如 <strong>strong</strong>、<em>emphasis</em>、==highlight== 进行了修改之外，UI 的美化、其他元素（ol、il、code、callout 等）的样式设计、文章排版之类的任务还暂时没有进行。不过问题不大，早晚而已。</p>
+<p>前两天在 puq 发的那个「调查」，就是由于我发现在中文编辑中，<strong>斜体</strong> <em>italic</em> 的应用面似乎很窄，所以在考虑要不要弃用掉 italic 的设计而将 em 元素应用其他的样式。还在思考中。</p>
+<hr>
+<p>这次扯得有点多。希望下次能少扯点。</p>
+]]></content:encoded>
+            <enclosure url="https://fro-q.github.io/metion-for-mac-ui.png" length="0" type="image/png"/>
+        </item>
+    </channel>
+</rss>

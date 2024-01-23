@@ -3,6 +3,7 @@ import { Content } from 'vitepress';
 import { useData } from 'vitepress';
 
 const { page, site, frontmatter } = useData()
+console.log('page', page)
 
 </script>
 

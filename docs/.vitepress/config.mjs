@@ -1,13 +1,29 @@
 import { defineConfig } from 'vitepress'
+import { RssPlugin } from 'vitepress-plugin-rss'
 
-// https://vitepress.dev/reference/site-config
+
+const rssOptions = {
+  baseUrl: 'https://fro-q.github.io',
+  title: 'FroQ',
+  copyRight: 'CopyRight © 2023-present, FroQ',
+  count: 20,
+}
+
 export default defineConfig({
+  vite: {
+    plugins: [
+      RssPlugin(rssOptions),
+    ],
+  },
   title: "FroQ",
   description: "Write Something",
   lang: "zh-CN",
   base: "/",
 
   themeConfig: {
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/Fro-Q' },
+    ],
   },
   markdown: {
     anchor: { permalink: true },
