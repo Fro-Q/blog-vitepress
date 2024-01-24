@@ -7,18 +7,134 @@ date: 2023/07/08
 
 ---
 
-```js{4}
+[[toc]]
+
+```js
 export default {
   data () {
     return {
-      msg: 'Highlighted!'
+      msg: 'Highlighted!' // [!code highlight]
     }
   }
 }
 ```
 
+
+```js:no-line-numbers
+export default {
+  data () {
+    return {
+      msg: 'Highlighted!' // [!code highlight]
+    }
+  }
+}
+```
+
+```js
+export default {
+  data () {
+    return {
+      msg: 'Highlighted!' // [!code focus]
+    }
+  }
+}
+```
+
+
+```js:no-line-numbers
+export default {
+  data () {
+    return {
+      msg: 'Highlighted!' // [!code focus]
+    }
+  }
+}
+```
+
+
+```js:no-line-numbers
+export default {
+  data () {
+    return { // [!code highlight]
+      msg: 'Highlighted!' // [!code focus]
+    }
+  }
+}
+```
+
+```js
+export default {
+  data () {
+    return {
+      msg: 'Removed' // [!code --]
+      msg: 'Added' // [!code ++]
+    }
+  }
+}
+```
+
+```js:no-line-numbers
+export default {
+  data () {
+    return {
+      msg: 'Removed' // [!code --]
+      msg: 'Added' // [!code ++]
+    }
+  }
+}
+```
+
+```js
+export default {
+  data () {
+    return {
+      msg: 'Error', // [!code error]
+      msg: 'Warning' // [!code warning]
+    }
+  }
+}
+```
+
+```js
+export default {
+  data () {
+    return {
+      msg: 'Error', // [!code error]
+      msg: 'Warning' // [!code warning]
+    }
+  }
+}
+```
+
+
 ::: info
 This is an info box.
+:::
+
+::: tip
+This is a tip.
+:::
+
+::: warning
+This is a warning.
+:::
+
+::: danger
+This is a dangerous warning.
+:::
+
+::: details
+This is a details block.
+:::
+
+::: danger STOP
+Danger zone, do not proceed
+:::
+
+::: details Click me to view the code
+```js
+console.log('Hello, VitePress!')
+```
 :::
 
 为什么突然想到自己做一个 theme 呢？
@@ -30,6 +146,14 @@ This is an info box.
 ![](metion-for-mac-ui.png)
 
 > metion 宣传为「<u>颜值高也好用，懂中文也懂 Markdown</u>」。它的确成功地为中文写作进行了很大程度的优化：它支持在中英文字词之间自动添加空格；它支持中文的词性分析；它使用左右 shift 键能够在不切换输入法的情况下键入不同的符号（如对于中文的左书名号键，使用 `左shift` 能够键入 `《` ，而使用 `右shift` 能够键入 `>` ）；它支持将文本直接导出为公众号格式（懒得调格式的公众号作者福音）……
+>
+> niha wdniaw d
+> 
+> > nih nih nih 
+> > > awdaw 
+> >>AWdawda>>
+> >>>>dawdad
+> niawhd iawd 
 
 在那之后，我陷入了一阵对 Markdown 的狂热。我在 iPad 上下载了一大批支持 Markdown 的笔记软件，其中就包括 **Obsidian**。但是当时由于不太会用，加上 iPadOS 端的 Obsidian 还存在一些 bug，导致当时**没有能够成功使用**。其他的诸如 [Bear](https://bear.app/cn/)、 [Notion](https://www.notion.so/product?fredir=1)、 [*Aganda*](https://agenda.com)（严格意义上来说不算**笔记**软件）、 [MWeb](https://www.mweb.im/cn/index.html) 等等，我都进行了一定程度的体验。它们都是合格的 Markdown 编辑器，只是<u>我口味比较刁</u>。所以在一番尝试之后，我暂时还是用着 iPad 上的 metion 作为码字工具。
 
@@ -70,4 +194,66 @@ MarkText 说到底只是**编辑器**，而随着对笔记体系的逐渐完善�
 这次扯得有点多。希望下次能少扯点。
 
 
+- 代码块的样式
+  - 代码块的行号
+    - 代码块的高亮
+  - 代码块的折叠
 
+1. 代码块的样式
+   1. 代码块的行号
+      1. 代码块的高亮
+   2. 代码块的折叠
+
+## h2
+
+### h3
+
+#### h4
+
+##### h5
+
+##### h6
+
+### h3
+
+## h2
+
+#### h4
+
+#### h4
+
+## h2
+
+## h2
+
+## h3
+
+## h2
+
+## h2
+
+## h3
+
+## h2
+
+## h2
+
+## h3
+
+## h2
+
+## h2
+
+## h3
+
+## h2
+
+## h2
+
+## h3
+
+## h2
+
+## h2
+
+## h3

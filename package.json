@@ -12,6 +12,8 @@
   "author": "froq",
   "license": "ISC",
   "devDependencies": {
+    "markdown-it-shikiji": "^0.10.0",
+    "shikiji": "^0.10.0",
     "vitepress": "^1.0.0-rc.39",
     "vue": "^3.4.15"
   },

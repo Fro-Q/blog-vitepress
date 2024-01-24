@@ -1,7 +1,11 @@
 <script setup>
 import { useData } from 'vitepress'
+import { ref, watch } from 'vue';
 
 const { page, site, frontmatter } = useData()
+
+const socialLinks = site.value.themeConfig.socialLinks
+
 </script>
 
 <template>
@@ -14,11 +18,20 @@ const { page, site, frontmatter } = useData()
           </a>
         </h1>
       </div>
-      <ul class="nav-links">
-        <li v-for="item in site.navs">
-          <a :href="item.link">{{ item.text }}</a>
-        </li>
-      </ul>
+      <div class="buttons">
+        <div class="button">
+          <a
+            v-for="link in socialLinks"
+            :key="link.icon"
+            :href="link.link"
+            class="link"
+            v-show="link.ariaLabel!='RSS'"
+            :title="link.ariaLabel"
+          >
+            <div v-html="link.icon.svg" class="icon"></div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </template>

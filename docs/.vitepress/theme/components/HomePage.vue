@@ -21,7 +21,7 @@ const showExcerpt = ref(false)
 <template>
   <div class="posts-wrapper">
     <div class="title">
-      <h1>Blog</h1>
+      <h2 id="blog">Blog</h2>
       <div class="options">
         <!-- whether to show excerpt -->
         <label for="">

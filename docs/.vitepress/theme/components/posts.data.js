@@ -17,10 +17,10 @@ export default createContentLoader('blog/*.md', {
 
 function formatDate(raw) {
   const date = new Date(raw)
-  date.setUTCHours(12)
+
   return {
     time: +date,
-    string: date.toLocaleDateString('en-US', {
+    string: date.toLocaleDateString('zh-CH', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
