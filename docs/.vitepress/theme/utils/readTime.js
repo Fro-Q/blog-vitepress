@@ -7,11 +7,8 @@ export function getReadingTime(content) {
 
   const processContent = content
     .replace(/---[\s\S]*?---/, '')  // remove frontmatter
-    .replace(/```[\s\S]*?```/g, '')  // remove code blocks
     .replace(/<[\s\S]*?>/g, '')  // remove html tags
-    .replace(/\${1,2}[\s\S]*?\${1,2}/g, '')  // remove math formulas
-    .replace(/!\[[\s\S]*?\]\([\s\S]*?\)/g, '')  // remove images
-    .replace(/\[[\s\S]*?\]\([\s\S]*?\)/g, '');  // remove links
+    .replace(/\[[^\n]*?\]\([^\n]*?\)/g, '');  // remove links
 
   const chinese = processContent.match(/[\u4e00-\u9fa5]/g);
   const chineseCount = chinese ? chinese.length : 0;
@@ -21,16 +18,16 @@ export function getReadingTime(content) {
   const englishCount = english ? english.length : 0;
   const englishTime = englishCount / WPM_EN;
 
-  const code = content.match(/```[\s\S]*?```/g);
+  const code = processContent.match(/```[\s\S]*?```/g);
   const codeCharCount = code ? code.reduce((acc, cur) => {
     return acc + cur.split(/\s+/).length - 1
   }, 0) : 0;
   const codeTime = codeCharCount / codeCharPerMin;
 
-  const picCount = (content.match(/!\[[\s\S]*?\]\([\s\S]*?\)/g) || []).length;
+  const picCount = (processContent.match(/!\[[^\n]*?\]\([^\n]*?\)/g) || []).length;
   const picTime = picCount / picPerMin;
 
-  const math = content.match(/\${1,2}[\s\S]*?\${1,2}/g);
+  const math = processContent.match(/\${1,2}[\s\S]*?\${1,2}/g);
   const mathCharCount = math ? math.reduce((acc, cur) => {
     return acc + cur.split(/\s+/).length - 1
   }, 0) : 0;

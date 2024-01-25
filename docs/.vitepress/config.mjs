@@ -1,12 +1,14 @@
 import { defineConfig } from 'vitepress'
 import { RssPlugin } from 'vitepress-plugin-rss'
+import markdownItFootnote from 'markdown-it-footnote'
+import markdownItMark from 'markdown-it-mark'
 
 
 const rssOptions = {
   baseUrl: 'https://fro-q.github.io',
   title: 'FroQ',
   copyRight: 'CopyRight © 2023-present, FroQ',
-  count: 20,
+  count: 0,
 }
 
 export default defineConfig({
@@ -36,6 +38,10 @@ export default defineConfig({
     toc: { level: [1, 2, 3] },
     lineNumbers: true,
     math: true,
+    config: (md) => {
+      md.use(markdownItFootnote)
+      md.use(markdownItMark)
+    },
     // container: {
     //   tipLabel: '提示',
     //   warningLabel: '警告',
