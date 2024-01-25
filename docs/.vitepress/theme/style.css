@@ -76,6 +76,7 @@ body {
 }
 body::-webkit-scrollbar {
   width: 1px;
+  position: absolute;
 }
 body::-webkit-scrollbar-thumb {
   background-color: var(--text-muted-color);
@@ -86,7 +87,7 @@ body::-webkit-scrollbar-thumb {
   left: 0;
   right: 0;
   height: 50px;
-  background-color: var(--bg-color);
+  background-color: transparent;
   z-index: 1000;
   border-bottom: 1px solid #eaecef;
 }
@@ -143,18 +144,6 @@ body::-webkit-scrollbar-thumb {
   align-items: center;
 }
 
-.post-date {
-  position: relative;
-  display: block;
-  height: -moz-max-content;
-  height: max-content;
-  margin: 0;
-  padding: 10px 0;
-  word-wrap: break-word;
-  font-size: 1rem;
-  font-family: var(--font-mono);
-}
-
 #content {
   max-width: 600px;
   margin: 0 auto;
@@ -163,30 +152,46 @@ body::-webkit-scrollbar-thumb {
   line-height: 2;
   font-size: 1.2rem;
 }
+#content > div {
+  width: 100%;
+}
 #content > div > p:first-child {
   display: none;
 }
 #content .table-of-contents {
   overflow-y: auto;
-  z-index: 100;
   position: fixed;
-  height: calc(100vh - 100px);
   top: 100px;
   left: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: calc((100% - 600px) / 2);
+  height: calc(100vh - 200px);
+  max-width: calc((100% - 700px) / 2);
   flex-direction: column;
   align-items: flex-start;
   font-size: 1rem;
   line-height: 1.5;
   color: var(--text-muted-color);
   border-left: 1px solid var(--text-muted-color);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+#content .table-of-contents:hover {
+  opacity: 0.6;
+}
+#content .table-of-contents ul {
+  overflow-y: auto;
+  padding-left: 20px;
+  margin: 0;
+}
+#content .table-of-contents ul::-webkit-scrollbar {
+  position: absolute;
+  width: 1px;
+}
+#content .table-of-contents ul::-webkit-scrollbar-thumb {
+  background-color: var(--text-muted-color);
 }
 #content .table-of-contents ul li {
-  margin: 10px 0;
+  margin-top: 20px;
 }
 #content .table-of-contents ul li a {
   color: var(--text-muted-color);
@@ -195,11 +200,17 @@ body::-webkit-scrollbar-thumb {
 #content .table-of-contents ul li a:hover {
   color: var(--text-color);
 }
-#content .table-of-contents ul li a::after {
-  display: none;
-}
 #content .table-of-contents ul li::marker {
   color: transparent;
+}
+#content .table-of-contents a {
+  color: var(--text-muted-color);
+}
+#content .table-of-contents a:hover {
+  color: var(--text-color);
+}
+#content .table-of-contents a::after {
+  display: none;
 }
 #content div[class*=language-] {
   position: relative;
@@ -576,7 +587,6 @@ body::-webkit-scrollbar-thumb {
   position: relative;
   width: 100%;
   height: auto;
-  flex-grow: 1;
   padding: 10px 0;
   background-color: transparent;
 }
@@ -594,7 +604,7 @@ body::-webkit-scrollbar-thumb {
 }
 .posts-wrapper .post-container .post-info .post-excerpt p {
   font-size: 1rem;
-  margin: 10px 0 0 0;
+  margin: 10px 20px 0 30px;
   padding: 0;
   position: relative;
   display: block;
@@ -602,17 +612,45 @@ body::-webkit-scrollbar-thumb {
   height: max-content;
   background-color: transparent;
   color: var(--text-muted-color);
+  transition: all 2s ease;
 }
-.posts-wrapper .post-date {
-  position: relative;
+.posts-wrapper .post-container .post-info .post-excerpt p::after {
+  content: "";
+  position: absolute;
   display: block;
-  width: 100px;
+  height: 90%;
+  width: 1px;
+  top: 5%;
+  left: -15px;
+  background-color: var(--text-muted-color);
+  transition: all 0.2s ease;
+  z-index: -1;
+  border-radius: 2px;
+}
+.posts-wrapper .post-container .post-other-info {
+  position: relative;
+  display: flex;
+  flex-direction: row;
   height: -moz-max-content;
   height: max-content;
-  margin: 0;
   padding: 10px 0;
   word-wrap: break-word;
-  font-size: 0.8rem;
-  color: var(--text-muted-color);
+  font-size: 1rem;
   font-family: var(--font-mono);
+  color: var(--text-muted-color);
+}
+.posts-wrapper .post-container .post-other-info .post-date {
+  margin-right: 20px;
+}
+.posts-wrapper .post-container .post-other-info .post-reading-info {
+  display: flex;
+  height: -moz-max-content;
+  height: max-content;
+  word-wrap: break-word;
+}
+.posts-wrapper .post-container .post-other-info .post-reading-info .post-reading-time {
+  margin-right: 20px;
+}
+.posts-wrapper .post-container .post-other-info .post-reading-info .post-word-count {
+  margin-right: 20px;
 }/*# sourceMappingURL=style.css.map */

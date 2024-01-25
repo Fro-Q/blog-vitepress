@@ -2,7 +2,15 @@
 home: true
 title: FroQ
 lang: zh-CN
+date: 2024/01/25
 ---
+
+<!-- <div :id="$frontmatter.title">
+
+[[toc]]
+
+</div> -->
+
 
 您好。
 

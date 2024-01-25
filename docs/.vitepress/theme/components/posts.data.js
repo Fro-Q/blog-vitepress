@@ -3,13 +3,15 @@ import { createContentLoader } from 'vitepress'
 
 export default createContentLoader('blog/*.md', {
   excerpt: true,
+  includeSrc: true,
   transform(raw) {
     return raw
-      .map(({ url, frontmatter, excerpt }) => ({
+      .map(({ url, frontmatter, excerpt, src }) => ({
+        src,
         frontmatter,
         url,
         excerpt,
-        date: formatDate(frontmatter.date)
+        date: formatDate(frontmatter.date),
       }))
       .sort((a, b) => b.date.time - a.date.time)
   }

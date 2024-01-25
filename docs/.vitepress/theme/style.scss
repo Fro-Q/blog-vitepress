@@ -61,7 +61,6 @@
   scroll-behavior: smooth;
 }
 
-
 #app {
   display: flex;
   flex-direction: column;
@@ -80,6 +79,7 @@ body {
 
   &::-webkit-scrollbar {
     width: 1px;
+    position: absolute;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -92,7 +92,7 @@ body {
   left: 0;
   right: 0;
   height: 50px;
-  background-color: var(--bg-color);
+  background-color: transparent;
   z-index: 1000;
   border-bottom: 1px solid #eaecef;
 
@@ -165,18 +165,11 @@ body {
   align-items: center;
 }
 
-.post-date {
-  position: relative;
-  display: block;
-  height: max-content;
-  margin: 0;
-  padding: 10px 0;
-  word-wrap: break-word;
-  font-size: 1rem;
-  font-family: var(--font-mono);
-}
-
 #content {
+
+  & > div {
+    width: 100%;
+  }
 
   max-width: 600px;
   margin: 0 auto;
@@ -191,44 +184,59 @@ body {
 
   & .table-of-contents {
     overflow-y: auto;
-    z-index: 100;
     position: fixed;
-    height: calc(100vh - 100px);
     top: 100px;
     left: 0;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: calc((100% - 600px) / 2);
+    height: calc(100vh - 200px);
+    max-width: calc((100% - 700px) / 2);
     flex-direction: column;
     align-items: flex-start;
     font-size: 1rem;
     line-height: 1.5;
     color: var(--text-muted-color);
     border-left: 1px solid var(--text-muted-color);
+    opacity: 0;
+    transition: all 0.5s ease;
 
-    & ul li {
+    &:hover {
+      opacity: 0.6;
+    }
 
-      margin: 10px 0;
+    & ul {
+      overflow-y: auto;
+      padding-left: 20px;
+      margin: 0;
 
-      & a {
-        color: var(--text-muted-color);
-        transition: all 0.2s ease;
+      &::-webkit-scrollbar {
+        position: absolute;
+        width: 1px;
+      }
 
-        &:hover {
-          color: var(--text-color);
-
-        }
-
-        &::after {
-          display: none;
-        }
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--text-muted-color);
       }
 
 
-      &::marker {
-        color: transparent;
+
+      & li {
+
+        margin-top: 20px;
+
+        & a {
+          color: var(--text-muted-color);
+          transition: all 0.2s ease;
+
+          &:hover {
+            color: var(--text-color);
+          }
+        }
+
+        &::marker {
+          color: transparent;
+        }
+
+
       }
 
 
@@ -236,6 +244,18 @@ body {
 
 
 
+    & a {
+      color: var(--text-muted-color);
+
+      &:hover {
+        color: var(--text-color);
+      }
+
+      &::after {
+        display: none;
+      }
+
+    }
 
   }
 
@@ -719,7 +739,7 @@ body {
     position: relative;
     width: 100%;
     height: auto;
-    flex-grow: 1;
+    // flex-grow: 1;
     padding: 10px 0;
     background-color: transparent;
 
@@ -741,31 +761,62 @@ body {
 
       & .post-excerpt p {
         font-size: 1rem;
-        margin: 10px 0 0 0;
+        margin: 10px 20px 0 30px;
         padding: 0;
         position: relative;
         display: block;
         height: max-content;
         background-color: transparent;
         color: var(--text-muted-color);
+        transition: all 2s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 90%;
+          width: 1px;
+          top: 5%;
+          left: -15px;
+          background-color: var(--text-muted-color);
+          transition: all 0.2s ease;
+          z-index: -1;
+          border-radius: 2px;
+        }
       }
     }
-  }
 
 
+    & .post-other-info {
+
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      height: max-content;
+      padding: 10px 0;
+      word-wrap: break-word;
+      font-size: 1rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted-color);
 
 
-  & .post-date {
+      & .post-date {
+        margin-right: 20px;
+      }
 
-    position: relative;
-    display: block;
-    width: 100px;
-    height: max-content;
-    margin: 0;
-    padding: 10px 0;
-    word-wrap: break-word;
-    font-size: 0.8rem;
-    color: var(--text-muted-color);
-    font-family: var(--font-mono);
+      & .post-reading-info {
+        display: flex;
+        height: max-content;
+        word-wrap: break-word;
+
+        & .post-reading-time {
+          margin-right: 20px;
+        }
+
+        & .post-word-count {
+          margin-right: 20px;
+        }
+      }
+    }
   }
 }
