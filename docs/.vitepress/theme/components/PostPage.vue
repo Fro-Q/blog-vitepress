@@ -4,12 +4,9 @@ import { useData } from 'vitepress'
 import { watch } from 'vue'
 import { computed } from 'vue';
 import { data as posts } from './posts.data.js'
-import { onMounted, onBeforeUnmount, ref, watchEffect } from 'vue';
+import { onMounted, onBeforeUnmount, ref, watchEffect } from 'vue'
 
 const { page, site, frontmatter } = useData()
-
-const date = new Date(frontmatter.value.date)
-
 
 const dateInfo = computed(() => {
   if (frontmatter.value.date) {
@@ -29,71 +26,54 @@ const dateInfo = computed(() => {
   }
 })
 
-
-let observer
-
 onMounted(() => {
-  console.log('mounted');
   // filter by parent element id
   if (frontmatter.value.home) {
-    console.log('home page');
     return;
   }
-  console.log(page.value.frontmatter.title);
-  var tocParent = document.getElementById(page.value.frontmatter.title);
-  console.log(tocParent);
+  var tocParent = document.getElementById(page.value.frontmatter.timestampId);
   var toc = tocParent.getElementsByClassName('table-of-contents')[0];
-  console.log(toc);
   if (toc) {
-    console.log('toc found');
     addEventListeners(toc);
-  } else {
-    observer = new MutationObserver((mutationsList, observer) => {
-      for(let mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-          var toc = document.getElementsByClassName('table-of-contents')[0];
-          if (toc) {
-            addEventListeners(toc);
-            observer.disconnect();
-          }
-        }
-      }
-    });
-
-    observer.observe(document.body, { childList: true, subtree: true });
-  }
-});
-
-onBeforeUnmount(() => {
-  if (observer) {
-    observer.disconnect();
   }
 });
 
 function addEventListeners(toc) {
-  toc.addEventListener('mouseenter', function() {
+  toc.addEventListener('mouseenter', function () {
     document.body.style.overflow = 'hidden';
     document.body.style.paddingRight = '1px';
-    console.log('mouseenter');
   });
 
-  toc.addEventListener('mouseleave', function() {
+  toc.addEventListener('mouseleave', function () {
     document.body.style.overflow = 'auto';
     document.body.style.paddingRight = '0px';
-    console.log('mouseleave');
   });
 }
+
+const thisPost = computed(() => {
+  if (frontmatter.value.home) {
+    return;
+  }
+  return posts.find(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
+})
 
 </script>
 
 <template>
   <div class="post-wrapper">
-    <div class="post-title" v-if="!frontmatter.home" >
+    <div class="post-title" v-if="!frontmatter.home">
       <h1>{{ frontmatter.title }}</h1>
     </div>
-    <div class="post-date" v-if="!frontmatter.home" >
-      <span>{{ dateInfo.string }}</span>
+    <div class="post-info">
+      <div class="post-date" v-if="!frontmatter.home">
+        <span>{{ dateInfo.string }}</span>
+      </div>
+      <div class="post-reading-info" v-if="!frontmatter.home">
+        <span class="post-reading-time">约{{ thisPost.readingInfo.totalTime }}分钟</span>
+        <span class="post-word-count">{{ thisPost.readingInfo.wordCount }}字</span>
+      </div>
+
     </div>
-    <Content class="content-wrapper" :id="frontmatter.home?'home':'content'" />
+    <Content class="content-wrapper" :id="frontmatter.home ? 'home' : 'content'" />
   </div>
 </template>

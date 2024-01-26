@@ -1,13 +1,14 @@
 ---
 title: '好久不见:P'
 date: 2023/06/01
+timestampId: "230601a"
 ---
 
 好几十天没有写东西，一部分原因是忙得没时间写，一部分原因是忙得没时间想。
 
 ---
 
-<div :id="$frontmatter.title">
+<div :id="$frontmatter.timestampId">
 
 [[toc]]
 

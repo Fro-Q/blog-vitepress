@@ -1,13 +1,12 @@
 <script setup>
 import { useData } from 'vitepress'
-import { onMounted, onBeforeUnmount } from 'vue';
+import { onMounted, onBeforeUnmount, ref } from 'vue';
 import Navbar from './components/Navbar.vue';
 import HomePage from './components/HomePage.vue';
 import PostPage from './components/PostPage.vue';
+import Footer from './components/Footer.vue';
 
 const { page, site, frontmatter } = useData()
-
-
 
 </script>
 
@@ -22,4 +21,5 @@ const { page, site, frontmatter } = useData()
 
   <HomePage v-else />
 
+  <Footer />
 </template>

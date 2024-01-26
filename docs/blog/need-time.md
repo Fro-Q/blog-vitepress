@@ -1,13 +1,14 @@
 ---
 title: '需要时间'
 date: 2023/06/21
+timestamp: "230621a"
 ---
 
 遥感和毛概考完了，时间快来了。
 
 ---
 
-<div :id="$frontmatter.title">
+<div :id="$frontmatter.timestampId">
 
 [[toc]]
 
@@ -54,6 +55,9 @@ export default defineConfig({
 })
 ```
 
+> okokokokokok `okokokokokok` ok
+
+okok `okok` okokokokokokokoko
 
 ==nihnih==
 
