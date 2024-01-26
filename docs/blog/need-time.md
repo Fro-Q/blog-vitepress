@@ -2,6 +2,7 @@
 title: '需要时间'
 date: 2023/06/21
 timestamp: "230621a"
+lastUpdated: true
 ---
 
 遥感和毛概考完了，时间快来了。

@@ -491,8 +491,20 @@ body::-webkit-scrollbar-thumb {
   color: var(--accent-color);
 }
 #content img {
-  max-width: 100%;
+  max-width: 80%;
   height: auto;
+  margin: 0 auto;
+  display: block;
+}
+#content p:has(> img)::after {
+  content: attr(alt);
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: 10px auto 0 auto;
+  text-align: center;
+  color: var(--text-muted-color);
+  font-size: 0.8rem;
 }
 #content section.footnotes {
   font-size: 0.8rem;
@@ -729,4 +741,21 @@ body::-webkit-scrollbar-thumb {
 }
 .posts-wrapper .post-container .post-other-info .post-reading-info .post-word-count {
   margin-right: 20px;
+}
+
+footer {
+  padding: 20px 0;
+  color: var(--text-faded-color);
+  text-align: end;
+  font-family: var(--font-mono);
+}
+footer a {
+  color: var(--text-muted-color);
+  transition: all 0.2s ease;
+}
+footer a.license {
+  color: var(--accent-color);
+}
+footer a:hover {
+  color: var(--accent-color);
 }/*# sourceMappingURL=style.css.map */

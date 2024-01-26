@@ -57,6 +57,24 @@ const thisPost = computed(() => {
   return posts.find(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
 })
 
+
+onMounted(() => {
+  if (frontmatter.value.home) {
+    return;
+  }
+  var content = document.getElementById('content');
+  var imgs = content.getElementsByTagName('img');
+  for (var i = 0; i < imgs.length; i++) {
+    var img = imgs[i];
+    var p = img.parentNode;
+    if (p.tagName === 'P') {
+      p.setAttribute('alt', img.getAttribute('alt'));
+    }
+  }
+});
+
+console.log(page);
+
 </script>
 
 <template>
@@ -75,5 +93,6 @@ const thisPost = computed(() => {
 
     </div>
     <Content class="content-wrapper" :id="frontmatter.home ? 'home' : 'content'" />
+
   </div>
 </template>
