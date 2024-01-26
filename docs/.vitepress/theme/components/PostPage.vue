@@ -26,6 +26,26 @@ const dateInfo = computed(() => {
   }
 })
 
+const lastUpdated = computed(() => {
+  if (frontmatter.value.lastUpdated) {
+    const date = new Date(frontmatter.value.lastUpdated);
+    return {
+      time: +date,
+      string: date.toLocaleDateString('zh-CN', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+      })
+    }
+  }
+  return {
+    time: +new Date(),
+    string: ''
+  }
+})
+
 onMounted(() => {
   // filter by parent element id
   if (frontmatter.value.home) {
@@ -57,6 +77,27 @@ const thisPost = computed(() => {
   return posts.find(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
 })
 
+const thisPostIndex = computed(() => {
+  if (frontmatter.value.home) {
+    return;
+  }
+  return posts.findIndex(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
+})
+
+const nextPost = computed(() => {
+  if (frontmatter.value.home) {
+    return;
+  }
+  return posts[thisPostIndex.value + 1];
+})
+
+const prevPost = computed(() => {
+  if (frontmatter.value.home) {
+    return;
+  }
+  return posts[thisPostIndex.value - 1];
+})
+
 
 onMounted(() => {
   if (frontmatter.value.home) {
@@ -72,8 +113,6 @@ onMounted(() => {
     }
   }
 });
-
-console.log(page);
 
 </script>
 
@@ -93,6 +132,25 @@ console.log(page);
 
     </div>
     <Content class="content-wrapper" :id="frontmatter.home ? 'home' : 'content'" />
-
+    <div class="content-footer">
+      <div class="last-updated">
+        <span>最后更新于</span>
+        <span>{{ lastUpdated.string }}</span>
+      </div>
+      <div class="related-posts" v-if="!frontmatter.home">
+        <div class="related-posts-container">
+          <div class="related-post">
+            <div class="related-post-title">上一篇：</div>
+            <a :href="prevPost.url" v-if="prevPost">{{ prevPost.frontmatter.title }}</a>
+            <div v-else>无</div>
+          </div>
+          <div class="related-post">
+            <div class="related-post-title">下一篇：</div>
+            <a :href="nextPost.url" v-if="nextPost">{{ nextPost.frontmatter.title }}</a>
+            <div v-else>无</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>

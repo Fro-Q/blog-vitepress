@@ -21,9 +21,11 @@
   :root {
     --accent-color: #fff;
     --bg-color: #111;
-    --text-color: #ccc;
+    --toc-bg-color: rgba(17, 17, 17, 0.8);
+    --text-color: #aaa;
     --text-muted-color: #999;
     --text-faded-color: #666;
+    --text-title-color: #eee;
     --a-color: #eee;
     --code-block-bg: #181818;
     --code-numbers-border: #333;
@@ -47,9 +49,11 @@
   :root {
     --accent-color: #000;
     --bg-color: #fff;
-    --text-color: #333;
+    --toc-bg-color: rgba(255, 255, 255, 0.8);
+    --text-color: #444;
     --text-muted-color: #666;
     --text-faded-color: #999;
+    --text-title-color: #111;
     --a-color: #111;
     --code-block-bg: #f7f7f7;
     --code-numbers-border: #eaeaea;
@@ -184,7 +188,7 @@ body {
     width: 100%;
   }
 
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -199,12 +203,16 @@ body {
     overflow-y: auto;
     position: fixed;
     top: 100px;
+    z-index: 100;
     left: 0;
     display: flex;
-    height: calc(100vh - 200px);
-    max-width: calc((100% - 700px) / 2);
+    // height: calc(100vh - 200px);
+    max-width: calc((100% - 840px) / 2);
+    min-width: 200px;
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--toc-bg-color);
+    backdrop-filter: blur(3px);
     font-size: 1rem;
     line-height: 1.5;
     color: var(--text-muted-color);
@@ -212,8 +220,12 @@ body {
     opacity: 0;
     transition: all 0.5s ease;
 
+    // @media screen and (max-width: 1200px) {
+    //   display: none;
+    // }
+
     &:hover {
-      opacity: 0.6;
+      opacity: 1;
     }
 
     & ul {
@@ -234,7 +246,7 @@ body {
 
       & li {
 
-        margin-top: 20px;
+        margin: 20px 0;
 
         & a {
           color: var(--text-muted-color);
@@ -501,6 +513,7 @@ body {
     padding: 0;
     font-weight: 600;
     position: relative;
+    color: var(--text-title-color);
 
     &:hover a {
       opacity: 1;
@@ -653,6 +666,15 @@ body {
 
   & section.footnotes {
     font-size: 0.8rem;
+    margin: 50px 0;
+
+    &::before {
+      content: "参考资料";
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
     & ol,
     & ul {
@@ -719,7 +741,7 @@ body {
 
 .post-wrapper {
   & .post-title {
-    color: var(--text-color);
+    color: var(--text-title-color);
     font-size: 2rem;
   }
 
@@ -945,8 +967,39 @@ body {
   }
 }
 
+.content-footer {
+
+  & .last-updated {
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
+    margin-top: 20px;
+  }
+
+  & .related-posts {
+    margin-top: 20px;
+    color: var(--text-muted-color);
+    display: flex;
+    flex-direction: column;
+
+    & .related-post {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      & .related-post-title {
+        font-size: 1rem;
+        color: var(--text-muted-color);
+        transition: all 0.2s ease;
+      }
+    }
+  }
+
+}
+
 footer {
-  padding: 20px 0;
+  width: 100%;
+  padding: 20px 0 10px 0;
   color: var(--text-faded-color);
   text-align: end;
   font-family: var(--font-mono);

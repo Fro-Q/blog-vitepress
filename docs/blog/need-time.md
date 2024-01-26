@@ -1,8 +1,8 @@
 ---
 title: '需要时间'
-date: 2023/06/21
-timestamp: "230621a"
-lastUpdated: true
+date: 2023-06-21
+timestampId: "230621a"
+lastUpdated: 2023-06-21 15:57
 ---
 
 遥感和毛概考完了，时间快来了。
@@ -32,34 +32,3 @@ lastUpdated: true
 ## 后续
 
 后续可能会有一些值得期待的行动，毕竟一个多月的纯 Spare Time，有点想入非非了已经。
-
-```js
-import { defineConfig } from 'vitepress'
-import markdownItAnchor from 'markdown-it-anchor'
-import markdownItFoo from 'markdown-it-foo'
-
-export default defineConfig({
-  markdown: {
-    // markdown-it-anchor 的选项
-    // https://github.com/valeriangalliat/markdown-it-anchor#usage
-    anchor: {
-      permalink: markdownItAnchor.permalink.headerLink()
-    },
-    // @mdit-vue/plugin-toc 的选项
-    // https://github.com/mdit-vue/mdit-vue/tree/main/packages/plugin-toc#options
-    toc: { level: [1, 2] },
-    config: (md) => {
-      // 使用更多的 Markdown-it 插件！
-      md.use(markdownItFoo)
-    }
-  }
-})
-```
-
-> okokokokokok `okokokokokok` ok
-
-okok `okok` okokokokokokokoko
-
-==nihnih==
-
-[Basics of Prompting](https://www.promptingguide.ai/introduction/basics)

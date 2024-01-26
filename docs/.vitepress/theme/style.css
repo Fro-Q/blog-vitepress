@@ -4,9 +4,11 @@
   :root {
     --accent-color: #fff;
     --bg-color: #111;
-    --text-color: #ccc;
+    --toc-bg-color: rgba(17, 17, 17, 0.8);
+    --text-color: #aaa;
     --text-muted-color: #999;
     --text-faded-color: #666;
+    --text-title-color: #eee;
     --a-color: #eee;
     --code-block-bg: #181818;
     --code-numbers-border: #333;
@@ -29,9 +31,11 @@
   :root {
     --accent-color: #000;
     --bg-color: #fff;
-    --text-color: #333;
+    --toc-bg-color: rgba(255, 255, 255, 0.8);
+    --text-color: #444;
     --text-muted-color: #666;
     --text-faded-color: #999;
+    --text-title-color: #111;
     --a-color: #111;
     --code-block-bg: #f7f7f7;
     --code-numbers-border: #eaeaea;
@@ -146,7 +150,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 #content {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -163,12 +167,16 @@ body::-webkit-scrollbar-thumb {
   overflow-y: auto;
   position: fixed;
   top: 100px;
+  z-index: 100;
   left: 0;
   display: flex;
-  height: calc(100vh - 200px);
-  max-width: calc((100% - 700px) / 2);
+  max-width: calc((100% - 840px) / 2);
+  min-width: 200px;
   flex-direction: column;
   align-items: flex-start;
+  background-color: var(--toc-bg-color);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   font-size: 1rem;
   line-height: 1.5;
   color: var(--text-muted-color);
@@ -177,7 +185,7 @@ body::-webkit-scrollbar-thumb {
   transition: all 0.5s ease;
 }
 #content .table-of-contents:hover {
-  opacity: 0.6;
+  opacity: 1;
 }
 #content .table-of-contents ul {
   overflow-y: auto;
@@ -192,7 +200,7 @@ body::-webkit-scrollbar-thumb {
   background-color: var(--text-muted-color);
 }
 #content .table-of-contents ul li {
-  margin-top: 20px;
+  margin: 20px 0;
 }
 #content .table-of-contents ul li a {
   color: var(--text-muted-color);
@@ -395,6 +403,7 @@ body::-webkit-scrollbar-thumb {
   padding: 0;
   font-weight: 600;
   position: relative;
+  color: var(--text-title-color);
 }
 #content :is(h1, h2, h3, h4, h5, h6):hover a {
   opacity: 1;
@@ -508,6 +517,14 @@ body::-webkit-scrollbar-thumb {
 }
 #content section.footnotes {
   font-size: 0.8rem;
+  margin: 50px 0;
+}
+#content section.footnotes::before {
+  content: "参考资料";
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 #content section.footnotes ol, #content section.footnotes ul {
   padding-left: 1rem;
@@ -562,7 +579,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .post-wrapper .post-title {
-  color: var(--text-color);
+  color: var(--text-title-color);
   font-size: 2rem;
 }
 .post-wrapper .post-info {
@@ -743,8 +760,32 @@ body::-webkit-scrollbar-thumb {
   margin-right: 20px;
 }
 
+.content-footer .last-updated {
+  font-size: 0.8rem;
+  color: var(--text-muted-color);
+  margin-top: 20px;
+}
+.content-footer .related-posts {
+  margin-top: 20px;
+  color: var(--text-muted-color);
+  display: flex;
+  flex-direction: column;
+}
+.content-footer .related-posts .related-post {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.content-footer .related-posts .related-post .related-post-title {
+  font-size: 1rem;
+  color: var(--text-muted-color);
+  transition: all 0.2s ease;
+}
+
 footer {
-  padding: 20px 0;
+  width: 100%;
+  padding: 20px 0 10px 0;
   color: var(--text-faded-color);
   text-align: end;
   font-family: var(--font-mono);

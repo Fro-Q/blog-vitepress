@@ -1,8 +1,8 @@
 ---
 title: '正在做一个OB主题'
-date: 2023/07/08
+date: 2023-07-08
 timestampId: "230708a"
-lastUpdated: true
+lastUpdated: 2023-07-08 22:06
 ---
 
 虽然在我认识的人里面用 Obsidian 的寥寥无几，但是还是想记录一下最近在干的事情。
