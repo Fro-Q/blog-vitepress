@@ -14,8 +14,6 @@ head:
         - LLM
         - ChatGPT
         - 人工智能
-        - 机器学习
-        - 人机交互
   - - meta
     - name: id
       content: 230628a
@@ -36,7 +34,7 @@ LLM 的本质是**概率模型**，即根据已有的 token 来预测下一个 t
 ```text
 I want to
 ```
-*ouput:*
+*output:*
 ```text
 see a movie.
 ```

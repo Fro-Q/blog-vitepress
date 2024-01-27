@@ -14,8 +14,6 @@ head:
         - LLM
         - ChatGPT
         - 人工智能
-        - 机器学习
-        - 人机交互
   - - meta
     - name: id
       content: 230615a

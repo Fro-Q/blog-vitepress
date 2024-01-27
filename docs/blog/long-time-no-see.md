@@ -10,7 +10,6 @@ head:
   - - meta
     - name: keywords
       content:
-        - 碎碎念
         - 闲聊
         - 个人
   - - meta
