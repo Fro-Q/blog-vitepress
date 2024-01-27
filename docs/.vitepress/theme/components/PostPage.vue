@@ -51,8 +51,9 @@ onMounted(() => {
   if (frontmatter.value.home) {
     return;
   }
-  var tocParent = document.getElementById(page.value.frontmatter.timestampId);
-  var toc = tocParent.getElementsByClassName('table-of-contents')[0];
+  var thisHead = document.querySelector(`meta[name="id"][content="${page.value.frontmatter.timestampId}"]`).parentElement;
+  var thisBody = thisHead.nextElementSibling;
+  var toc = thisBody.getElementsByClassName('table-of-contents')[0];
   if (toc) {
     addEventListeners(toc);
   }

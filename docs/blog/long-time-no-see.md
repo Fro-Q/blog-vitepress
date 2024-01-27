@@ -3,17 +3,26 @@ title: '好久不见:P'
 date: 2023-06-01
 timestampId: "230601a"
 lastUpdated: 2023-06-01 05:20
+head:
+  - - meta
+    - name: description
+      content: 好几十天没有写东西，一部分原因是忙得没时间写，一部分原因是忙得没时间想。
+  - - meta
+    - name: keywords
+      content:
+        - 碎碎念
+        - 闲聊
+        - 个人
+  - - meta
+    - name: id
+      content: 230601a
 ---
 
 好几十天没有写东西，一部分原因是忙得没时间写，一部分原因是忙得没时间想。
 
 ---
 
-<div :id="$frontmatter.timestampId">
-
 [[toc]]
-
-</div>
 
 ## 最近
 

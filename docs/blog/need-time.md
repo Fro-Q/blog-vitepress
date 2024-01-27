@@ -3,17 +3,26 @@ title: '需要时间'
 date: 2023-06-21
 timestampId: "230621a"
 lastUpdated: 2023-06-21 15:57
+head:
+  - - meta
+    - name: description
+      content: 遥感和毛概考完了，时间快来了。
+  - - meta
+    - name: keywords
+      content:
+        - 碎碎念
+        - 闲聊
+        - 个人
+  - - meta
+    - name: id
+      content: 230621a
 ---
 
 遥感和毛概考完了，时间快来了。
 
 ---
 
-<div :id="$frontmatter.timestampId">
-
 [[toc]]
-
-</div>
 
 ## 考试
 

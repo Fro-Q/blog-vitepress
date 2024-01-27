@@ -3,17 +3,29 @@ title: 'What is Prompt?'
 date: 2023-06-15
 timestampId: "230615a"
 lastUpdated: 2023-06-15 18:46
+head:
+  - - meta
+    - name: description
+      content: 一篇关于「Prompt」的极极极简介绍。
+  - - meta
+    - name: keywords
+      content:
+        - Prompt
+        - LLM
+        - ChatGPT
+        - 人工智能
+        - 机器学习
+        - 人机交互
+  - - meta
+    - name: id
+      content: 230615a
 ---
 
 一篇关于「Prompt」的极极极简介绍。
 
 ---
 
-<div :id="$frontmatter.timestampId">
-
 [[toc]]
-
-</div>
 
 「*Prompt*」是什么？
 
