@@ -70,34 +70,36 @@ function addEventListeners(toc) {
   });
 }
 
-const thisPost = computed(() => {
-  if (frontmatter.value.home) {
-    return;
-  }
-  return posts.find(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
-})
-
-const thisPostIndex = computed(() => {
-  if (frontmatter.value.home) {
-    return;
-  }
-  return posts.findIndex(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
-})
-
 const nextPost = computed(() => {
   if (frontmatter.value.home) {
     return;
   }
-  return posts[thisPostIndex.value + 1];
+  const thisPostIndex = posts.findIndex(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
+  if (thisPostIndex === posts.length - 1) {
+    return;
+  }
+  return posts[thisPostIndex + 1];
 })
 
 const prevPost = computed(() => {
   if (frontmatter.value.home) {
     return;
   }
-  return posts[thisPostIndex.value - 1];
+  const thisPostIndex = posts.findIndex(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
+  if (thisPostIndex === 0) {
+    return;
+  }
+  return posts[thisPostIndex - 1];
 })
 
+const thisPostReadingInfo = computed(() => {
+  if (frontmatter.value.home || page.value.isNotFound) {
+    return;
+  }
+  const thisPostIndex = posts.findIndex(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
+
+  return posts[thisPostIndex].readingInfo;
+})
 
 onMounted(() => {
   if (frontmatter.value.home) {
@@ -117,27 +119,26 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="post-wrapper">
-    <div class="post-title" v-if="!frontmatter.home">
+  <div class="post-wrapper" v-if="!frontmatter.home && !page.isNotFound">
+    <div class="post-title">
       <h1>{{ frontmatter.title }}</h1>
     </div>
     <div class="post-info">
-      <div class="post-date" v-if="!frontmatter.home">
+      <div class="post-date">
         <span>{{ dateInfo.string }}</span>
       </div>
-      <div class="post-reading-info" v-if="!frontmatter.home">
-        <span class="post-reading-time">约{{ thisPost.readingInfo.totalTime }}分钟</span>
-        <span class="post-word-count">{{ thisPost.readingInfo.wordCount }}字</span>
+      <div class="post-reading-info">
+        <span class="post-reading-time">约{{ thisPostReadingInfo.totalTime }}分钟</span>
+        <span class="post-word-count">{{ thisPostReadingInfo.wordCount }}字</span>
       </div>
-
     </div>
-    <Content class="content-wrapper" :id="frontmatter.home ? 'home' : 'content'" />
+    <Content class="content-wrapper" id="content" />
     <div class="content-footer">
       <div class="last-updated">
         <span>最后更新于</span>
         <span>{{ lastUpdated.string }}</span>
       </div>
-      <div class="related-posts" v-if="!frontmatter.home">
+      <div class="related-posts">
         <div class="related-posts-container">
           <div class="related-post">
             <div class="related-post-title">上一篇：</div>

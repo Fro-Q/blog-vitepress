@@ -2,13 +2,16 @@
 import { data as posts } from './posts.data.js'
 import { computed, ref } from 'vue'
 import PostPage from './PostPage.vue';
+import Contact from './Contact.vue';
 
 const showExcerpt = ref(false)
 
 </script>
 
 <template>
-  <PostPage />
+  <div class="post-wrapper">
+    <Content class="content-wrapper" id="home" />
+  </div>
 
   <div class="posts-wrapper">
     <div class="title">
@@ -38,4 +41,5 @@ const showExcerpt = ref(false)
       </div>
     </div>
   </div>
+  <Contact></Contact>
 </template>
