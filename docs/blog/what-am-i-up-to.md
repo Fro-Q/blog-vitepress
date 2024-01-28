@@ -20,7 +20,7 @@ head:
       content: 240128a
 ---
 
-{{ excerpt }}
+我 xxx 又回来啦！
 
 ---
 
