@@ -2,3 +2,5 @@
 docs/blog/.obsidian/*
 docs/blog/template/*
 docs/.vitepress/dist/*
+.DS_Store
+docs/.DS_Store
