@@ -23,7 +23,7 @@ head:
 
 [[toc]]
 
-# 最近
+## 最近
 
 [上一次公众号](https://mp.weixin.qq.com/s?__biz=Mzg3Mjc2MDE2OA==&mid=2247483963&idx=1&sn=bf3d40c677e588cd9c1fdf1a23ba7144&chksm=ceeb143cf99c9d2a2746ab153396f3053c6e2f15eb42c5fc03d025eedcedf5453b209f42d21b&token=1755124329&lang=zh_CN#rd) 更新是在 4 月 5 日，关于一个辩论题略有所思。
 
@@ -33,7 +33,7 @@ head:
 
 现在正在鼓捣的这个叫 Gridea（[see in GitHub](https://github.com/getgridea/gridea)），本质上是基于 Git 的静态网页，不过作者把功能直接整合成了一个客户端，使得配置网站样式、Push & Pull 等等操作完全可以用 UI 实现，对于不熟悉三件套的人来说非常友好；而且这个客户端的 MD 编辑器手感莫名非常好，大家有兴趣也可以试试。这个可以直接去网上找教程，有几个写得很清楚。
 
-# 大家都在用 ChatGPT
+## 大家都在用 ChatGPT
 
 很难想象，这个东西才出来半年左右。
 
