@@ -60,7 +60,7 @@ I made a mistake.
 
 我现在在用的就是自己写的 [Qlean](https://github.com/Fro-Q/Qlean)。有一说一我觉得用户体验还算可以。
 
-![I wrote Qlean](Qlean-README.png)
+![I wrote Qlean](assets/Qlean-README.png)
 
 这是截至 1 月 28 日 13 时 40 分的数据。2000 多的下载量虽然不多，但我能感受到我花时间花精力去做的东西确实得到了部分人的认可，这就够了。如果有朋友用 Obsidian，不妨试一试它，有 bug 或者有什么需求和想法可以直接联系我。
 
@@ -72,11 +72,11 @@ I made a mistake.
 
 在这之前，我其实还用纯 Vue. js 写过一个版本，长这样：
 
-![Previous blog site](prev-blog-site.png)
+![Previous blog site](assets/prev-blog-site.png)
 
 其实效果还可以，我也挺满意的。不过这两天用 Vitepress 重新做了一个，也就是现在大家看到的这个，整体观感可能会更好吧。
 
-![fro-blo's home](fro-blo-home.png)
+![fro-blo's home](assets/fro-blo-home.png)
 
 说实话，在做这个玩意的过程中一直在不断学习。当初我以为我看了几天 Vue 的文档已经把它完全掌握了，结果后来自己做另一个 GIS 可视化项目的时候发现之前的全是粑粑，然后现在回头看那个可视化项目也跟粑粑一样。不过没事，至少说明我进步显著。
 
