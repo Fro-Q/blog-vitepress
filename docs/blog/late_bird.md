@@ -2,24 +2,29 @@
 title: '晚鸟'
 date: 2024-03-28
 timestampId: 240328a
-lastUpdated: {{ last updated time | must be declared when writing done}}
+lastUpdated: 2024-03-28
 head:
   - - meta
     - name: description
-      content: {{ excerpt }}
+      content: 我是晚鸟。
   - - meta
     - name: keywords
       content:
-        - {{ keyword }}
+        - 闲聊
+        - 个人
   - - meta
     - name: id
       content: 240328a
 ---
 
-{{ excerpt }}
+我是晚鸟。
 
 ---
 
 [[toc]]
 
-如果不是通宵 + 一天课
+今天起得很早。主要是因为昨天没有通宵。
+
+最近事情真的很多，几乎连思考的时间都没有。我很喜欢在晚上做事情，一方面是因为作息不是很阳间，另一方面是因为我感觉只有在晚上，我的时间才属于我。虽然严格来说，如果我不想理人，它们在白天也属于我，但是别管了。
+
+这次不想写太多东西。我知道我挖了八百个坑没填，但相信我以后会一个一个填的，最近有更重要更紧急的事情要做。没办法，又当了一次 late bird。上一次当 late bird 还得是高考了，不过这次有可能能抓到虫尾巴。
