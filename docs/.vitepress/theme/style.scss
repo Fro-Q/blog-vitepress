@@ -100,17 +100,18 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 
-  @include scroll-bar;
 
+  @include scroll-bar;
 }
 
 .navbar {
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 20px;
+  left: 20px;
+  right: 20px;
   height: 50px;
   background-color: transparent;
   z-index: 1000;
+  position: fixed;
   // border-bottom: 1px solid #eaecef;
 
   .navbar-inner {
@@ -185,7 +186,7 @@ body {
 
 #content {
 
-  & > div {
+  &>div {
     width: 100%;
   }
 
@@ -196,7 +197,7 @@ body {
   line-height: 2;
   font-size: 1.2rem;
 
-  & > div > p:first-child {
+  &>div>p:first-child {
     display: none;
   }
 
@@ -218,7 +219,7 @@ body {
     line-height: 1.5;
     color: var(--text-muted-color);
     border-left: 1px solid var(--text-muted-color);
-    opacity: 0;
+    opacity: 0.2;
     transition: all 0.5s ease;
 
     // @media screen and (max-width: 1200px) {
@@ -557,7 +558,7 @@ body {
       color: var(--text-color);
     }
 
-    & > p:first-child::before {
+    &>p:first-child::before {
       content: "format_quote";
       font-family: "Material Icons";
       position: absolute;
@@ -761,7 +762,7 @@ body {
       flex-direction: row;
       align-items: center;
 
-      & > span {
+      &>span {
         margin-left: 20px;
       }
     }
@@ -1064,26 +1065,6 @@ body {
 
 }
 
-footer {
-  width: 100%;
-  padding: 20px 0 10px 0;
-  color: var(--text-faded-color);
-  text-align: end;
-  font-family: var(--font-mono);
-
-  & a {
-    color: var(--text-muted-color);
-    transition: all 0.2s ease;
-
-    &.license {
-      color: var(--accent-color);
-    }
-
-    &:hover {
-      color: var(--accent-color);
-    }
-  }
-}
 
 .not-found {
   position: relative;
@@ -1135,9 +1116,13 @@ button#back-to-top {
   color: var(--bg-color);
   transition: all 0.2s ease;
   opacity: 0;
+  cursor: pointer;
 
   & svg {
-    margin: auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
   }
 
   &:hover {
