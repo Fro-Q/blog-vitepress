@@ -110,6 +110,10 @@ const thisPostReadingInfo = computed(() => {
       post.frontmatter.timestampId === page.value.frontmatter.timestampId,
   );
 
+  if (thisPostIndex === -1) {
+    return { totalTime: 0, wordCount: 0 };
+  }
+
   return posts[thisPostIndex].readingInfo;
 });
 
