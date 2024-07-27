@@ -1,8 +1,6 @@
 ---
 title: '所有人都在说的「Prompt」'
-date: 2023-06-15
-timestampId: "230615a"
-lastUpdated: 2023-06-15 18:46
+timestampId: 230615a
 head:
   - - meta
     - name: description
@@ -17,6 +15,8 @@ head:
   - - meta
     - name: id
       content: 230615a
+created: 2024-01-26 17:00
+last_modified: 2024-07-27 15:78
 ---
 
 一篇关于「Prompt」的极极极简介绍。

@@ -1,8 +1,6 @@
 ---
-title: "碎碎念"
-date: 2023-08-08
-timestampId: "230808a"
-lastUpdated: 2023-08-08 08:30
+title: '碎碎念'
+timestampId: 230808a
 head:
   - - meta
     - name: description
@@ -15,6 +13,8 @@ head:
   - - meta
     - name: id
       content: 230808a
+created: 2024-01-27 09:00
+last_modified: 2024-07-27 15:61
 ---
 
 睡不着，忽地想起来好久没动笔了。

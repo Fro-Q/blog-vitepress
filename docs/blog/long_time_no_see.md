@@ -1,8 +1,6 @@
 ---
 title: '好久不见:P'
-date: 2023-06-01
-timestampId: "230601a"
-lastUpdated: 2023-06-01 05:20
+timestampId: 230601a
 head:
   - - meta
     - name: description
@@ -15,6 +13,8 @@ head:
   - - meta
     - name: id
       content: 230601a
+created: 2023-06-15 05:00
+last_modified: 2024-07-27 15:19
 ---
 
 好几十天没有写东西，一部分原因是忙得没时间写，一部分原因是忙得没时间想。

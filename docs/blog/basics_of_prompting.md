@@ -1,8 +1,6 @@
 ---
 title: 'Prompt 入门'
-date: 2023-06-28
-timestampId: "230628a"
-lastUpdated: 2023-06-28 19:15
+timestampId: 230628a
 head:
   - - meta
     - name: description
@@ -17,6 +15,8 @@ head:
   - - meta
     - name: id
       content: 230628a
+created: 2023-06-28 19:00
+last_modified: 2024-07-27 15:88
 ---
 
 一些关于 prompt 的入门知识，包括一种基础的 prompt 格式、两种常用的 prompt 类型、prompt 的组成元素以及 prompt 设计的通用思维与方法。

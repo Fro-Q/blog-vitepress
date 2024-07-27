@@ -1,8 +1,6 @@
 ---
 title: '需要时间'
-date: 2023-06-21
-timestampId: "230621a"
-lastUpdated: 2023-06-21 15:57
+timestampId: 230621a
 head:
   - - meta
     - name: description
@@ -15,6 +13,8 @@ head:
   - - meta
     - name: id
       content: 230621a
+created: 2023-06-21 16:00
+last_modified: 2024-07-27 15:48
 ---
 
 遥感和毛概考完了，时间快来了。

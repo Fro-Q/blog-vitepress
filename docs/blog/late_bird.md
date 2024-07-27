@@ -1,8 +1,6 @@
 ---
 title: '晚鸟'
-date: 2024-03-28
 timestampId: 240328a
-lastUpdated: 2024-03-28
 head:
   - - meta
     - name: description
@@ -15,6 +13,8 @@ head:
   - - meta
     - name: id
       content: 240328a
+created: 2024-03-28 06:00
+last_modified: 2024-07-27 15:94
 ---
 
 我是晚鸟。
