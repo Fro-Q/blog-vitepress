@@ -1,73 +1,75 @@
 <script setup>
-import { Content } from 'vitepress';
-import { useData } from 'vitepress'
-import { watch } from 'vue'
-import { computed } from 'vue';
-import { data as posts } from './posts.data.js'
-import { onMounted, onBeforeUnmount, ref, watchEffect } from 'vue'
+import { Content } from "vitepress";
+import { useData } from "vitepress";
+import { watch } from "vue";
+import { computed } from "vue";
+import { data as posts } from "./posts.data.js";
+import { onMounted, onBeforeUnmount, ref, watchEffect } from "vue";
 
-const { page, site, frontmatter } = useData()
+const { page, site, frontmatter } = useData();
 
 const dateInfo = computed(() => {
   if (frontmatter.value.date) {
-    const date = new Date(frontmatter.value.date);
+    const date = new Date(frontmatter.value.created);
     return {
       time: +date,
-      string: date.toLocaleDateString('zh-CN', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-      })
-    }
+      string: date.toLocaleDateString("zh-CN", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }),
+    };
   }
   return {
     time: +new Date(),
-    string: ''
-  }
-})
+    string: "",
+  };
+});
 
 const lastUpdated = computed(() => {
   if (frontmatter.value.lastUpdated) {
-    const date = new Date(frontmatter.value.lastUpdated);
+    const date = new Date(frontmatter.value.last_modified);
     return {
       time: +date,
-      string: date.toLocaleDateString('zh-CN', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric'
-      })
-    }
+      string: date.toLocaleDateString("zh-CN", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+      }),
+    };
   }
   return {
     time: +new Date(),
-    string: ''
-  }
-})
+    string: "",
+  };
+});
 
 onMounted(() => {
   // filter by parent element id
   if (frontmatter.value.home) {
     return;
   }
-  var thisHead = document.querySelector(`meta[name="id"][content="${page.value.frontmatter.timestampId}"]`).parentElement;
+  var thisHead = document.querySelector(
+    `meta[name="id"][content="${page.value.frontmatter.timestampId}"]`,
+  ).parentElement;
   var thisBody = thisHead.nextElementSibling;
-  var toc = thisBody.getElementsByClassName('table-of-contents')[0];
+  var toc = thisBody.getElementsByClassName("table-of-contents")[0];
   if (toc) {
     addEventListeners(toc);
   }
 });
 
 function addEventListeners(toc) {
-  toc.addEventListener('mouseenter', function () {
-    document.body.style.overflow = 'hidden';
-    document.body.style.paddingRight = '1px';
+  toc.addEventListener("mouseenter", function () {
+    document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = "1px";
   });
 
-  toc.addEventListener('mouseleave', function () {
-    document.body.style.overflow = 'auto';
-    document.body.style.paddingRight = '0px';
+  toc.addEventListener("mouseleave", function () {
+    document.body.style.overflow = "auto";
+    document.body.style.paddingRight = "0px";
   });
 }
 
@@ -75,48 +77,56 @@ const nextPost = computed(() => {
   if (frontmatter.value.home) {
     return;
   }
-  const thisPostIndex = posts.findIndex(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
+  const thisPostIndex = posts.findIndex(
+    (post) =>
+      post.frontmatter.timestampId === page.value.frontmatter.timestampId,
+  );
   if (thisPostIndex === posts.length - 1) {
     return;
   }
   return posts[thisPostIndex + 1];
-})
+});
 
 const prevPost = computed(() => {
   if (frontmatter.value.home) {
     return;
   }
-  const thisPostIndex = posts.findIndex(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
+  const thisPostIndex = posts.findIndex(
+    (post) =>
+      post.frontmatter.timestampId === page.value.frontmatter.timestampId,
+  );
   if (thisPostIndex === 0) {
     return;
   }
   return posts[thisPostIndex - 1];
-})
+});
 
 const thisPostReadingInfo = computed(() => {
   if (frontmatter.value.home || page.value.isNotFound) {
     return;
   }
-  const thisPostIndex = posts.findIndex(post => post.frontmatter.timestampId === page.value.frontmatter.timestampId);
+  const thisPostIndex = posts.findIndex(
+    (post) =>
+      post.frontmatter.timestampId === page.value.frontmatter.timestampId,
+  );
 
   return posts[thisPostIndex].readingInfo;
-})
+});
 
 onMounted(() => {
   if (frontmatter.value.home) {
     return;
   }
-  var content = document.getElementById('content');
-  var imgs = content.getElementsByTagName('img');
+  var content = document.getElementById("content");
+  var imgs = content.getElementsByTagName("img");
   for (var i = 0; i < imgs.length; i++) {
     var img = imgs[i];
     var p = img.parentNode;
-    if (p.tagName === 'P') {
-      p.setAttribute('alt', img.getAttribute('alt'));
+    if (p.tagName === "P") {
+      p.setAttribute("alt", img.getAttribute("alt"));
     }
   }
 });
-
 </script>
 
 <template>
@@ -129,8 +139,12 @@ onMounted(() => {
         <span>{{ dateInfo.string }}</span>
       </div>
       <div class="post-reading-info">
-        <span class="post-reading-time">约{{ thisPostReadingInfo.totalTime }}分钟</span>
-        <span class="post-word-count">{{ thisPostReadingInfo.wordCount }}字</span>
+        <span class="post-reading-time"
+          >约{{ thisPostReadingInfo.totalTime }}分钟</span
+        >
+        <span class="post-word-count"
+          >{{ thisPostReadingInfo.wordCount }}字</span
+        >
       </div>
     </div>
     <Content class="content-wrapper" id="content" />
@@ -143,12 +157,16 @@ onMounted(() => {
         <div class="related-posts-container">
           <div class="related-post">
             <div class="related-post-title">上一篇：</div>
-            <a :href="prevPost.url" v-if="prevPost">{{ prevPost.frontmatter.title }}</a>
+            <a :href="prevPost.url" v-if="prevPost">{{
+              prevPost.frontmatter.title
+            }}</a>
             <div v-else>无</div>
           </div>
           <div class="related-post">
             <div class="related-post-title">下一篇：</div>
-            <a :href="nextPost.url" v-if="nextPost">{{ nextPost.frontmatter.title }}</a>
+            <a :href="nextPost.url" v-if="nextPost">{{
+              nextPost.frontmatter.title
+            }}</a>
             <div v-else>无</div>
           </div>
         </div>
