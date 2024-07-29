@@ -1,6 +1,6 @@
 // https://vitepress.dev/guide/custom-theme
-import Layout from './Layout.vue'
-import './style.scss'
+import Layout from "./Layout.vue";
+import "./style.scss";
 import { useRoute } from "vitepress";
 import { nextTick, onMounted, watch } from "vue";
 import mediumZoom from "medium-zoom";
@@ -24,7 +24,7 @@ export default {
     });
     watch(
       () => route.path,
-      () => nextTick(() => initZoom())
+      () => nextTick(() => initZoom()),
     );
   },
-}
+};

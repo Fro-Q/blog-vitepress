@@ -4,3 +4,4 @@ docs/blog/template/*
 docs/.vitepress/dist/*
 .DS_Store
 docs/.DS_Store
+docs/.vitepress/dist/*

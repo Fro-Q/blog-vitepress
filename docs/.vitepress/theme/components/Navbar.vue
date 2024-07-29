@@ -1,11 +1,10 @@
 <script setup>
-import { useData } from 'vitepress'
-import { ref, watch } from 'vue';
+import { useData } from "vitepress";
+import { ref, watch } from "vue";
 
-const { page, site, frontmatter } = useData()
+const { page, site, frontmatter } = useData();
 
-const socialLinks = site.value.themeConfig.socialLinks
-
+const socialLinks = site.value.themeConfig.socialLinks;
 </script>
 
 <template>
@@ -25,10 +24,13 @@ const socialLinks = site.value.themeConfig.socialLinks
             :key="link.icon"
             :href="link.link"
             class="link"
-            v-show="link.ariaLabel!='RSS'"
+            v-show="link.ariaLabel != 'RSS'"
             :title="link.ariaLabel"
           >
-            <div v-html="link.icon.svg" class="icon"></div>
+            <div
+              v-html="link.icon.svg"
+              class="icon"
+            ></div>
           </a>
         </div>
       </div>
