@@ -67,7 +67,7 @@ const showExcerpt = ref(false);
   <Contact></Contact>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 #home {
   font-size: 1.8rem;
   font-weight: 600;

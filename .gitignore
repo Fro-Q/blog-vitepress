@@ -1,6 +1,6 @@
 
 docs/blog/.obsidian/*
-docs/blog/template/*
+docs/blog/_template/*
 docs/.vitepress/dist/*
 .DS_Store
 docs/.DS_Store
