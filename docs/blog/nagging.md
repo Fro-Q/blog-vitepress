@@ -7,14 +7,12 @@ head:
       content: 睡不着，忽地想起来好久没动笔了。
   - - meta
     - name: keywords
-      content:
-        - 闲聊
-        - 个人
+      content: 闲聊 个人
   - - meta
     - name: id
       content: 230808a
 created: 2024-01-27 09:00
-last_modified: 2024-07-27 15:61
+last_modified: 2024-08-04 01:55
 ---
 
 睡不着，忽地想起来好久没动笔了。

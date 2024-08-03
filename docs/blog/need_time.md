@@ -7,14 +7,12 @@ head:
       content: 遥感和毛概考完了，时间快来了。
   - - meta
     - name: keywords
-      content:
-        - 闲聊
-        - 个人
+      content: 闲聊 个人
   - - meta
     - name: id
       content: 230621a
 created: 2023-06-21 16:00
-last_modified: 2024-07-27 15:48
+last_modified: 2024-08-04 01:05
 ---
 
 遥感和毛概考完了，时间快来了。

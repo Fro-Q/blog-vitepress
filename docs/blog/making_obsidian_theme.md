@@ -7,15 +7,12 @@ head:
       content: 虽然在我认识的人里面用 Obsidian 的寥寥无几，但是还是想记录一下最近在干的事情。
   - - meta
     - name: keywords
-      content:
-        - Obsidian
-        - 主题
-        - CSS
+      content: Obsidian 主题 CSS
   - - meta
     - name: id
       content: 230708a
 created: 2023-07-08 23:00
-last_modified: 2024-07-27 15:75
+last_modified: 2024-08-04 01:16
 ---
 
 虽然在我认识的人里面用 Obsidian 的寥寥无几，但是还是想记录一下最近在干的事情。

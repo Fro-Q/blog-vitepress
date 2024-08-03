@@ -7,14 +7,12 @@ head:
       content: Forget-me-not.
   - - meta
     - name: keywords
-      content:
-        - 闲聊
-        - 个人
+      content: 闲聊 个人
   - - meta
     - name: id
       content: 240727a
 created: 2024-07-27 12:00
-last_modified: 2024-07-27 15:51
+last_modified: 2024-08-04 01:33
 ---
 
 Forget-me-not.

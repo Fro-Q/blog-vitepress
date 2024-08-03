@@ -7,16 +7,12 @@ head:
       content: 一篇关于「Prompt」的极极极简介绍。
   - - meta
     - name: keywords
-      content:
-        - Prompt
-        - LLM
-        - ChatGPT
-        - 人工智能
+      content: Prompt LLM ChatGPT 人工智能
   - - meta
     - name: id
       content: 230615a
 created: 2024-01-26 17:00
-last_modified: 2024-07-27 15:78
+last_modified: 2024-08-04 01:48
 ---
 
 一篇关于「Prompt」的极极极简介绍。

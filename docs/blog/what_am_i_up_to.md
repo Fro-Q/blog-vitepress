@@ -7,17 +7,12 @@ head:
       content: 我 xxx 又回来啦！
   - - meta
     - name: keywords
-      content:
-        - CSS
-        - Obsidian
-        - 主题
-        - 博客
-        - 个人网站
+      content: CSS Obsidian 主题 博客 个人网站
   - - meta
     - name: id
       content: 240128a
 created: 2024-01-28 05:00
-last_modified: 2024-07-27 15:04
+last_modified: 2024-08-04 01:13
 ---
 
 我 xxx 又回来啦！

@@ -7,16 +7,12 @@ head:
       content: 一些关于 prompt 的入门知识，包括一种基础的 prompt 格式、两种常用的 prompt 类型、prompt 的组成元素以及 prompt 设计的通用思维与方法。
   - - meta
     - name: keywords
-      content:
-        - Prompt
-        - LLM
-        - ChatGPT
-        - 人工智能
+      content: Prompt LLM ChatGPT 人工智能
   - - meta
     - name: id
       content: 230628a
 created: 2023-06-28 19:00
-last_modified: 2024-07-27 15:88
+last_modified: 2024-08-04 01:05
 ---
 
 一些关于 prompt 的入门知识，包括一种基础的 prompt 格式、两种常用的 prompt 类型、prompt 的组成元素以及 prompt 设计的通用思维与方法。
@@ -29,7 +25,7 @@ last_modified: 2024-07-27 15:88
 
 ## 一个简单的 Prompt 格式
 
-LLM 的本质是**概率模型**，即根据已有的 token 来预测下一个 token 的概率分布。如果**提供的信息不充分**或**给出的引导不明确**，LLM——如 ChatGPT——可能会给出一些预期之外的回答，所以早期的 LLM 会出现下面这类问题：
+LLM 的本质是**概率模型**，即根据已有的 token 来预测下一个 token 的概率分布。如果**提供的信息不充分**或**给出的引导不明确**，LLM——如 ChatGPT——可能会给出一些预期之外的回答，所以早期的 LLM 会出现下面这类问题：  
 *input:*
 
 ```text

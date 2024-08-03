@@ -7,14 +7,12 @@ head:
       content: 好几十天没有写东西，一部分原因是忙得没时间写，一部分原因是忙得没时间想。
   - - meta
     - name: keywords
-      content:
-        - 闲聊
-        - 个人
+      content: 闲聊 个人
   - - meta
     - name: id
       content: 230601a
 created: 2023-06-15 05:00
-last_modified: 2024-07-27 15:19
+last_modified: 2024-08-04 01:69
 ---
 
 好几十天没有写东西，一部分原因是忙得没时间写，一部分原因是忙得没时间想。

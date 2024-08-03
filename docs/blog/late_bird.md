@@ -7,14 +7,12 @@ head:
       content: 我是晚鸟。
   - - meta
     - name: keywords
-      content:
-        - 闲聊
-        - 个人
+      content: 闲聊 个人
   - - meta
     - name: id
       content: 240328a
 created: 2024-03-28 06:00
-last_modified: 2024-07-27 15:94
+last_modified: 2024-08-04 01:94
 ---
 
 我是晚鸟。
