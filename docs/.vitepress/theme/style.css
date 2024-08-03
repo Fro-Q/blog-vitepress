@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @media (prefers-color-scheme: dark) {
   :root {
@@ -361,4 +362,398 @@ button#back-to-top svg {
 }
 button#back-to-top:hover {
   background-color: var(--accent-color);
+}
+
+#content {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  line-height: 2;
+  font-size: 1.2rem;
+}
+#content > div {
+  width: 100%;
+}
+#content > div > p:first-child {
+  display: none;
+}
+#content .table-of-contents {
+  overflow-y: auto;
+  position: fixed;
+  top: 100px;
+  z-index: 100;
+  left: 0;
+  display: flex;
+  max-width: calc((100% - 840px) / 2);
+  min-width: 200px;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--toc-bg-color);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-muted-color);
+  border-left: 1px solid var(--text-muted-color);
+  opacity: 0.2;
+  transition: all 0.5s ease;
+}
+#content .table-of-contents:hover {
+  opacity: 1;
+}
+#content .table-of-contents ul {
+  overflow-y: auto;
+  padding-left: 20px;
+  margin: 0;
+}
+#content .table-of-contents ul::-webkit-scrollbar {
+  position: absolute;
+  width: 1px;
+}
+#content .table-of-contents ul::-webkit-scrollbar-thumb {
+  background-color: var(--text-muted-color);
+}
+#content .table-of-contents ul li {
+  margin: 20px 0;
+}
+#content .table-of-contents ul li a {
+  color: var(--text-muted-color);
+  transition: all 0.2s ease;
+}
+#content .table-of-contents ul li a:hover {
+  color: var(--accent-color);
+}
+#content .table-of-contents ul li::marker {
+  color: transparent;
+}
+#content .table-of-contents a {
+  color: var(--text-muted-color);
+}
+#content .table-of-contents a:hover {
+  color: var(--text-color);
+}
+#content .table-of-contents a::after {
+  display: none;
+}
+#content div[class*=language-] {
+  position: relative;
+  margin: 16px auto;
+  background-color: var(--code-block-bg);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+#content div[class*=language-]:hover button.copy {
+  opacity: 1;
+}
+#content div[class*=language-] button.copy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  width: 50px;
+  height: 30px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid var(--code-numbers-border);
+  border-radius: 3px;
+  background-color: var(--code-block-bg);
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+#content div[class*=language-] button.copy.copied::after {
+  content: "✓";
+  color: var(--accent-color);
+}
+#content div[class*=language-] button.copy::after {
+  content: "Copy";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: var(--text-muted-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+#content div[class*=language-] button.copy:hover {
+  border: 1px solid var(--text-muted-color);
+}
+#content div[class*=language-] button.copy:hover::after {
+  color: var(--accent-color);
+}
+#content div[class*=language-] span.lang {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 20px;
+  margin: 10px;
+  padding: 0 6px;
+  color: var(--text-faded-color);
+}
+#content div[class*=language-] pre {
+  padding: 20px 0;
+  margin: 0;
+  overflow-x: auto;
+}
+#content div[class*=language-] pre::-webkit-scrollbar {
+  height: 1px;
+  position: absolute;
+}
+#content div[class*=language-] pre::-webkit-scrollbar-thumb {
+  background-color: var(--text-muted-color);
+}
+#content div[class*=language-] pre code {
+  padding: 0 30px;
+  display: block;
+  font-family: var(--font-mono);
+  width: auto;
+}
+@media (prefers-color-scheme: dark) {
+  #content div[class*=language-] pre code span {
+    color: var(--shiki-dark, inherit);
+  }
+}
+@media (prefers-color-scheme: light) {
+  #content div[class*=language-] pre code span {
+    color: var(--shiki-light, inherit);
+  }
+}
+#content div[class*=language-] pre.has-highlighted .line.highlighted {
+  padding: 0 30px;
+  margin: 0 -30px;
+  display: inline-block;
+  width: calc(100% + 40px);
+  background-color: var(--code-highlight-bg);
+}
+#content div[class*=language-] pre.has-highlighted .line.highlighted.error {
+  background-color: var(--code-error-bg);
+}
+#content div[class*=language-] pre.has-highlighted .line.highlighted.warning {
+  background-color: var(--code-warning-bg);
+}
+#content div[class*=language-] pre.has-focused-lines .line:not(.has-focus) {
+  filter: blur(0.095rem);
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+#content div[class*=language-] pre.has-focused-lines:hover .line:not(.has-focus) {
+  filter: none;
+  opacity: 1;
+}
+#content div[class*=language-] pre.has-diff .line.diff.remove {
+  padding: 0 30px;
+  margin: 0 -30px;
+  display: inline-block;
+  width: calc(100% + 40px);
+  background-color: var(--code-remove-bg);
+}
+#content div[class*=language-] pre.has-diff .line.diff.remove::before {
+  content: "-";
+  position: absolute;
+  transform: translateX(-200%);
+  color: var(--code-remove-color);
+}
+#content div[class*=language-] pre.has-diff .line.diff.add {
+  padding: 0 30px;
+  margin: 0 -30px;
+  display: inline-block;
+  width: calc(100% + 40px);
+  background-color: var(--code-add-bg);
+}
+#content div[class*=language-] pre.has-diff .line.diff.add::before {
+  content: "+";
+  position: absolute;
+  transform: translateX(-200%);
+  color: var(--code-add-color);
+}
+#content div[class*=language-].line-numbers-mode {
+  padding-left: 2.8em;
+}
+#content div[class*=language-].line-numbers-mode .line-numbers-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  color: var(--text-muted-color);
+  border-right: 1px solid var(--code-numbers-border);
+  padding-top: 20px;
+  width: 2.8em;
+  text-align: center;
+  transition: border-color 0.5s, color 0.5s;
+}
+#content .custom-block {
+  margin: 16px auto;
+  padding: 20px 30px;
+  background-color: var(--code-block-bg);
+  border-radius: 4px;
+}
+#content .custom-block.info {
+  background-color: var(--block-info-bg);
+}
+#content .custom-block.tip {
+  background-color: var(--block-tip-bg);
+}
+#content .custom-block.warning {
+  background-color: var(--block-warning-bg);
+}
+#content .custom-block.danger {
+  background-color: var(--block-danger-bg);
+}
+#content .custom-block.details {
+  background-color: var(--block-details-bg);
+}
+#content .custom-block .custom-block-title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#content :is(h1, h2, h3, h4, h5, h6) {
+  margin: 60px auto 5px auto;
+  padding: 0;
+  font-weight: 600;
+  position: relative;
+  color: var(--text-title-color);
+}
+#content :is(h1, h2, h3, h4, h5, h6):hover a {
+  opacity: 1;
+}
+#content :is(h1, h2, h3, h4, h5, h6) a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(-120%);
+  color: var(--text-muted-color);
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+#content :is(h1, h2, h3, h4, h5, h6) a::after {
+  display: none;
+}
+#content :is(h1, h2, h3, h4, h5, h6) a:hover {
+  color: var(--text-color);
+}
+#content blockquote {
+  margin: 16px auto;
+  padding: 20px 30px;
+  background-color: var(--quote-bg);
+  border-radius: 4px;
+  font-size: 1.2rem;
+  color: var(--text-muted-color);
+  border-left: 4px solid var(--text-muted-color);
+  transition: all 0.2s ease;
+  position: relative;
+}
+#content blockquote p strong {
+  color: var(--text-color);
+}
+#content blockquote > p:first-child::before {
+  content: "format_quote";
+  font-family: "Material Icons";
+  position: absolute;
+  display: block;
+  top: -20px;
+  right: 10px;
+  font-size: 3rem;
+  color: var(--text-muted-color);
+  opacity: 0.2;
+}
+#content blockquote:hover {
+  border-left-color: var(--text-color);
+}
+#content blockquote p {
+  margin-top: 0;
+}
+#content p code {
+  padding: 2px 4px;
+  font-size: 0.9em;
+  color: var(--text-muted-color);
+  background-color: var(--code-block-bg);
+  border-radius: 4px;
+}
+#content p code::before {
+  content: "`";
+}
+#content p code::after {
+  content: "`";
+}
+#content p strong {
+  font-weight: 900;
+  color: var(--accent-color);
+}
+#content p u {
+  text-underline-offset: 3px;
+}
+#content p mark {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin: 0 2px;
+}
+#content p sup {
+  font-size: 0.8em;
+  vertical-align: super;
+  line-height: 1;
+  top: -0.5em;
+}
+#content p sup a {
+  color: var(--text-muted-color);
+}
+#content p sup a::after {
+  display: none;
+}
+#content p sup a:hover {
+  color: var(--accent-color);
+}
+#content p ul li::marker, #content p ol li::marker {
+  color: var(--accent-color);
+}
+#content img {
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+#content p:has(> img)::after {
+  content: attr(alt);
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: 10px auto 0 auto;
+  text-align: center;
+  color: var(--text-muted-color);
+  font-size: 0.8rem;
+}
+#content section.footnotes {
+  font-size: 0.8rem;
+  margin: 50px 0;
+}
+#content section.footnotes::before {
+  content: "参考资料";
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+#content section.footnotes ol, #content section.footnotes ul {
+  padding-left: 1rem;
+}
+#content section.footnotes .footnote-backref {
+  color: var(--text-muted-color);
+  font-size: 0.8rem;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 1;
+}
+#content section.footnotes .footnote-backref::after {
+  display: none;
+}
+#content section.footnotes .footnote-backref:hover {
+  color: var(--accent-color);
 }/*# sourceMappingURL=style.css.map */
