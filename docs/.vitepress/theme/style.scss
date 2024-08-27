@@ -1,14 +1,21 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 @mixin scroll-bar($direction: y) {
+  // scrollbar style
+
+  // scrollbar width
   &::-webkit-scrollbar {
+
     @if $direction ==y {
       width: 1px;
-    } @else {
+    }
+
+    @else {
       height: 1px;
     }
   }
 
+  // scrollbar track
   &::-webkit-scrollbar-thumb {
     background-color: var(--text-muted-color);
   }
@@ -71,8 +78,6 @@
 }
 
 :root {
-  --100-percent: 100%;
-  --0-percent: 0%;
   --font: "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica,
     Arial, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
@@ -91,65 +96,12 @@
 
 body {
   background-color: var(--bg-color);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font);
   color: var(--text-color);
   line-height: 1.5;
   overflow-x: hidden;
 
   @include scroll-bar;
-}
-
-.navbar {
-  top: 20px;
-  left: 20px;
-  right: 20px;
-  height: 50px;
-  background-color: transparent;
-  z-index: 1000;
-  position: fixed;
-  // border-bottom: 1px solid #eaecef;
-
-  .navbar-inner {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    box-sizing: border-box;
-
-    .brand {
-      .brand-title {
-        padding: 0 10px;
-        display: flex;
-        margin: 0;
-        font-size: 48px;
-        text-decoration: none;
-
-        a {
-          text-decoration: none;
-          font-weight: 200;
-          color: var(--accent-color);
-          // font-family: "snell roundhand", sans-serif;
-          font-family: noteworthy, sans-serif;
-        }
-      }
-    }
-
-    .buttons {
-      a {
-        display: block;
-        margin: 0 10px;
-        text-decoration: none;
-        color: var(--text-muted-color);
-        font-size: 1.2rem;
-        transition: all 0.2s ease;
-
-        &:hover {
-          color: var(--text-color);
-        }
-      }
-    }
-  }
 }
 
 .posts-wrapper {
@@ -162,7 +114,7 @@ body {
   flex-direction: column;
   justify-content: start;
 
-  .title {
+  & .title {
     position: sticky;
     top: 0;
     background-color: var(--bg-color);
@@ -184,21 +136,21 @@ body {
       z-index: -1;
     }
 
-    .options {
+    & .options {
       display: flex;
       flex-direction: row;
       align-items: center;
       font-size: 0.8rem;
       margin-bottom: 20px;
 
-      label {
+      & label {
         display: flex;
         flex-direction: row;
         justify-content: start;
         align-items: center;
       }
 
-      input[type="checkbox"] {
+      & input[type="checkbox"] {
         appearance: none;
         width: 15px;
         height: 15px;
@@ -368,7 +320,7 @@ body {
   flex-direction: column;
   align-items: center;
 
-  .nf-title {
+  & .nf-title {
     width: 100%;
     font-size: 2rem;
     font-weight: 600;
@@ -376,12 +328,12 @@ body {
     text-align: center;
   }
 
-  .nf-info {
+  & .nf-info {
     width: 100%;
     font-size: 1.2rem;
     color: var(--text-muted-color);
 
-    a {
+    & a {
       color: var(--text-muted-color);
       transition: all 0.2s ease;
 
@@ -423,10 +375,6 @@ button#back-to-top {
 }
 
 #content {
-  & > div {
-    width: 100%;
-  }
-
   max-width: 700px;
   margin: 0 auto;
   display: flex;
@@ -434,7 +382,13 @@ button#back-to-top {
   line-height: 2;
   font-size: 1.2rem;
 
-  & > div > p:first-child {
+  &>div {
+    width: 100%;
+  }
+
+
+
+  &>div>p:first-child {
     display: none;
   }
 
@@ -772,7 +726,7 @@ button#back-to-top {
       color: var(--text-color);
     }
 
-    & > p:first-child::before {
+    &>p:first-child::before {
       content: "format_quote";
       font-family: "Material Icons";
       position: absolute;

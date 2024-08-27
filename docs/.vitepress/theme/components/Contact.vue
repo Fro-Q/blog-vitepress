@@ -52,7 +52,7 @@ const { site } = useData();
   flex-direction: column;
   justify-content: start;
 
-  .title {
+  & .title {
     position: sticky;
     top: 0;
     background-color: var(--bg-color);
@@ -75,26 +75,26 @@ const { site } = useData();
     }
   }
 
-  .contacts-info {
+  & .contacts-info {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
 
-    .contact-info {
+    & .contact-info {
       display: flex;
       flex-direction: row;
       justify-content: start;
       align-items: center;
       margin-bottom: 20px;
 
-      p {
+      & p {
         font-size: 1.5rem;
         color: var(--text-muted-color);
         transition: all 0.2s ease;
 
-        a,
-        span {
+        & a,
+        & span {
           color: var(--text-muted-color);
           text-decoration: underline;
           cursor: pointer;
