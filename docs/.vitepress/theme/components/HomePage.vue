@@ -16,7 +16,7 @@ const showExcerpt = ref(false);
     />
   </div>
 
-  <div class="posts-wrapper">
+  <div class="posts-list-wrapper">
     <div class="title">
       <h2 id="blog">Blog</h2>
       <div class="options">
@@ -68,6 +68,8 @@ const showExcerpt = ref(false);
 </template>
 
 <style lang="scss">
+@import "../style.scss";
+
 #home {
   font-size: 1.8rem;
   font-weight: 600;
@@ -77,5 +79,138 @@ const showExcerpt = ref(false);
   margin: 0 auto;
   display: flex;
   align-items: center;
+}
+
+.posts-list-wrapper {
+  padding: 0 30px;
+  max-width: 800px;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  & .title {
+    position: sticky;
+    top: 0;
+    background-color: var(--bg-color);
+    z-index: 100;
+    margin-bottom: 20px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 30px;
+      bottom: -30px;
+      left: 0;
+      // gradient to transparent
+      background: linear-gradient(to top, transparent 0%, var(--bg-color) 100%);
+
+      transition: all 0.2s ease;
+      z-index: -1;
+    }
+
+    & .options {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+
+      & label {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+      }
+    }
+  }
+
+  & .post-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    height: auto;
+    // flex-grow: 1;
+    padding: 10px 0;
+    background-color: transparent;
+
+    & .post-info {
+      & .post-title {
+        height: max-content;
+        white-space: normal;
+        font-size: 1.5rem;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: var(--bg-color);
+        }
+      }
+
+      & .post-excerpt p {
+        font-size: 1rem;
+        margin: 10px 20px 0 30px;
+        padding: 0;
+        position: relative;
+        display: block;
+        height: max-content;
+        background-color: transparent;
+        color: var(--text-muted-color);
+        transition: all 2s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 90%;
+          width: 1px;
+          top: 5%;
+          left: -15px;
+          background-color: var(--text-muted-color);
+          transition: all 0.2s ease;
+          z-index: -1;
+          border-radius: 2px;
+        }
+      }
+    }
+
+    & .post-other-info {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      height: max-content;
+      padding: 10px 0;
+      word-wrap: break-word;
+      font-size: 1rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted-color);
+
+      & .post-date {
+        margin-right: 20px;
+      }
+
+      & .post-reading-info {
+        display: flex;
+        height: max-content;
+        word-wrap: break-word;
+
+        & .post-reading-time {
+          margin-right: 20px;
+        }
+
+        & .post-word-count {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
 }
 </style>

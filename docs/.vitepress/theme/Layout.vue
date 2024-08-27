@@ -117,7 +117,7 @@ onMounted(() => {
 }
 
 .post-wrapper,
-.posts-wrapper {
+.posts-list-wrapper {
   a {
     position: relative;
     display: inline-block;

@@ -5,12 +5,9 @@
 
   // scrollbar width
   &::-webkit-scrollbar {
-
     @if $direction ==y {
       width: 1px;
-    }
-
-    @else {
+    } @else {
       height: 1px;
     }
   }
@@ -18,6 +15,52 @@
   // scrollbar track
   &::-webkit-scrollbar-thumb {
     background-color: var(--text-muted-color);
+  }
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--text-muted-color);
+  background-color: transparent;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: "";
+    background-color: var(--accent-color);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 8px;
+    height: 8px;
+    transition: all 0.3s ease;
+  }
+
+  &:hover {
+    border-color: var(--accent-color);
+
+    &::before {
+      transform: translate(-50%, -50%) scale(0.3);
+    }
+  }
+
+  &:checked {
+    &:hover {
+      &::before {
+        transform: translate(-50%, -50%) scale(0.7);
+      }
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
   }
 }
 
@@ -102,185 +145,6 @@ body {
   overflow-x: hidden;
 
   @include scroll-bar;
-}
-
-.posts-wrapper {
-  padding: 0 30px;
-  max-width: 800px;
-  width: calc(100% - 60px);
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-
-  & .title {
-    position: sticky;
-    top: 0;
-    background-color: var(--bg-color);
-    z-index: 100;
-    margin-bottom: 20px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 30px;
-      bottom: -30px;
-      left: 0;
-      // gradient to transparent
-      background: linear-gradient(to top, transparent 0%, var(--bg-color) 100%);
-
-      transition: all 0.2s ease;
-      z-index: -1;
-    }
-
-    & .options {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      font-size: 0.8rem;
-      margin-bottom: 20px;
-
-      & label {
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-        align-items: center;
-      }
-
-      & input[type="checkbox"] {
-        appearance: none;
-        width: 15px;
-        height: 15px;
-        border: 1px solid var(--text-muted-color);
-        background-color: transparent;
-        display: inline-block;
-        position: relative;
-        margin-right: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-
-        &::before {
-          content: "";
-          background-color: var(--accent-color);
-          display: block;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) scale(0);
-          width: 8px;
-          height: 8px;
-          transition: all 0.3s ease;
-        }
-
-        &:hover {
-          border-color: var(--accent-color);
-
-          &::before {
-            transform: translate(-50%, -50%) scale(0.3);
-          }
-        }
-
-        &:checked {
-          &:hover {
-            &::before {
-              transform: translate(-50%, -50%) scale(0.7);
-            }
-          }
-
-          &::before {
-            transform: translate(-50%, -50%) scale(1);
-          }
-        }
-      }
-    }
-  }
-
-  & .post-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    flex-wrap: wrap;
-    position: relative;
-    width: 100%;
-    height: auto;
-    // flex-grow: 1;
-    padding: 10px 0;
-    background-color: transparent;
-
-    & .post-info {
-      & .post-title {
-        height: max-content;
-        white-space: normal;
-        font-size: 1.5rem;
-        color: var(--text-color);
-        text-decoration: none;
-        transition: all 0.2s ease;
-
-        &:hover {
-          color: var(--bg-color);
-        }
-      }
-
-      & .post-excerpt p {
-        font-size: 1rem;
-        margin: 10px 20px 0 30px;
-        padding: 0;
-        position: relative;
-        display: block;
-        height: max-content;
-        background-color: transparent;
-        color: var(--text-muted-color);
-        transition: all 2s ease;
-
-        &::after {
-          content: "";
-          position: absolute;
-          display: block;
-          height: 90%;
-          width: 1px;
-          top: 5%;
-          left: -15px;
-          background-color: var(--text-muted-color);
-          transition: all 0.2s ease;
-          z-index: -1;
-          border-radius: 2px;
-        }
-      }
-    }
-
-    & .post-other-info {
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      height: max-content;
-      padding: 10px 0;
-      word-wrap: break-word;
-      font-size: 1rem;
-      font-family: var(--font-mono);
-      color: var(--text-muted-color);
-
-      & .post-date {
-        margin-right: 20px;
-      }
-
-      & .post-reading-info {
-        display: flex;
-        height: max-content;
-        word-wrap: break-word;
-
-        & .post-reading-time {
-          margin-right: 20px;
-        }
-
-        & .post-word-count {
-          margin-right: 20px;
-        }
-      }
-    }
-  }
 }
 
 .content-footer {
@@ -382,13 +246,11 @@ button#back-to-top {
   line-height: 2;
   font-size: 1.2rem;
 
-  &>div {
+  & > div {
     width: 100%;
   }
 
-
-
-  &>div>p:first-child {
+  & > div > p:first-child {
     display: none;
   }
 
@@ -726,7 +588,7 @@ button#back-to-top {
       color: var(--text-color);
     }
 
-    &>p:first-child::before {
+    & > p:first-child::before {
       content: "format_quote";
       font-family: "Material Icons";
       position: absolute;
