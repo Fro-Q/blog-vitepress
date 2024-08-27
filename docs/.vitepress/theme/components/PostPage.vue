@@ -190,4 +190,34 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import "../style.scss";
+
+.content-footer {
+  & .last-updated {
+    font-size: 0.8rem;
+    color: var(--text-muted-color);
+    margin-top: 20px;
+  }
+
+  & .related-posts {
+    margin-top: 20px;
+    color: var(--text-muted-color);
+    display: flex;
+    flex-direction: column;
+
+    & .related-post {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      & .related-post-title {
+        font-size: 1rem;
+        color: var(--text-muted-color);
+        transition: all 0.2s ease;
+      }
+    }
+  }
+}
+</style>

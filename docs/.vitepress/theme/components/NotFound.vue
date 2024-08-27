@@ -16,3 +16,44 @@
     </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+@import "../style.scss";
+
+.not-found {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .nf-title {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-title-color);
+    text-align: center;
+  }
+
+  & .nf-info {
+    width: 100%;
+    font-size: 1.2rem;
+    color: var(--text-muted-color);
+
+    & a {
+      color: var(--text-muted-color);
+      transition: all 0.2s ease;
+
+      &.license {
+        color: var(--accent-color);
+      }
+
+      &:hover {
+        color: var(--accent-color);
+      }
+    }
+  }
+}
+</style>

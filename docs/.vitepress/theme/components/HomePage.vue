@@ -16,8 +16,17 @@ const showExcerpt = ref(false);
     />
   </div>
 
+  <div class="table-of-contents">
+    <h2>目录</h2>
+    <ul>
+      <li>
+        <a href="#blog">Blog</a>
+      </li>
+    </ul>
+  </div>
+
   <div class="posts-list-wrapper">
-    <div class="title">
+    <div class="posts-list-title">
       <h2 id="blog">Blog</h2>
       <div class="options">
         <!-- whether to show excerpt -->
@@ -81,6 +90,47 @@ const showExcerpt = ref(false);
   align-items: center;
 }
 
+.table-of-contents {
+  padding: 0 30px;
+  max-width: 800px;
+  width: calc(100% - 60px);
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  & h2 {
+    font-size: 1.2rem;
+    color: var(--text-muted-color);
+    margin-bottom: 10px;
+  }
+
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    & li {
+      margin: 0;
+      padding: 0;
+      font-size: 1rem;
+      color: var(--text-muted-color);
+      margin-bottom: 10px;
+
+      & a {
+        text-decoration: none;
+        color: var(--text-muted-color);
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: var(--accent-color);
+        }
+      }
+    }
+  }
+}
+
 .posts-list-wrapper {
   padding: 0 30px;
   max-width: 800px;
@@ -91,7 +141,7 @@ const showExcerpt = ref(false);
   flex-direction: column;
   justify-content: start;
 
-  & .title {
+  & .posts-list-title {
     position: sticky;
     top: 0;
     background-color: var(--bg-color);
