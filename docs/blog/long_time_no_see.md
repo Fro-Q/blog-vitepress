@@ -1,7 +1,7 @@
 ---
 title: '好久不见:P'
 timestampId: 230601a
-category: 誌
+category: 代序
 head:
   - - meta
     - name: description
@@ -13,7 +13,7 @@ head:
     - name: id
       content: 230601a
 created: 2023-06-15 05:00
-last_modified: 2024-08-04 01:69
+last_modified: 2024-09-09 20:81
 ---
 
 好几十天没有写东西，一部分原因是忙得没时间写，一部分原因是忙得没时间想。
@@ -30,16 +30,4 @@ last_modified: 2024-08-04 01:69
 
 最近鼓捣博客网站很久。博客园那个也搞了一两天（点 [这里](https://www.cnblogs.com/ypsr/) 可以去看看）。不过由于三件套不太熟练，所以还是找的模版，只进行了一些小改动，有人有兴趣的话可以给我留言，后续出个简明教程。网上那些教程或多或少有点问题。
 
-现在正在鼓捣的这个叫 Gridea（[see in GitHub](https://github.com/getgridea/gridea)），本质上是基于 Git 的静态网页，不过作者把功能直接整合成了一个客户端，使得配置网站样式、Push & Pull 等等操作完全可以用 UI 实现，对于不熟悉三件套的人来说非常友好；而且这个客户端的 MD 编辑器手感莫名非常好，大家有兴趣也可以试试。这个可以直接去网上找教程，有几个写得很清楚。
-
-## 大家都在用 ChatGPT
-
-很难想象，这个东西才出来半年左右。
-
-ChatGPT 只是一个 GPT，有人拿它当 AI 来用，期望它能像 AI 一样用，可能还是没有完全明白这个东西。
-
-我鼓捣 GPT 也很久了，在使用上算是略有心得吧。后续可能会出一些关于 Prompt 的教学，帮助大家更好地理解和使用这个小玩意。
-
-BTW，编程开发相关的同学可能尝试一下 [GitHub Copilot](https://github.com/features/copilot/)，体验还是不错的，不过要学东西还是老老实实手搓吧。
-
-总之这次就先这样，后面这段时间应该会加大更新力度，躺了好久稍微站起来一下。
+现在正在鼓捣的这个叫 Gridea（[see in GitHub](https://github.com/getgridea/gridea)），本质上是基于 GitHub Pages 的静态网页，不过作者把功能直接整合成了一个客户端，使得配置网站样式、Push & Pull 等等操作完全可以通过 UI 实现，对于不熟悉 Web 开发的人来说非常友好；而且这个客户端的 Markdown 编辑器手感莫名非常好，大家有兴趣也可以试试。这个可以直接去网上找教程，有几个写得很清楚。

@@ -1,7 +1,7 @@
 ---
 title: '阶段'
 timestampId: 240727a
-category: 誌
+category: 代序
 head:
   - - meta
     - name: description
@@ -13,7 +13,7 @@ head:
     - name: id
       content: 240727a
 created: 2024-07-27 12:00
-last_modified: 2024-09-09 19:81
+last_modified: 2024-07-27 21:11
 ---
 
 Forget-me-not.

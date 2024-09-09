@@ -7,7 +7,7 @@ import StyledULink from "./StyledULink.vue";
 
 const showExcerpt = ref([
   {
-    title: "共",
+    title: "全",
     show: false,
   },
   {
@@ -15,19 +15,15 @@ const showExcerpt = ref([
     show: false,
   },
   {
+    title: "共读",
+    show: false,
+  },
+  {
     title: "代序",
     show: false,
   },
   {
-    title: "鞿羁",
-    show: false,
-  },
-  {
     title: "前脩",
-    show: false,
-  },
-  {
-    title: "初服",
     show: false,
   },
   {
@@ -42,28 +38,24 @@ const showExcerpt = ref([
 
 const tocContents = [
   {
-    title: "共",
-    link: "#gs",
+    title: "全",
+    link: "#qr",
   },
   {
     title: "成言",
     link: "#igyj",
   },
   {
+    title: "共读",
+    link: "#gsdu",
+  },
+  {
     title: "代序",
     link: "#dlxu",
   },
   {
-    title: "鞿羁",
-    link: "#jiji",
-  },
-  {
     title: "前脩",
     link: "#qmxq",
-  },
-  {
-    title: "初服",
-    link: "#iufu",
   },
   {
     title: "日志",
@@ -77,28 +69,24 @@ const tocContents = [
 
 const blogCategory = [
   {
-    title: "共",
-    id: "gs",
+    title: "全",
+    id: "qr",
   },
   {
     title: "成言",
     id: "igyj",
   },
   {
+    title: "共读",
+    id: "gsdu",
+  },
+  {
     title: "代序",
     id: "dlxu",
   },
   {
-    title: "鞿羁",
-    id: "jiji",
-  },
-  {
     title: "前脩",
     id: "qmxq",
-  },
-  {
-    title: "初服",
-    id: "iufu",
   },
   {
     title: "日志",
@@ -172,7 +160,7 @@ const blogCategory = [
     </div>
 
     <div
-      v-for="post of category.id == 'gs' ?
+      v-for="post of category.id == 'qr' ?
         posts.filter((post) => post.frontmatter.category !== '格外')
       : posts.filter((post) => post.frontmatter.category === category.title)"
       class="post-container flex h-auto w-full flex-col flex-wrap justify-start py-2"

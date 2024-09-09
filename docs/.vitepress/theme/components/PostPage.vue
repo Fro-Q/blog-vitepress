@@ -22,7 +22,7 @@ const dateInfo = computed(() => {
   return "";
 });
 
-const lastUpdatedString = computed(() => {
+const 日志lastUpdatedInfo = computed(() => {
   if (frontmatter.value.last_modified) {
     const date = new Date(frontmatter.value.last_modified);
     return date
@@ -179,7 +179,7 @@ onMounted(() => {
     >
       <div class="mt-5 text-sm">
         <span>最后更新于：</span>
-        <span>{{ lastUpdatedString }}</span>
+        <span>{{ 日志lastUpdatedInfo }}</span>
       </div>
       <div
         class="mt-5 flex flex-col"

@@ -78,7 +78,7 @@
 
 @layer components {
   #content {
-    @apply relative m-auto flex min-h-screen w-[calc(100%-60px)] max-w-[700px] items-center text-xl/10;
+    @apply relative m-auto min-h-screen w-[calc(100%-60px)] max-w-[700px] items-center text-xl/10;
 
     & hr {
       @apply my-4 h-px border-none bg-neutral-300 dark:bg-neutral-700;
@@ -335,6 +335,10 @@
 
     & p:has(> img) {
       @apply after:mx-auto after:mt-10 after:block after:h-auto after:w-[60%] after:text-center after:text-sm after:text-neutral-700 after:content-[attr(alt)] dark:after:text-neutral-300;
+    }
+
+    & p {
+      @apply my-8;
     }
 
     & section.footnotes {
