@@ -1,6 +1,7 @@
 ---
 title: '需要时间'
 timestampId: 230621a
+category: 誌
 head:
   - - meta
     - name: description

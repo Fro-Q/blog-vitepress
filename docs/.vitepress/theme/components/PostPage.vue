@@ -8,41 +8,33 @@ import { onMounted } from "vue";
 const { page, frontmatter } = useData();
 
 const dateInfo = computed(() => {
-  if (frontmatter.value.date) {
+  if (frontmatter.value.created) {
     const date = new Date(frontmatter.value.created);
-    return {
-      time: +date,
-      string: date.toLocaleDateString("zh-CN", {
+    return date
+      .toLocaleDateString("zh-CN", {
         year: "numeric",
         month: "long",
         day: "numeric",
-      }),
-    };
+      })
+      .replace(/年|月/g, "/")
+      .replace(/日/g, "");
   }
-  return {
-    time: +new Date(),
-    string: "",
-  };
+  return "";
 });
 
-const lastUpdated = computed(() => {
-  if (frontmatter.value.lastUpdated) {
+const lastUpdatedString = computed(() => {
+  if (frontmatter.value.last_modified) {
     const date = new Date(frontmatter.value.last_modified);
-    return {
-      time: +date,
-      string: date.toLocaleDateString("zh-CN", {
+    return date
+      .toLocaleDateString("zh-CN", {
         year: "numeric",
         month: "long",
         day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-      }),
-    };
+      })
+      .replace(/年|月/g, "/")
+      .replace(/日/g, "");
   }
-  return {
-    time: +new Date(),
-    string: "",
-  };
+  return "";
 });
 
 onMounted(() => {
@@ -76,13 +68,23 @@ const nextPost = computed(() => {
   if (frontmatter.value.home) {
     return;
   }
-  const thisPostIndex = posts.findIndex(
+  let thisPostIndex = posts.findIndex(
     (post) =>
       post.frontmatter.timestampId === page.value.frontmatter.timestampId,
   );
   if (thisPostIndex === posts.length - 1) {
     return;
   }
+
+  while (
+    posts[thisPostIndex + 1].frontmatter.category !== frontmatter.value.category
+  ) {
+    thisPostIndex++;
+    if (thisPostIndex === posts.length - 1) {
+      return;
+    }
+  }
+
   return posts[thisPostIndex + 1];
 });
 
@@ -90,13 +92,23 @@ const prevPost = computed(() => {
   if (frontmatter.value.home) {
     return;
   }
-  const thisPostIndex = posts.findIndex(
+  let thisPostIndex = posts.findIndex(
     (post) =>
       post.frontmatter.timestampId === page.value.frontmatter.timestampId,
   );
   if (thisPostIndex === 0) {
     return;
   }
+
+  while (
+    posts[thisPostIndex - 1].frontmatter.category !== frontmatter.value.category
+  ) {
+    thisPostIndex--;
+    if (thisPostIndex === 0) {
+      return;
+    }
+  }
+
   return posts[thisPostIndex - 1];
 });
 
@@ -135,50 +147,62 @@ onMounted(() => {
 <template>
   <div
     class="post-wrapper"
-    v-if="!frontmatter.home && !page.isNotFound"
+    v-if="frontmatter.category !== '扉' && !page.isNotFound"
   >
-    <div class="post-title">
+    <div
+      class="post-title mx-auto my-10 w-[calc(100%-60px)] max-w-[700px] font-serif text-5xl"
+    >
       <h1>{{ frontmatter.title }}</h1>
     </div>
-    <div class="post-info">
-      <div class="post-date">
-        <span>{{ dateInfo.string }}</span>
+    <div
+      class="post-info mx-auto mb-5 flex w-[calc(100%-60px)] max-w-[700px] flex-row justify-end font-serif"
+      v-if="frontmatter.category !== '格外'"
+    >
+      <div class="post-date mr-5">
+        <span>{{ dateInfo }}</span>
       </div>
-      <div class="post-reading-info">
+      <div class="post-reading-info flex flex-row gap-5">
         <span class="post-reading-time">
-          约{{ thisPostReadingInfo.totalTime }}分钟
+          约 {{ thisPostReadingInfo.totalTime }} 分钟
         </span>
         <span class="post-word-count">
-          {{ thisPostReadingInfo.wordCount }}字
+          {{ thisPostReadingInfo.wordCount }} 字
         </span>
       </div>
     </div>
     <Content
-      class="content-wrapper"
+      class="content-wrapper relative"
       id="content"
     />
-    <div class="content-footer">
-      <div class="last-updated">
-        <span>最后更新于</span>
-        <span>{{ lastUpdated.string }}</span>
+    <div
+      class="content-footer mx-auto my-10 w-[calc(100%-60px)] max-w-[700px] font-serif"
+    >
+      <div class="mt-5 text-sm">
+        <span>最后更新于：</span>
+        <span>{{ lastUpdatedString }}</span>
       </div>
-      <div class="related-posts">
-        <div class="related-posts-container">
-          <div class="related-post">
-            <div class="related-post-title">上一篇：</div>
+      <div
+        class="mt-5 flex flex-col"
+        v-if="frontmatter.category !== '格外'"
+      >
+        <div class="">
+          <div class="mt-2 flex flex-row items-center">
+            上一篇：
             <a
               :href="prevPost.url"
               v-if="prevPost"
+              class="inline-block text-neutral-600 underline decoration-1 underline-offset-4 transition duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-['open\_in\_new'] hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
             >
               {{ prevPost.frontmatter.title }}
             </a>
             <div v-else>无</div>
           </div>
-          <div class="related-post">
-            <div class="related-post-title">下一篇：</div>
+          <div class="mt-2 flex flex-row items-center">
+            下一篇：
             <a
               :href="nextPost.url"
               v-if="nextPost"
+              class="inline-block text-neutral-600 underline decoration-1 underline-offset-4 transition duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-['open\_in\_new'] hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
             >
               {{ nextPost.frontmatter.title }}
             </a>
@@ -189,35 +213,3 @@ onMounted(() => {
     </div>
   </div>
 </template>
-
-<style lang="scss">
-@import "../style.scss";
-
-.content-footer {
-  & .last-updated {
-    font-size: 0.8rem;
-    color: var(--text-muted-color);
-    margin-top: 20px;
-  }
-
-  & .related-posts {
-    margin-top: 20px;
-    color: var(--text-muted-color);
-    display: flex;
-    flex-direction: column;
-
-    & .related-post {
-      margin-top: 10px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-
-      & .related-post-title {
-        font-size: 1rem;
-        color: var(--text-muted-color);
-        transition: all 0.2s ease;
-      }
-    }
-  }
-}
-</style>

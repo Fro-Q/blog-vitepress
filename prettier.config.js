@@ -1,4 +1,6 @@
 const config = {
+  plugins: ["prettier-plugin-tailwindcss"],
+
   experimentalTernaries: true,
   // boolean
   // default: false

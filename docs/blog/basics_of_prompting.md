@@ -1,6 +1,7 @@
 ---
 title: 'Prompt 入门'
 timestampId: 230628a
+category: 代序
 head:
   - - meta
     - name: description
@@ -25,7 +26,7 @@ last_modified: 2024-08-04 01:05
 
 ## 一个简单的 Prompt 格式
 
-LLM 的本质是**概率模型**，即根据已有的 token 来预测下一个 token 的概率分布。如果**提供的信息不充分**或**给出的引导不明确**，LLM——如 ChatGPT——可能会给出一些预期之外的回答，所以早期的 LLM 会出现下面这类问题：  
+LLM 的本质是**概率模型**，即根据已有的 token 来预测下一个 token 的概率分布。如果**提供的信息不充分**或**给出的引导不明确**，LLM——如 ChatGPT——可能会给出一些预期之外的回答，所以早期的 LLM 会出现下面这类问题：
 *input:*
 
 ```text

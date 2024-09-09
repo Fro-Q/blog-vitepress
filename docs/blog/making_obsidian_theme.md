@@ -1,6 +1,7 @@
 ---
 title: '正在做一个OB主题'
 timestampId: 230708a
+category: 代序
 head:
   - - meta
     - name: description

@@ -1,59 +1,29 @@
-<script setup></script>
+<script setup>
+import StyledBgLink from "./StyledBgLink.vue";
+</script>
 
 <template>
-  <div class="not-found">
-    <div class="nf-title">
+  <div
+    class="mx-auto my-10 min-h-screen w-[calc(100%-60px)] max-w-[700px] font-serif"
+  >
+    <div class="nf-title mb-10 text-5xl">
       <h1>404</h1>
     </div>
-    <div class="nf-info">
-      <p>您发现了一个不存在的页面。</p>
+    <div class="nf-info text-3xl leading-relaxed">
+      <p>未书。</p>
       <p>
-        如果您从我的其它页面来到这里，请
-        <a href="/#contact">联系我</a>
-        。
+        返回
+        <StyledBgLink
+          href="/"
+          text="扉"
+        ></StyledBgLink>
+        或者
+        <StyledBgLink
+          href="/contact"
+          text="联系"
+        ></StyledBgLink>
+        我。
       </p>
-      <p>或者您可以玩点游戏：</p>
     </div>
   </div>
 </template>
-
-<style scoped lang="scss">
-@import "../style.scss";
-
-.not-found {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  height: calc(100vh - 200px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  & .nf-title {
-    width: 100%;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--text-title-color);
-    text-align: center;
-  }
-
-  & .nf-info {
-    width: 100%;
-    font-size: 1.2rem;
-    color: var(--text-muted-color);
-
-    & a {
-      color: var(--text-muted-color);
-      transition: all 0.2s ease;
-
-      &.license {
-        color: var(--accent-color);
-      }
-
-      &:hover {
-        color: var(--accent-color);
-      }
-    }
-  }
-}
-</style>

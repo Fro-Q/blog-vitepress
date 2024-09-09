@@ -1,6 +1,7 @@
 ---
 title: '好久不见:P'
 timestampId: 230601a
+category: 誌
 head:
   - - meta
     - name: description

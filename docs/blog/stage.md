@@ -1,8 +1,7 @@
 ---
 title: '阶段'
-tags:
-  - diary
 timestampId: 240727a
+category: 誌
 head:
   - - meta
     - name: description
@@ -53,7 +52,7 @@ Forget-me-not.
 
 也就是说，现在的情况是：一个国奖没有；那那个比赛进了决赛但还没答辩，不知道能不能拿奖；就算拿了奖，99% 保不上。
 
-> [!Note] NOTE  
+> [!Note] NOTE
 > 2024 年 7 月 31 日最新消息，遗憾离场了。
 
 所以，第一万次决定了开始复习。

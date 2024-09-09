@@ -1,5 +1,5 @@
 ---
-home: true
+category: 扉
 title: FroQ
 lang: zh-CN
 date: 2024/01/25

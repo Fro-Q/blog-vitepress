@@ -1,6 +1,7 @@
 ---
 title: '我在干何'
 timestampId: 240128a
+category: 誌
 head:
   - - meta
     - name: description

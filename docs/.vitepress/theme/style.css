@@ -1,0 +1,353 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "MesloLGMDZ Nerd Font";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/MesloLGMDZNerdFontMono-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "MesloLGMDZ Nerd Font";
+    font-style: italic;
+    font-weight: normal;
+    src: url("fonts/MesloLGMDZNerdFontMono-Italic.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "MesloLGMDZ Nerd Font";
+    font-style: normal;
+    font-weight: bold;
+    src: url("fonts/MesloLGMDZNerdFontMono-Bold.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "MesloLGMDZ Nerd Font";
+    font-style: italic;
+    font-weight: bold;
+    src: url("fonts/MesloLGMDZNerdFontMono-BoldItalic.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "MaterialIcons";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://fonts.gstatic.com/s/materialicons/v92/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2")
+      format("woff2");
+  }
+}
+
+:root {
+  --font: "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  #app {
+    @apply flex min-h-screen flex-col bg-neutral-50 text-base text-neutral-700 dark:bg-neutral-950 dark:text-neutral-300;
+
+    &::-webkit-scrollbar {
+      @apply w-px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-neutral-100 dark:bg-neutral-900;
+    }
+  }
+}
+
+@layer base {
+  html {
+    @apply font-sans antialiased selection:bg-neutral-400 selection:text-neutral-50;
+
+    &::-webkit-scrollbar {
+      @apply w-px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-neutral-100 dark:bg-neutral-900;
+    }
+  }
+}
+
+@layer components {
+  #content {
+    @apply relative m-auto flex min-h-screen w-[calc(100%-60px)] max-w-[700px] items-center text-xl/10;
+
+    & hr {
+      @apply my-4 h-px border-none bg-neutral-300 dark:bg-neutral-700;
+    }
+
+    & > div {
+      @apply w-full;
+    }
+
+    & > div > p {
+      @apply first:hidden;
+    }
+
+    & .table-of-contents {
+      @apply fixed left-0 top-[100px] z-50 flex w-[200px] flex-col items-start overflow-auto border border-neutral-700 bg-neutral-50 bg-opacity-80 text-sm text-neutral-300 opacity-20 transition-all duration-200 hover:opacity-100 hover:backdrop-blur-sm dark:border-neutral-300 dark:bg-neutral-950 dark:text-neutral-700;
+
+      & ul {
+        @apply m-0 list-none px-5;
+
+        &::-webkit-scrollbar {
+          @apply w-px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          @apply bg-neutral-700 dark:bg-neutral-300;
+        }
+
+        & li {
+          @apply my-4;
+
+          & a {
+            @apply text-neutral-600 no-underline transition-colors duration-200 after:hidden hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100;
+          }
+        }
+      }
+    }
+
+    & div[class*="language-"] {
+      @apply relative my-8 w-full overflow-x-auto rounded-md bg-neutral-100 text-sm dark:bg-neutral-900;
+
+      &:hover button.copy {
+        @apply opacity-100;
+      }
+
+      & button.copy {
+        @apply absolute right-0 top-0 z-10 m-2 h-6 w-12 appearance-none rounded-sm border border-neutral-300 bg-neutral-100 opacity-0 transition-all duration-200 after:content-["相袭"] hover:border-neutral-600 hover:after:text-neutral-950 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-400 dark:hover:after:text-neutral-50;
+
+        &.copied {
+          @apply after:text-neutral-950 after:content-["\2713"] dark:after:text-neutral-50;
+        }
+      }
+
+      & span.lang {
+        @apply absolute bottom-0 right-0 z-10 m-2 px-2 text-sm text-stone-600 dark:text-neutral-400;
+      }
+
+      & pre {
+        @apply overflow-x-auto py-5;
+
+        &::-webkit-scrollbar {
+          @apply h-px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          @apply bg-neutral-300 dark:bg-neutral-700;
+        }
+
+        & code {
+          @apply block px-8 font-mono;
+
+          & span {
+            @apply whitespace-nowrap text-[var(--shiki-light,inherit)] dark:text-[var(--shiki-dark,inherit)];
+          }
+        }
+
+        &.has-highlighted .line.highlighted {
+          @apply -mx-8 inline-block w-[calc(100%+200px)] bg-neutral-200 px-8 dark:bg-neutral-800;
+
+          &.error {
+            @apply bg-red-500/25 dark:bg-red-500/25;
+          }
+
+          &.warning {
+            @apply bg-yellow-500/25 dark:bg-yellow-500/25;
+          }
+        }
+
+        &.has-focused-lines {
+          & .line:not(.has-focus) {
+            @apply opacity-50 blur-sm transition-all duration-200;
+          }
+
+          &:hover {
+            .line:not(.has-focus) {
+              @apply opacity-100 blur-none;
+            }
+          }
+        }
+
+        &.has-diff .line.diff {
+          @apply -mx-8 inline-block w-[calc(100%+200px)] px-8 before:absolute before:-translate-x-5;
+
+          &.remove {
+            @apply relative bg-red-500/25 before:text-red-500 before:content-["-"] dark:bg-red-500/25;
+          }
+
+          &.add {
+            @apply relative bg-green-500/25 before:text-green-500 before:content-["+"] dark:bg-green-500/25;
+          }
+        }
+      }
+
+      &.line-numbers-mode {
+        @apply pl-[2.4rem];
+
+        & .line-numbers-wrapper {
+          @apply absolute bottom-0 left-0 top-0 z-10 w-[2.4rem] border-r border-neutral-600 pt-5 text-center text-neutral-600 transition-colors duration-200 dark:border-neutral-400 dark:text-neutral-400;
+        }
+      }
+    }
+
+    & .custom-block {
+      @apply my-8 rounded-sm border border-neutral-500 px-8 py-5;
+
+      &.info {
+        @apply bg-neutral-200 dark:bg-neutral-800;
+      }
+
+      &.tip {
+        @apply bg-sky-100 dark:bg-sky-900;
+      }
+
+      &.warning {
+        @apply bg-yellow-100 dark:bg-yellow-900;
+      }
+
+      &.danger {
+        @apply bg-red-100 dark:bg-red-900;
+      }
+
+      &.details {
+        @apply bg-neutral-100 dark:bg-neutral-900;
+      }
+
+      &.note {
+        @apply bg-neutral-100 dark:bg-neutral-900;
+      }
+
+      &.important {
+        @apply bg-violet-100 dark:bg-violet-900;
+      }
+
+      &.caution {
+        @apply bg-red-100 dark:bg-red-900;
+      }
+
+      & .custom-block-title {
+        @apply text-lg font-bold;
+      }
+    }
+
+    & a:not(.footnote-backref, .header-anchor, [id^="fnref"]) {
+      @apply inline-block text-neutral-600 underline decoration-1 underline-offset-4 transition duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-["open\_in\_new"] hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50;
+    }
+
+    & :is(h1, h2, h3, h4, h5, h6) {
+      @apply relative mb-4 mt-16 font-bold;
+
+      &:hover a {
+        @apply opacity-100;
+      }
+
+      & a {
+        @apply absolute left-0 top-0 -translate-x-[150%] opacity-0 transition-opacity duration-200;
+      }
+    }
+
+    & h1 {
+      @apply text-4xl;
+    }
+
+    & h2 {
+      @apply text-3xl;
+    }
+
+    & h3 {
+      @apply text-2xl;
+    }
+
+    & h4 {
+      @apply text-xl;
+    }
+
+    & h5 {
+      @apply text-lg;
+    }
+
+    & h6 {
+      @apply text-base;
+    }
+
+    & blockquote {
+      @apply relative my-8 rounded-sm border-l-4 border-neutral-500 bg-neutral-100 px-8 py-5 transition-colors duration-200 hover:border-neutral-600 dark:border-neutral-500 dark:bg-neutral-900 dark:hover:border-neutral-400;
+
+      & > p:first-child::before {
+        @apply absolute right-10 top-[-20px] font-[MaterialIcons] text-8xl text-neutral-300 opacity-20 content-["format\_quote"] dark:text-neutral-300;
+      }
+    }
+
+    & :not(pre) > code {
+      @apply rounded-sm bg-neutral-100 px-1 text-neutral-600 before:content-["`"] after:content-["`"] dark:bg-neutral-900 dark:text-neutral-400;
+    }
+
+    & strong {
+      @apply font-black text-neutral-900 dark:text-neutral-100;
+    }
+
+    & u {
+      @apply decoration-wavy decoration-1 underline-offset-4;
+    }
+
+    & mark {
+      @apply mx-1 rounded-sm bg-neutral-800 px-1 py-0.5 text-neutral-50 dark:bg-neutral-200 dark:text-neutral-900;
+    }
+
+    & sup {
+      @apply top-1 align-top text-sm;
+
+      & a {
+        @apply text-neutral-600 transition-colors duration-200 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100;
+      }
+    }
+
+    & ul {
+      @apply list-disc;
+    }
+
+    & ol {
+      @apply list-decimal;
+    }
+
+    & ul,
+    & ol {
+      @apply pl-8;
+
+      & li {
+        @apply marker:text-neutral-900 dark:marker:text-neutral-100;
+      }
+    }
+
+    & img {
+      @apply mx-auto my-8 rounded-sm;
+    }
+
+    & p:has(> img) {
+      @apply after:mx-auto after:mt-10 after:block after:h-auto after:w-[60%] after:text-center after:text-sm after:text-neutral-700 after:content-[attr(alt)] dark:after:text-neutral-300;
+    }
+
+    & section.footnotes {
+      @apply my-8 text-sm/8 before:mb-10 before:block before:text-3xl before:font-bold before:content-["据引"];
+
+      & ol,
+      & ul {
+        @apply pl-4;
+      }
+
+      & .footnote-backref {
+        @apply text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100;
+      }
+    }
+  }
+}

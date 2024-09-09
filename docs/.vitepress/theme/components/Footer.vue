@@ -1,94 +1,54 @@
 <script setup></script>
 
 <template>
-  <footer class="footer">
+  <footer class="mx-auto my-10 w-[calc(100%-60px)] max-w-[700px] font-serif">
     <p
       xmlns:cc="http://creativecommons.org/ns#"
       xmlns:dct="http://purl.org/dc/terms/"
+      class="flex"
     >
       <a
         property="dct:title"
         rel="cc:attributionURL"
         href="https://fro-q.github.io/"
+        class="underline"
       >
         Fro-Blo
       </a>
-      by
+      &nbsp;by&nbsp;
       <a
         rel="cc:attributionURL dct:creator"
         property="cc:attributionName"
         href="https://github.com/Fro-Q"
+        class="underline"
       >
         FroQ
       </a>
-      is licensed under
+      &nbsp;is licensed under&nbsp;
       <a
         href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
         target="_blank"
         rel="license noopener noreferrer"
-        style="display: inline-block"
+        class="flex shrink flex-row items-center underline"
       >
         CC BY-NC-SA 4.0
         <img
-          style="
-            height: 18px !important;
-            margin-left: 3px;
-            vertical-align: text-bottom;
-          "
+          class="ml-1 h-4 align-bottom"
           src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
         />
         <img
-          style="
-            height: 18px !important;
-            margin-left: 3px;
-            vertical-align: text-bottom;
-          "
+          class="ml-1 h-4 align-bottom"
           src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
         />
         <img
-          style="
-            height: 18px !important;
-            margin-left: 3px;
-            vertical-align: text-bottom;
-          "
+          class="ml-1 h-4 align-bottom"
           src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
         />
         <img
-          style="
-            height: 18px !important;
-            margin-left: 3px;
-            vertical-align: text-bottom;
-          "
+          class="ml-1 h-4 align-bottom"
           src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"
         />
       </a>
     </p>
   </footer>
 </template>
-
-<style lang="scss">
-footer {
-  max-width: 800px;
-  margin: 0 auto;
-
-  padding: 100px 0 10px 0;
-  color: var(--text-faded-color);
-  text-align: end;
-  font-family: var(--font);
-  position: sticky;
-  top: 100vh;
-
-  & a {
-    color: var(--text-muted-color);
-    transition: all 0.2s ease;
-
-    &.license {
-      color: var(--accent-color);
-    }
-
-    &:hover {
-      color: var(--accent-color);
-    }
-  }
-}
-</style>

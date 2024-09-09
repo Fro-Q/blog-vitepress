@@ -1,6 +1,7 @@
 ---
 title: '所有人都在说的「Prompt」'
 timestampId: 230615a
+category: 代序
 head:
   - - meta
     - name: description
@@ -60,16 +61,62 @@ Translate Flower to Spanish.
 
 后者则允许模型在少量示例或指导信息的帮助下生成回答，如：
 
-```text
-English: music
-Spanish: música
-English: father
-Spanish: padre
-English: flower
-Spanish: {}
+```js
+English: music // [!code error]
+Spanish: música // [!code warning]
+English: father // [!code ++]
+Spanish: padre // [!code --]
+English: flower // [!code focus]
+Spanish: {} // [!code highlight]
 ```
 
-Prompt 的编写相当值得学习。[后续的文章](basics_of_prompting.md) 中我会进一步介绍其常见的的编写规范与技巧。
+::: warning
+123
+:::
+
+::: tip
+123
+:::
+
+::: info
+123
+
+::: tip
+123
+:::
+
+::: danger
+123
+
+::: warning
+123
+:::
+
+::: details
+123
+:::
+
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!important]
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
+
+> 发文答问啊我发文阿文。
+> 阿文阿文阿文阿文，阿文打我的阿文的阿文的阿文**W服把WIUF吧茶VWF呀**BWIF把UWF咋BWF说爱阿文到家哈我看黄熬完慌咖完慌`咖王道看`啊王道啊王道啊王到阿文d
+>
+> 阿文的阿文的阿文的阿*文看否奥*甲苯看安慰看否那夸奖否卡夹本。
+
+`Prompt` 的编写<u>相当值得学习</u>。[后续的文章](basics_of_prompting.md) 中我会进一步介绍其常见的的==编写规范==与技巧。
 
 [^1]: andrew makes things, [Prompt Engineering Tips and Tricks with GPT-3](https://blog.andrewcantino.com/blog/2021/04/21/prompt-engineering-tips-and-tricks/)
 [^2]: Wikipedia, [Prompt](https://en.wikipedia.org/wiki/Prompt)

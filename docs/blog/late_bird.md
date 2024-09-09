@@ -1,6 +1,7 @@
 ---
 title: '晚鸟'
 timestampId: 240328a
+category: 誌
 head:
   - - meta
     - name: description

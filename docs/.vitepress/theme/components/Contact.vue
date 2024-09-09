@@ -1,5 +1,6 @@
 <script setup>
 import { useData } from "vitepress";
+import StyledULink from "./StyledULink.vue";
 
 const { site } = useData();
 
@@ -14,21 +15,38 @@ const { site } = useData();
 </script>
 
 <template>
-  <div class="contacts-wrapper">
-    <div class="title">
-      <h2 id="contact">Contact</h2>
+  <div
+    class="mx-auto flex h-[calc(100vh-100px)] w-[calc(100%-60px)] max-w-[800px] flex-col justify-start px-6"
+  >
+    <div
+      class="sticky top-0 z-10 mb-5 bg-neutral-50 py-10 after:absolute after:-bottom-8 after:left-0 after:z-[-1] after:h-8 after:w-full after:bg-gradient-to-t after:from-transparent after:to-neutral-50"
+    >
+      <h2
+        id="contact"
+        class="font-serif text-4xl"
+      >
+        相与
+      </h2>
     </div>
-    <div class="contacts-info">
-      <div class="contact-email contact-info">
-        <p>
+    <div class="contacts-info flex flex-col items-start justify-start">
+      <div class="contact-email contact-info mb-5">
+        <p class="text-xl transition duration-200">
           向我发送
-          <a :href="`mailto:${site.themeConfig.email}`">邮件</a>
+          <!-- <a :href="`mailto:${site.themeConfig.email}`">邮件</a> -->
+          <StyledULink
+            :href="`mailto:${site.themeConfig.email}`"
+            text="邮件"
+          ></StyledULink>
         </p>
       </div>
       <div class="contact-github contact-info">
-        <p>
+        <p class="text-xl transition duration-200">
           在
-          <a :href="site.themeConfig.github">GitHub</a>
+          <!-- <a :href="site.themeConfig.github">GitHub</a> -->
+          <StyledULink
+            :href="site.themeConfig.github"
+            text="GitHub"
+          ></StyledULink>
           上找到我
         </p>
       </div>
@@ -39,73 +57,3 @@ const { site } = useData();
     </div>
   </div>
 </template>
-
-<style lang="scss">
-.contacts-wrapper {
-  height: calc(100vh - 60px);
-  padding: 0 30px;
-  max-width: 800px;
-  width: calc(100% - 60px);
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-
-  & .title {
-    position: sticky;
-    top: 0;
-    background-color: var(--bg-color);
-    z-index: 100;
-    margin-bottom: 20px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 30px;
-      bottom: -30px;
-      left: 0;
-      // gradient to transparent
-      background: linear-gradient(to top, transparent 0%, var(--bg-color) 100%);
-
-      transition: all 0.2s ease;
-      z-index: -1;
-    }
-  }
-
-  & .contacts-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-
-    & .contact-info {
-      display: flex;
-      flex-direction: row;
-      justify-content: start;
-      align-items: center;
-      margin-bottom: 20px;
-
-      & p {
-        font-size: 1.5rem;
-        color: var(--text-muted-color);
-        transition: all 0.2s ease;
-
-        & a,
-        & span {
-          color: var(--text-muted-color);
-          text-decoration: underline;
-          cursor: pointer;
-          transition: all 0.2s ease;
-
-          &:hover {
-            color: var(--accent-color);
-          }
-        }
-      }
-    }
-  }
-}
-</style>

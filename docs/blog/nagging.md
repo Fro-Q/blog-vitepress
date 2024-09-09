@@ -1,6 +1,7 @@
 ---
 title: '碎碎念'
 timestampId: 230808a
+category: 誌
 head:
   - - meta
     - name: description
