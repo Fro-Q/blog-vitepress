@@ -13,7 +13,7 @@ head:
     - name: id
       content: 230708a
 created: 2023-07-08 23:00
-last_modified: 2024-08-04 01:16
+last_modified: 2024-09-09 19:54
 ---
 
 虽然在我认识的人里面用 Obsidian 的寥寥无几，但是还是想记录一下最近在干的事情。

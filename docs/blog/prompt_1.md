@@ -1,11 +1,11 @@
 ---
-title: '所有人都在说的「Prompt」'
+title: 'Prompt 之一'
 timestampId: 230615a
 category: 代序
 head:
   - - meta
     - name: description
-      content: 一篇关于「Prompt」的极极极简介绍。
+      content: 先讲讲 prompt。
   - - meta
     - name: keywords
       content: Prompt LLM ChatGPT 人工智能
@@ -13,7 +13,7 @@ head:
     - name: id
       content: 230615a
 created: 2024-01-26 17:00
-last_modified: 2024-08-04 01:48
+last_modified: 2024-09-09 19:73
 ---
 
 一篇关于「Prompt」的极极极简介绍。
@@ -70,50 +70,50 @@ English: flower // [!code focus]
 Spanish: {} // [!code highlight]
 ```
 
-::: warning
-123
+::: warning  
+123  
 :::
 
-::: tip
-123
+::: tip  
+123  
 :::
 
-::: info
+::: info  
 123
 
-::: tip
-123
+::: tip  
+123  
 :::
 
-::: danger
+::: danger  
 123
 
-::: warning
-123
+::: warning  
+123  
 :::
 
-::: details
-123
+::: details  
+123  
 :::
 
-> [!NOTE]
+> [!NOTE]  
 > Highlights information that users should take into account, even when skimming.
 
-> [!TIP]
+> [!TIP]  
 > Optional information to help a user be more successful.
 
-> [!important]
+> [!important]  
 > Crucial information necessary for users to succeed.
 
-> [!WARNING]
+> [!WARNING]  
 > Critical content demanding immediate user attention due to potential risks.
 
-> [!CAUTION]
+> [!CAUTION]  
 > Negative potential consequences of an action.
 
-> 发文答问啊我发文阿文。
-> 阿文阿文阿文阿文，阿文打我的阿文的阿文的阿文**W服把WIUF吧茶VWF呀**BWIF把UWF咋BWF说爱阿文到家哈我看黄熬完慌咖完慌`咖王道看`啊王道啊王道啊王到阿文d
->
+> 发文答问啊我发文阿文。  
+> 阿文阿文阿文阿文，阿文打我的阿文的阿文的阿文**W 服把 WIUF 吧茶 VWF 呀**BWIF 把 UWF 咋 BWF 说爱阿文到家哈我看黄熬完慌咖完慌 `咖王道看` 啊王道啊王道啊王到阿文 d
+> 
 > 阿文的阿文的阿文的阿*文看否奥*甲苯看安慰看否那夸奖否卡夹本。
 
 `Prompt` 的编写<u>相当值得学习</u>。[后续的文章](basics_of_prompting.md) 中我会进一步介绍其常见的的==编写规范==与技巧。
