@@ -43,7 +43,7 @@ onMounted(() => {
     return;
   }
   var thisHead = document.querySelector(
-    `meta[name="id"][content="${page.value.frontmatter.timestampId}"]`,
+    `meta[name="id"][content="${frontmatter.timestampId}"]`,
   ).parentElement;
   var thisBody = thisHead.nextElementSibling;
   var toc = thisBody.getElementsByClassName("table-of-contents")[0];
@@ -68,10 +68,10 @@ const nextPost = computed(() => {
   if (frontmatter.value.category === "扉") {
     return;
   }
-  let thisPostIndex = posts.findIndex(
-    (post) =>
-      post.frontmatter.timestampId === page.value.frontmatter.timestampId,
-  );
+  let thisPostIndex = posts.findIndex((post) => {
+    console.log(post);
+    post.frontmatter.timestampId === frontmatter.timestampId;
+  });
   if (thisPostIndex === posts.length - 1) {
     return;
   }
@@ -93,8 +93,7 @@ const prevPost = computed(() => {
     return;
   }
   let thisPostIndex = posts.findIndex(
-    (post) =>
-      post.frontmatter.timestampId === page.value.frontmatter.timestampId,
+    (post) => post.frontmatter.timestampId === frontmatter.timestampId,
   );
   if (thisPostIndex === 0) {
     return;
@@ -117,8 +116,7 @@ const thisPostReadingInfo = computed(() => {
     return;
   }
   const thisPostIndex = posts.findIndex(
-    (post) =>
-      post.frontmatter.timestampId === page.value.frontmatter.timestampId,
+    (post) => post.frontmatter.timestampId === frontmatter.timestampId,
   );
 
   if (thisPostIndex === -1) {

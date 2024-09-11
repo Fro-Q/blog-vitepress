@@ -5,10 +5,10 @@ category: 格外
 head:
   - - meta
     - name: description
-      content:
+      content: 联系我。
   - - meta
     - name: keywords
-      content:
+      content: 联系方式
   - - meta
     - name: id
       content: 240901a

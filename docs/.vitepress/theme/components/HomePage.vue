@@ -162,7 +162,11 @@ const blogCategory = [
     <div
       v-for="post of category.id == 'qr' ?
         posts.filter((post) => post.frontmatter.category !== '格外')
-      : posts.filter((post) => post.frontmatter.category === category.title)"
+      : posts.filter((post) => {
+          console.log(category.title);
+          console.log(post.frontmatter);
+          return post.frontmatter.category === category.title;
+        })"
       class="post-container flex h-auto w-full flex-col flex-wrap justify-start py-2"
     >
       <div class="post-info">
