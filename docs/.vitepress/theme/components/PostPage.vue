@@ -39,7 +39,7 @@ const 日志lastUpdatedInfo = computed(() => {
 
 onMounted(() => {
   // filter by parent element id
-  if (frontmatter.value.home) {
+  if (frontmatter.value.category === "扉") {
     return;
   }
   var thisHead = document.querySelector(
@@ -65,7 +65,7 @@ function addEventListeners(toc) {
 }
 
 const nextPost = computed(() => {
-  if (frontmatter.value.home) {
+  if (frontmatter.value.category === "扉") {
     return;
   }
   let thisPostIndex = posts.findIndex(
@@ -89,7 +89,7 @@ const nextPost = computed(() => {
 });
 
 const prevPost = computed(() => {
-  if (frontmatter.value.home) {
+  if (frontmatter.value.category === "扉") {
     return;
   }
   let thisPostIndex = posts.findIndex(
@@ -113,7 +113,7 @@ const prevPost = computed(() => {
 });
 
 const thisPostReadingInfo = computed(() => {
-  if (frontmatter.value.home || page.value.isNotFound) {
+  if (frontmatter.value.category === "扉" || page.value.isNotFound) {
     return;
   }
   const thisPostIndex = posts.findIndex(
@@ -129,7 +129,7 @@ const thisPostReadingInfo = computed(() => {
 });
 
 onMounted(() => {
-  if (frontmatter.value.home) {
+  if (frontmatter.value.category === "扉") {
     return;
   }
   var content = document.getElementById("content");
