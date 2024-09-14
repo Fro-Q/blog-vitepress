@@ -64,12 +64,12 @@ function addEventListeners(toc) {
   });
 }
 
-const nextPost = computed(() => {
+const prevPost = computed(() => {
   if (frontmatter.value.category === "扉") {
     return;
   }
   let thisPostIndex = posts.findIndex(
-    (post) => post.frontmatter.timestampId === frontmatter.timestampId,
+    (post) => post.frontmatter.timestampId === frontmatter.value.timestampId,
   );
   if (thisPostIndex === posts.length - 1) {
     return;
@@ -87,12 +87,12 @@ const nextPost = computed(() => {
   return posts[thisPostIndex + 1];
 });
 
-const prevPost = computed(() => {
+const nextPost = computed(() => {
   if (frontmatter.value.category === "扉") {
     return;
   }
   let thisPostIndex = posts.findIndex(
-    (post) => post.frontmatter.timestampId === frontmatter.timestampId,
+    (post) => post.frontmatter.timestampId === frontmatter.value.timestampId,
   );
   if (thisPostIndex <= 0) {
     return;
@@ -115,7 +115,7 @@ const thisPostReadingInfo = computed(() => {
     return;
   }
   const thisPostIndex = posts.findIndex(
-    (post) => post.frontmatter.timestampId === frontmatter.timestampId,
+    (post) => post.frontmatter.timestampId === frontmatter.value.timestampId,
   );
 
   if (thisPostIndex === -1) {
