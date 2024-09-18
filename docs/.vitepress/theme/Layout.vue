@@ -1,6 +1,8 @@
 <script setup>
 import { useData } from "vitepress";
 import { onMounted } from "vue";
+import Giscus from "@giscus/vue";
+
 import Navbar from "./components/Navbar.vue";
 import HomePage from "./components/HomePage.vue";
 import PostPage from "./components/PostPage.vue";
@@ -39,6 +41,23 @@ onMounted(() => {
   <NotFound v-else-if="page.isNotFound" />
 
   <HomePage v-else-if="frontmatter.category === '扉'" />
+
+  <Giscus
+    src="https://giscus.app/client.js"
+    repo="Fro-Q/Fro-Q.github.io"
+    repo-id="R_kgDOLISyuA"
+    category-id="DIC_kwDOLISyuM4CihU7"
+    mapping="url"
+    strict="0"
+    reactions-enabled="1"
+    emit-metadata="0"
+    input-position="top"
+    theme="light"
+    lang="zh-CN"
+    crossorigin="anonymous"
+    class="relative m-auto min-h-screen w-[calc(100%-60px)] max-w-[700px] items-center text-xl/10"
+    async
+  ></Giscus>
 
   <Footer />
 

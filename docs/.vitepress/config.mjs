@@ -20,7 +20,7 @@ export default defineConfig({
   base: "/",
 
   themeConfig: {
-    email: "qingzhengye@outlook.com",
+    email: "froqqq@outlook.com",
     github: "https://github.com/Fro-Q",
     socialLinks: [
       {
