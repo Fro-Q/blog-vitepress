@@ -4,6 +4,7 @@ import { useData } from "vitepress";
 import { computed } from "vue";
 import { data as posts } from "./posts.data.js";
 import { onMounted } from "vue";
+import Giscus from "@giscus/vue";
 
 const { page, frontmatter } = useData();
 
@@ -167,6 +168,15 @@ onMounted(() => {
         </span>
       </div>
     </div>
+    <div
+      class="post-info mx-auto mb-5 flex w-[calc(100%-60px)] max-w-[700px] flex-row font-serif"
+    >
+      {{
+        frontmatter.head.filter((item) => item[1].name === "description")[0][1]
+          .content
+      }}
+    </div>
+
     <Content
       class="content-wrapper relative"
       id="content"
@@ -209,4 +219,21 @@ onMounted(() => {
       </div>
     </div>
   </div>
+  <Giscus
+    src="https://giscus.app/client.js"
+    repo="Fro-Q/Fro-Q.github.io"
+    repo-id="R_kgDOLISyuA"
+    category-id="DIC_kwDOLISyuM4CihU7"
+    mapping="url"
+    strict="0"
+    reactions-enabled="1"
+    emit-metadata="0"
+    input-position="top"
+    theme="light"
+    lang="zh-CN"
+    crossorigin="anonymous"
+    :key="page.filePath"
+    class="relative m-auto min-h-screen w-[calc(100%-60px)] max-w-[700px] items-center text-xl/10"
+    async
+  ></Giscus>
 </template>
