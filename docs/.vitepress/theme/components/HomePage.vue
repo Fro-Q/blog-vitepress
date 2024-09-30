@@ -2,7 +2,6 @@
 import { data as posts } from "./posts.data.js";
 import { computed, ref } from "vue";
 import { Content } from "vitepress";
-import StyledBgLink from "./StyledBgLink.vue";
 import StyledULink from "./StyledULink.vue";
 
 const showExcerpt = ref([
@@ -170,7 +169,7 @@ const blogCategory = [
       class="post-container flex h-auto w-full flex-col flex-wrap justify-start py-2"
     > -->
       <div class="post-info">
-        <StyledBgLink
+        <StyledULink
           :href="post.url"
           :text="post.frontmatter.title"
           class="post-title font-serif text-2xl"

@@ -6,6 +6,8 @@ import { data as posts } from "./posts.data.js";
 import { onMounted } from "vue";
 import Giscus from "@giscus/vue";
 
+import markdownIt from "markdown-it";
+
 const { page, frontmatter } = useData();
 
 const dateInfo = computed(() => {
@@ -23,7 +25,7 @@ const dateInfo = computed(() => {
   return "";
 });
 
-const 日志lastUpdatedInfo = computed(() => {
+const lastUpdatedInfo = computed(() => {
   if (frontmatter.value.last_modified) {
     const date = new Date(frontmatter.value.last_modified);
     return date
@@ -50,6 +52,16 @@ onMounted(() => {
   var toc = thisBody.getElementsByClassName("table-of-contents")[0];
   if (toc) {
     addEventListeners(toc);
+  }
+
+  var content = document.getElementById("content");
+  var imgs = content.getElementsByTagName("img");
+  for (var i = 0; i < imgs.length; i++) {
+    var img = imgs[i];
+    var p = img.parentNode;
+    if (p.tagName === "P") {
+      p.setAttribute("alt", img.getAttribute("alt"));
+    }
   }
 });
 
@@ -126,19 +138,24 @@ const thisPostReadingInfo = computed(() => {
   return posts[thisPostIndex].readingInfo;
 });
 
-onMounted(() => {
-  if (frontmatter.value.category === "扉") {
+const thisPostTitle = computed(() => {
+  if (frontmatter.value.category === "扉" || page.value.isNotFound) {
     return;
   }
-  var content = document.getElementById("content");
-  var imgs = content.getElementsByTagName("img");
-  for (var i = 0; i < imgs.length; i++) {
-    var img = imgs[i];
-    var p = img.parentNode;
-    if (p.tagName === "P") {
-      p.setAttribute("alt", img.getAttribute("alt"));
-    }
+
+  return markdownIt().render(frontmatter.value.title);
+});
+
+const thisPostExcerpt = computed(() => {
+  if (frontmatter.value.category === "扉" || page.value.isNotFound) {
+    return;
   }
+
+  const rawExcerpt = frontmatter.value.head.filter(
+    (item) => item[1].name === "description",
+  )[0][1].content;
+
+  return markdownIt().render(rawExcerpt);
 });
 </script>
 
@@ -148,9 +165,9 @@ onMounted(() => {
     v-if="frontmatter.category !== '扉' && !page.isNotFound"
   >
     <div
-      class="post-title mx-auto my-10 w-[calc(100%-60px)] max-w-[700px] font-serif text-5xl"
+      class="post-title mx-auto my-10 w-[calc(100%-60px)] max-w-[700px] font-serif text-5xl/relaxed"
     >
-      <h1>{{ frontmatter.title }}</h1>
+      <h1 v-html="thisPostTitle"></h1>
     </div>
     <div
       class="post-info mx-auto mb-5 flex w-[calc(100%-60px)] max-w-[700px] flex-row justify-end font-serif"
@@ -170,12 +187,8 @@ onMounted(() => {
     </div>
     <div
       class="post-info mx-auto mb-5 flex w-[calc(100%-60px)] max-w-[700px] flex-row font-serif"
-    >
-      {{
-        frontmatter.head.filter((item) => item[1].name === "description")[0][1]
-          .content
-      }}
-    </div>
+      v-html="thisPostExcerpt"
+    />
 
     <Content
       class="content-wrapper relative"
@@ -186,7 +199,7 @@ onMounted(() => {
     >
       <div class="mt-5 text-sm">
         <span>最后更新于：</span>
-        <span>{{ 日志lastUpdatedInfo }}</span>
+        <span>{{ lastUpdatedInfo }}</span>
       </div>
       <div
         class="mt-5 flex flex-col"
@@ -198,10 +211,13 @@ onMounted(() => {
             <a
               :href="prevPost.url"
               v-if="prevPost"
-              class="inline-block text-neutral-600 underline decoration-1 underline-offset-4 transition duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-['open\_in\_new'] hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
-            >
-              {{ prevPost.frontmatter.title }}
-            </a>
+              class="relative inline-block text-neutral-600 transition duration-200 before:absolute before:bottom-[1px] before:h-[1px] before:w-full before:bg-neutral-600 before:transition-all before:duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-['open\_in\_new'] hover:text-neutral-950 hover:before:bg-neutral-950 dark:text-neutral-400 dark:before:bg-neutral-400 dark:hover:text-neutral-50 dark:hover:before:bg-neutral-50"
+              v-html="
+                markdownIt()
+                  .render(prevPost.frontmatter.title)
+                  .replace(/<p>|<\/p>/g, '')
+              "
+            ></a>
             <div v-else>无</div>
           </div>
           <div class="mt-2 flex flex-row items-center">
@@ -209,10 +225,13 @@ onMounted(() => {
             <a
               :href="nextPost.url"
               v-if="nextPost"
-              class="inline-block text-neutral-600 underline decoration-1 underline-offset-4 transition duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-['open\_in\_new'] hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50"
-            >
-              {{ nextPost.frontmatter.title }}
-            </a>
+              class="relative inline-block text-neutral-600 transition duration-200 before:absolute before:bottom-[1px] before:h-[1px] before:w-full before:bg-neutral-600 before:transition-all before:duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-['open\_in\_new'] hover:text-neutral-950 hover:before:bg-neutral-950 dark:text-neutral-400 dark:before:bg-neutral-400 dark:hover:text-neutral-50 dark:hover:before:bg-neutral-50"
+              v-html="
+                markdownIt()
+                  .render(nextPost.frontmatter.title)
+                  .replace(/<p>|<\/p>/g, '')
+              "
+            ></a>
             <div v-else>无</div>
           </div>
         </div>

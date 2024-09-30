@@ -1,5 +1,5 @@
 <script setup>
-import StyledBgLink from "./StyledBgLink.vue";
+import StyledULink from "./StyledULink.vue";
 </script>
 
 <template>
@@ -13,15 +13,15 @@ import StyledBgLink from "./StyledBgLink.vue";
       <p>未书。</p>
       <p>
         返回
-        <StyledBgLink
+        <StyledULink
           href="/"
           text="扉"
-        ></StyledBgLink>
+        ></StyledULink>
         或者
-        <StyledBgLink
+        <StyledULink
           href="/contact"
           text="联系"
-        ></StyledBgLink>
+        ></StyledULink>
         我。
       </p>
     </div>

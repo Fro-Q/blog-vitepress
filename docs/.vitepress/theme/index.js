@@ -4,12 +4,13 @@ import "./style.css";
 import { useRoute } from "vitepress";
 import { nextTick, onMounted, watch } from "vue";
 import mediumZoom from "medium-zoom";
+import Badge from "./components/Badge.vue";
 
 /** @type {import('vitepress').Theme} */
 export default {
   Layout,
   enhanceApp({ app, router, siteData }) {
-    // ...
+    app.component("Badge", Badge);
   },
   setup() {
     const route = useRoute();

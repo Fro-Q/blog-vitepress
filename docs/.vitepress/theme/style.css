@@ -64,7 +64,7 @@
 
 @layer base {
   html {
-    @apply font-sans antialiased selection:bg-neutral-400 selection:text-neutral-50;
+    @apply font-sans antialiased selection:bg-neutral-400/20;
 
     &::-webkit-scrollbar {
       @apply w-px;
@@ -77,8 +77,12 @@
 }
 
 @layer components {
+  :not(pre) > code {
+    @apply rounded-sm bg-neutral-200/50 px-1 text-neutral-600 before:content-["`"] after:content-["`"] dark:bg-neutral-800/50 dark:text-neutral-400;
+  }
+
   #content {
-    @apply relative m-auto min-h-screen w-[calc(100%-60px)] max-w-[700px] items-center text-xl/10;
+    @apply relative m-auto min-h-screen w-[calc(100%-60px)] max-w-[700px] items-center text-base/10;
 
     & hr {
       @apply my-4 h-px border-none bg-neutral-300 dark:bg-neutral-700;
@@ -92,8 +96,12 @@
       @apply first:hidden;
     }
 
+    & mjx-container svg {
+      @apply inline-block;
+    }
+
     & .table-of-contents {
-      @apply fixed left-0 top-[100px] z-50 flex w-[200px] flex-col items-start overflow-auto border border-neutral-700 bg-neutral-50 bg-opacity-80 text-sm text-neutral-300 opacity-20 transition-all duration-200 hover:opacity-100 hover:backdrop-blur-sm dark:border-neutral-300 dark:bg-neutral-950 dark:text-neutral-700;
+      @apply fixed left-0 top-[100px] z-50 flex min-w-[200px] max-w-fit flex-col items-start overflow-auto border border-neutral-700 bg-neutral-50 bg-opacity-80 text-sm text-neutral-300 opacity-20 transition-all duration-200 hover:opacity-100 hover:backdrop-blur-sm dark:border-neutral-300 dark:bg-neutral-950 dark:text-neutral-700;
 
       & ul {
         @apply m-0 list-none px-5;
@@ -240,8 +248,8 @@
       }
     }
 
-    & a:not(.footnote-backref, .header-anchor, [id^="fnref"]) {
-      @apply inline-block text-neutral-600 underline decoration-1 underline-offset-4 transition duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-["open\_in\_new"] hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-neutral-50;
+    & a:not([href^="#"]) {
+      @apply relative inline-block text-neutral-600 transition duration-200 before:absolute before:bottom-2 before:h-[1px] before:w-full before:bg-neutral-600 before:transition-all before:duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-["open\_in\_new"] hover:text-neutral-950 hover:before:bg-neutral-950 dark:text-neutral-400 dark:before:bg-neutral-400 dark:hover:text-neutral-50 dark:hover:before:bg-neutral-50;
     }
 
     & :is(h1, h2, h3, h4, h5, h6) {
@@ -288,8 +296,21 @@
       }
     }
 
-    & :not(pre) > code {
-      @apply rounded-sm bg-neutral-100 px-1 text-neutral-600 before:content-["`"] after:content-["`"] dark:bg-neutral-900 dark:text-neutral-400;
+    & table {
+      @apply my-8 w-full border-collapse text-center;
+
+      & th {
+        @apply font-bold text-neutral-900 dark:text-neutral-100;
+      }
+
+      & td {
+        @apply border-t border-neutral-300 dark:border-neutral-700;
+      }
+
+      & th,
+      & td {
+        @apply px-4 py-2;
+      }
     }
 
     & strong {

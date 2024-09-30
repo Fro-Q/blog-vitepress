@@ -1,3 +1,5 @@
+import "./chunk-PZ5AY32C.js";
+
 // node_modules/@giscus/vue/dist/giscus-BNK3dBIH.js
 var H = globalThis;
 var V = H.ShadowRoot && (H.ShadyCSS === void 0 || H.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype;
@@ -1016,4 +1018,4 @@ export {
    * SPDX-License-Identifier: BSD-3-Clause
    *)
 */
-//# sourceMappingURL=giscus-BNK3dBIH-YISHHA3T.js.map
+//# sourceMappingURL=giscus-BNK3dBIH-7TIMRLNB.js.map

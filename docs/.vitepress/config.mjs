@@ -33,8 +33,16 @@ export default defineConfig({
     ],
   },
   markdown: {
-    anchor: { permalink: true },
-    toc: { level: [1, 2, 3] },
+    anchor: {
+      permalink: true,
+      permalinkSymbol: "#",
+    },
+    toc: {
+      level: [2, 3, 4, 5],
+      format: (str) => {
+        console.log(str);
+      },
+    },
     lineNumbers: true,
     math: true,
     config: (md) => {
