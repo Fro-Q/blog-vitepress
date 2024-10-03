@@ -33,14 +33,8 @@
   color: var(--text-normal-color);
 }
 
-.gsc-right-header {
-  border-radius: none;
-}
-
-.gsc-right-header li:not(.BtnGroup-item--selected) {
-  border-top: none;
-  border-left: none;
-  border-right: none;
+.gsc-right-header li {
+  border-radius: 0;
 }
 
 .gsc-right-header li:not(.BtnGroup-item--selected) .btn:hover {
