@@ -40,7 +40,7 @@
 
 .gsc-right-header li:not(.BtnGroup-item--selected) .btn:hover {
   background-color: transparent;
-  color: var(--text-normal-color);
+  color: var(--text-muted-color);
 }
 
 .gsc-comment-box-tabs {
@@ -75,7 +75,7 @@
 }
 
 .gsc-comment-box-buttons .btn-primary {
-  background-color: var(--text-normal-color);
+  background-color: var(--text-muted-color);
 }
 
 .gsc-comment-box-buttons .btn-primary:disabled {
