@@ -6,18 +6,20 @@
 @media (prefers-color-scheme: light) {
   :root {
     --text-muted-color: rgb(82, 82, 82);
-    --text-normal-color: rgb(10, 10, 10);
+    --text-normal-color: rgb(64, 64, 64);
     --color-segmented-control-bg: transparent;
     --blur-bg: rgba(0, 0, 0, 0.1);
+    --color-fg-default: var(--text-normal-color);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --text-muted-color: rgb(163, 163, 163);
-    --text-normal-color: rgb(250, 250, 250);
+    --text-normal-color: rgb(212, 212, 212);
     --color-segmented-control-bg: transparent;
     --blur-bg: rgba(255, 255, 255, 0.1);
+    --color-fg-default: var(--text-normal-color);
   }
 }
 
@@ -99,4 +101,15 @@
 .gsc-comment-box-buttons .btn-primary:disabled {
   color: var(--text-muted-color);
   cursor: not-allowed;
+}
+
+.gsc-comment > * {
+  border-radius: 0;
+  border-color: var(--text-muted-color);
+}
+
+.gsc-reply-box > button {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--text-muted-color);
 }
