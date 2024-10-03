@@ -70,6 +70,7 @@
 }
 
 .btn-primary, .link-secondary {
+  transition: all 0.2s;
   background-color: transparent;
   border: none;
   text-decoration: underline;
