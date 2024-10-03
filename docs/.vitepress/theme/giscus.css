@@ -61,6 +61,11 @@
   display: none;
 } */
 
+.gsc-reactions-popover {
+  backgroud-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
 .gsc-comment-box-bottom button:hover {
   color: var(--text-normal-color);
 }
