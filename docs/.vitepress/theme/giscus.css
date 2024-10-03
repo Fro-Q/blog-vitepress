@@ -1,5 +1,6 @@
 :root {
   font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --color-border-default: var(--text-muted-color);
 }
 
 @media (prefers-color-scheme: light) {
