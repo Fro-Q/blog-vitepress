@@ -5,7 +5,7 @@
     <p
       xmlns:cc="http://creativecommons.org/ns#"
       xmlns:dct="http://purl.org/dc/terms/"
-      class="flex"
+      class="flex flex-wrap"
     >
       <a
         property="dct:title"
