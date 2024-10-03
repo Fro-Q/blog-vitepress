@@ -53,17 +53,34 @@
   background-color: transparent;
 }
 
+.gsc-comment-box-textarea:focus {
+    border-color: var(--text-normal-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 .gsc-comment-box-main .gsc-comment-box-write textarea.gsc-comment-box-textarea {
   border-radius: 0;
   border-bottom-style: solid;
 }
 
-/* .gsc-comment-box-main .gsc-comment-box-write .form-control {
-  display: none;
-} */
+.gsc-comment-box-textarea-extras {
+    display: none;
+}
+
+.btn-primary, .link-secondary {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  color: var(--text-muted-color);
+}
+
+:is(.btn-primary, link-secondary):hover {
+  color: var(--text-normal-color);
+}
 
 .gsc-reactions-popover {
-  backgroud-color: rgba(0, 0, 0, 0.1);
+  backgroud-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
 }
 
