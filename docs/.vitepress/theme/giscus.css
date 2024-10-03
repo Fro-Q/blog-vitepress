@@ -56,8 +56,8 @@
 }
 
 .gsc-comment-box-textarea:focus {
-    border-color: var(--text-normal-color);
-    background-color: var(--blur-bg);
+  border-color: var(--text-normal-color);
+  background-color: var(--blur-bg);
 }
 
 .gsc-comment-box-main .gsc-comment-box-write textarea.gsc-comment-box-textarea {
@@ -66,10 +66,11 @@
 }
 
 .gsc-comment-box-textarea-extras {
-    display: none;
+  display: none;
 }
 
-.btn-primary, .link-secondary {
+.btn-primary,
+.link-secondary {
   transition: all 0.2s;
   background-color: transparent;
   border: none;
@@ -83,7 +84,7 @@
 }
 
 .gsc-reactions-popover {
-  backgroud-color: var(--blur-bg);
+  background-color: var(--blur-bg);
   backdrop-filter: blur(10px);
 }
 
