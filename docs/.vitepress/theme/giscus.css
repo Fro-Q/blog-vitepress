@@ -103,13 +103,17 @@
   cursor: not-allowed;
 }
 
-.gsc-comment > * {
+.gsc-comment > div.rounded-md {
   border-radius: 0;
   border-color: var(--text-muted-color);
 }
 
-.gsc-reply-box > button {
+.gsc-reply-box > button.rounded {
   border-radius: 0;
   border: none;
   border-bottom: 1px solid var(--text-muted-color);
+}
+
+.gsc-comment-box-buttons > button.rounded-md {
+  border: none;
 }
