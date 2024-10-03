@@ -253,15 +253,7 @@
     }
 
     & :is(h1, h2, h3, h4, h5, h6) {
-      @apply relative mb-4 mt-16 font-bold;
-
-      &:hover a {
-        @apply opacity-100;
-      }
-
-      & a {
-        @apply absolute left-0 top-0 -translate-x-[150%] opacity-0 transition-opacity duration-200;
-      }
+      @apply relative z-0 inline-block px-1 text-neutral-800 transition after:absolute after:-bottom-1.5 after:left-0 after:-z-[1] after:h-px after:w-0 after:rounded-sm after:bg-neutral-800 after:duration-200 hover:after:w-full dark:text-neutral-200 dark:after:bg-neutral-200;
     }
 
     & h1 {

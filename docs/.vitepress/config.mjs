@@ -2,6 +2,7 @@ import { defineConfig } from "vitepress";
 import { RssPlugin } from "vitepress-plugin-rss";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItMark from "markdown-it-mark";
+import anchor from "markdown-it-anchor";
 
 const rssOptions = {
   baseUrl: "https://fro-q.github.io",
@@ -34,8 +35,7 @@ export default defineConfig({
   },
   markdown: {
     anchor: {
-      permalink: true,
-      permalinkSymbol: "#",
+      permalink: anchor.permalink.headerLink(),
     },
     toc: {
       level: [2, 3, 4, 5],

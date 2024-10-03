@@ -248,7 +248,7 @@ const thisPostExcerpt = computed(() => {
     reactions-enabled="1"
     emit-metadata="0"
     input-position="top"
-    theme="light"
+    theme="https://github.com/Fro-Q/Fro-Q.github.io/blob/master/docs/.vitepress/theme/giscus.css"
     lang="zh-CN"
     crossorigin="anonymous"
     :key="page.filePath"
