@@ -104,12 +104,12 @@
 }
 
 .gsc-comment > div.rounded-md {
-  border-radius: 0;
+  border-radius: 0 !important;
   border-color: var(--text-muted-color);
 }
 
 .gsc-reply-box > button.rounded {
-  border-radius: 0;
+  border-radius: 0 !important;
   border: none;
   border-bottom: 1px solid var(--text-muted-color);
 }
