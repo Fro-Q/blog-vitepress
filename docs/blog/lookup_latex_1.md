@@ -1,5 +1,5 @@
 ---
-title: '来查表 · 日用公式/快捷键/概念定义等等之收集整理 · LaTeX 公式（一）'
+title: '*unfinished*｜来查表 · 日用公式/快捷键/概念定义等等之收集整理 · LaTeX 公式（一）'
 timestampId: 241001a
 category: 共读
 head:
@@ -22,7 +22,7 @@ last_modified: 2024-10-01 19:25
 
 [[toc]]
 
-## `LaTeX` 中的公式
+## `LaTeX` 中的公式 <Badge text="Unfinished" type="warning" />
 
 ::: tip  
 本节仅介绍 $\LaTeX$ 中的数学公式部分。有关 $\LaTeX$ 使用方法（排版、页码管理等）的内容，请阅读其它文章或访问 [The $\LaTeX$ Project 官网](https://www.latex-project.org/)。  
@@ -51,38 +51,58 @@ last_modified: 2024-10-01 19:25
 
 ### 二元与关系｜Binary Operators and Relations
 
-| 渲染                                                                   | 输入                                                                   |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| $+$, $-$, $\times$, $\div$                                           | `+`, `-`, `\times`. `\div`                                           |
-| $\cdot$, $\ast$, $\colon$                                            | `\cdot`, `\ast`, `\colon`                                            |
-| $\pm$, $\mp$, $\divideontimes$                                       | `\pm`, `\mp`, `\divideontimes`                                       |
-| $\prec$, $\succ$, $\preceq$, $\succeq$                               | `\prec`, `\succ`, `\preceq`, `\succeq`                               |
-| $\nprec$, $\nsucc$, $\npreceq$, $\nsucceq$                           | `\nprec`, `\nsucc`, `\npreceq`, `\nsucceq`                           |
-| $\preccurlyeq$. $\succcurlyeq$, $\curlyeqprec$, $\curlyeqsucc$       | `\preccurlyeq`, `\succcurlyeq`, `\curlyeqprec`, `\curlyeqsucc`       |
-| $\precsim$, $\succsim$, $\precnsim$, $\succnsim$                     | `\precsim`, `\succsim`, `\precnsim`, `\succnsim`                     |
-| $\precapprox$, $\succapprox$, $\precnapprox$, $\succnapprox$         | `\precapprox`, `\succapprox`, `\precnapprox`, `\succnapprox`         |
-| $\cong$, $\ncong$                                                    | `\cong`, `\ncong`                                                    |
-| $\asymp$                                                             | `\asymp`                                                             |
-| $\dashv$                                                             | `\dashv`                                                             |
-| $\vdash$, $\vDash$, $\Vdash$, $\Vvdash$                              | `\vdash`, `\vDash`, `\Vdash`, `\Vvdash`                              |
-| $\nvdash$, $\nvDash$, $\nVdash$                                      | `\nvdash`, `\nvDash`, `\nVvdash`                                     |
-| $\perp$, $\parallel$, $\nparallel$                                   | `\perp`, `\parallel`, `\nparallel`                                   |
-| $\mid$, $\nmid$                                                      | `\mid`, `\nmid`                                                      |
-| $\Join$                                                              | `\bowtie`                                                            |
-| $\propto$, $\varpropto$                                              | `\propto`, `\varpropto`                                              |
-| $\between$                                                           | `\between`                                                           |
-| $\in$, $\ni$, $\notin$                                               | `\in`, `\ni`, `\notin`                                               |
-| $\subset$, $\supset$, $\subseteq$, $\supseteq$                       | `\subset`, `\supset`, `\subseteq`, `\supseteq`                       |
-| $\sqsubset$, $\sqsupset$, $\sqsubseteq$, $\sqsupseteq$               | `\sqsubset`, `\sqsupset`, `\sqsubseteq`, `\sqsupseteq`               |
-| $\nsubseteq$, $\nsupseteq$, $\subsetneq$, $\supsetneq$               | `\nsubseteq`, `\nsupseteq`, `\subsetneq`, `\supsetneq`               |
-| $\subseteqq$, $\supseteqq$                                           | `\subseteq`, `\supseteq`                                             |
-| $\nsubseteqq$, $\nsupseteqq$, $\subsetneqq$, $\supsetneqq$           | `\nsubseteqq`, `\nsupseteqq`, `\subsetneqq`, `\supsetneqq`           |
-| $\Subset$, $\Supset$                                                 | `\Subset`, `\Supset`                                                 |
-| $\lt$, $\gt$, $\leq$, $\geq$                                         | `\lt`, `\gt`, `\leq`, `\geq`                                         |
-| $\nless$, $\ngtr$, $\nleq$, $\ngeq$, $\lneq$, $\gneq$                | `\nless`, `\ngtr`, `\nleq`, `\ngeq`, `\lneq`, `\gneq`                |
-| $\ll$, $\lll$, $\gg$, $\ggg$                                         | `\ll`, `\lll`, `\gg`, `\ggg`                                         |
-| $\leqq$, $\geqq$, $\lessapprox$, $\gtrapprox$, $\lesssim$, $\gtrsim$ | `\leqq`, `\geqq`, `\lessapprox`, `\gtrapprox`, `\lesssim`, `\gtrsim` |
-| $\nleqq$, $\ngeqq$                                                   | `\nleqq`, `\ngeqq`                                                   |
-| $\lneqq$, $\gneqq$, $\lnapprox$, $\gnapprox$, $\lnsim$, $\gnsim$     | `\lneqq`, `\gneqq`, `\lnapprox`, `\gnapprox`, `\lnsim`, `\gnsim`     |
-| $\lvertneqq$, $\gvertneqq$                                           | `\lvertneqq`, `\gvertneqq`                                           |
-| $\leqslant$, $\geqslant$, $\eqslantless$, $\eqslantgtr$              | `\leqslant`, `\geqslant`, `\eqslantless`, `\eqslantgtr`              |
+| 渲染                                                                               | 输入                                                                               |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| $+$, $-$, $\times$, $\div$                                                       | `+`, `-`, `\times`. `\div`                                                       |
+| $\cdot$, $\ast$, $\colon$                                                        | `\cdot`, `\ast`, `\colon`                                                        |
+| $\pm$, $\mp$, $\divideontimes$                                                   | `\pm`, `\mp`, `\divideontimes`                                                   |
+| $\prec$, $\succ$, $\preceq$, $\succeq$                                           | `\prec`, `\succ`, `\preceq`, `\succeq`                                           |
+| $\nprec$, $\nsucc$, $\npreceq$, $\nsucceq$                                       | `\nprec`, `\nsucc`, `\npreceq`, `\nsucceq`                                       |
+| $\preccurlyeq$. $\succcurlyeq$, $\curlyeqprec$, $\curlyeqsucc$                   | `\preccurlyeq`, `\succcurlyeq`, `\curlyeqprec`, `\curlyeqsucc`                   |
+| $\precsim$, $\succsim$, $\precnsim$, $\succnsim$                                 | `\precsim`, `\succsim`, `\precnsim`, `\succnsim`                                 |
+| $\precapprox$, $\succapprox$, $\precnapprox$, $\succnapprox$                     | `\precapprox`, `\succapprox`, `\precnapprox`, `\succnapprox`                     |
+| $\cong$, $\ncong$                                                                | `\cong`, `\ncong`                                                                |
+| $\asymp$                                                                         | `\asymp`                                                                         |
+| $\dashv$                                                                         | `\dashv`                                                                         |
+| $\vdash$, $\vDash$, $\Vdash$, $\Vvdash$                                          | `\vdash`, `\vDash`, `\Vdash`, `\Vvdash`                                          |
+| $\nvdash$, $\nvDash$, $\nVdash$                                                  | `\nvdash`, `\nvDash`, `\nVvdash`                                                 |
+| $\perp$, $\parallel$, $\nparallel$                                               | `\perp`, `\parallel`, `\nparallel`                                               |
+| $\mid$, $\nmid$                                                                  | `\mid`, `\nmid`                                                                  |
+| $\Join$                                                                          | `\bowtie`                                                                        |
+| $\propto$, $\varpropto$                                                          | `\propto`, `\varpropto`                                                          |
+| $\between$                                                                       | `\between`                                                                       |
+| $\in$, $\ni$, $\notin$                                                           | `\in`, `\ni`, `\notin`                                                           |
+| $\subset$, $\supset$, $\subseteq$, $\supseteq$                                   | `\subset`, `\supset`, `\subseteq`, `\supseteq`                                   |
+| $\sqsubset$, $\sqsupset$, $\sqsubseteq$, $\sqsupseteq$                           | `\sqsubset`, `\sqsupset`, `\sqsubseteq`, `\sqsupseteq`                           |
+| $\nsubseteq$, $\nsupseteq$, $\subsetneq$, $\supsetneq$                           | `\nsubseteq`, `\nsupseteq`, `\subsetneq`, `\supsetneq`                           |
+| $\subseteqq$, $\supseteqq$                                                       | `\subseteq`, `\supseteq`                                                         |
+| $\nsubseteqq$, $\nsupseteqq$, $\subsetneqq$, $\supsetneqq$                       | `\nsubseteqq`, `\nsupseteqq`, `\subsetneqq`, `\supsetneqq`                       |
+| $\Subset$, $\Supset$                                                             | `\Subset`, `\Supset`                                                             |
+| $\lt$, $\gt$, $\leq$, $\geq$                                                     | `\lt`, `\gt`, `\leq`, `\geq`                                                     |
+| $\nless$, $\ngtr$, $\nleq$, $\ngeq$, $\lneq$, $\gneq$                            | `\nless`, `\ngtr`, `\nleq`, `\ngeq`, `\lneq`, `\gneq`                            |
+| $\ll$, $\lll$, $\gg$, $\ggg$                                                     | `\ll`, `\lll`, `\gg`, `\ggg`                                                     |
+| $\leqq$, $\geqq$, $\lessapprox$, $\gtrapprox$, $\lesssim$, $\gtrsim$             | `\leqq`, `\geqq`, `\lessapprox`, `\gtrapprox`, `\lesssim`, `\gtrsim`             |
+| $\nleqq$, $\ngeqq$                                                               | `\nleqq`, `\ngeqq`                                                               |
+| $\lneqq$, $\gneqq$, $\lnapprox$, $\gnapprox$, $\lnsim$, $\gnsim$                 | `\lneqq`, `\gneqq`, `\lnapprox`, `\gnapprox`, `\lnsim`, `\gnsim`                 |
+| $\lvertneqq$, $\gvertneqq$                                                       | `\lvertneqq`, `\gvertneqq`                                                       |
+| $\leqslant$, $\geqslant$, $\eqslantless$, $\eqslantgtr$                          | `\leqslant`, `\geqslant`, `\eqslantless`, `\eqslantgtr`                          |
+| $\lesseqgtr$, $\gtreqless$, $\lesseqqgtr$, $\gtreqqless$, $\lessgtr$, $\gtrless$ | `\lesseqgtr`, `\gtreqless`, `\lesseqqgtr`, `\gtreqqless`, `\lessgtr`, `\gtrless` |
+|                                                                                  |                                                                                  |
+
+### 箭头｜Arrows
+
+| 渲染                                                                             | 输入                                                                             |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| $\leftarrow$, $\rightarrow$, $\leftrightarrow$                                 | `\leftarrow`, `\rightarrow`, `\leftrightarrow`                                 |
+| $\Leftarrow$, $\Rightarrow$, $\Leftrightarrow$                                 | `\Leftarrow`, `\Rightarrow`, `\Leftrightarrow`                                 |
+| $\hookleftarrow$, $\hookrightarrow$, $\leadsto$                                | `\hookleftarrow`, `\hookrightarrow`, `\leadsto`                                |
+| $\longleftarrow$, $\longrightarrow$, $\longleftrightarrow$                     | `\longleftarrow`, `\longrightarrow`, `\longleftrightarrow`                     |
+| $\Longleftarrow$, $\Longrightarrow$, $\Longleftrightarrow$                     | `\Longleftarrow`, `\Longrightarrow`, `\Longleftrightarrow`                     |
+| $\mapsto$, $\longmapsto$                                                       | `\mapsto`, `\longmapsto`                                                       |
+| $\uparrow$, $\downarrow$, $\updownarrow$                                       | `\uparrow`, `\downarrow`, `\updownarrow`                                       |
+| $\Uparrow$, $\Downarrow$, $\Updownarrow$                                       | `\Uparrow`, `\Downarrow`, `\Updownarrow`                                       |
+| $\nearrow$, $\nwarrow$, $\swarrow$, $\searrow$                                 | `\nearrow`, `\nwarrow`, `\swarrow`, `\searrow`                                 |
+| $\leftharpoondown$, $\leftharpoonup$, $\rightharpoondown$, $\rightharpoonup$   | `\leftharpoondown`, `\leftharpoonup`, `\rightharpoondown`, `\rightharpoonup`   |
+| $\rightleftharpoons$                                                           | `\rightleftharpoons`                                                           |
+| $\circlearrowleft$, $\circlearrowright$, $\curvearrowleft$, $\curvearrowright$ | `\circlearrowleft`, `\circlearrowright`, `\curvearrowleft`, `\curvearrowright` |
+|                                                                                |                                                                                |
