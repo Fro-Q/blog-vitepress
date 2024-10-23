@@ -8,7 +8,7 @@ head:
       content: 关于 LaTeX 中的 `\epsilon` 与 `\varepsilon`，`\theta` 与 `\vartheta` 以及更多。
   - - meta
     - name: keywords
-      content: latex epsilon varepsilon theta vartheta rho varrho phi varphi latex-symbol latex符号
+      content: latex epsilon varepsilon theta vartheta rho varrho phi varphi latex_symbol latex符号
   - - meta
     - name: id
       content: 240925a

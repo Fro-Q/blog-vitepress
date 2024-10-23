@@ -8,7 +8,7 @@ head:
       content: 一些收集整理——LaTeX 公式（一）。
   - - meta
     - name: keywords
-      content: latex greekletter binaryoperator
+      content: latex greek_letter binary_operator
   - - meta
     - name: id
       content: 241001a

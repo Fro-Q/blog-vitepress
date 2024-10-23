@@ -8,7 +8,7 @@ head:
       content: 不是第一个坑但第一个记一下。
   - - meta
     - name: keywords
-      content: vitepress blog personal-website vue tutorial 博客 个人网站 教程
+      content: vitepress blog personal_website vue tutorial 博客 个人网站 教程
   - - meta
     - name: id
       content: 240918a
