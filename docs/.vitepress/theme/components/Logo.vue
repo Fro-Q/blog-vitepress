@@ -11,7 +11,7 @@ const blinkingLetter = ref("o");
     <span class="text text-neutral-400 transition-opacity delay-100 duration-200 hover:delay-0 group-hover:opacity-20">fr</span>
     <span
       class="text inline-block text-end text-neutral-400 transition duration-200 group-hover:text-emerald-400"
-      :class="props.blinking ? 'blinking min-w-[0.5em]' : ''"
+      :class="props.blinking ? 'blinking' : ''"
     >
       {{ blinkingLetter }}
     </span>
@@ -28,13 +28,28 @@ const blinkingLetter = ref("o");
   0% {
     transform: scaleY(1);
   }
-  48% {
+  24% {
     transform: scaleY(1);
   }
-  50% {
+  25% {
     transform: scaleY(0);
   }
-  52% {
+  26% {
+    transform: scaleY(1);
+  }
+  73% {
+    transform: scaleY(1);
+  }
+  74% {
+    transform: scaleY(0);
+  }
+  75% {
+    transform: scaleY(1);
+  }
+  76% {
+    transform: scaleY(0);
+  }
+  77% {
     transform: scaleY(1);
   }
   100% {
@@ -43,7 +58,7 @@ const blinkingLetter = ref("o");
 }
 
 .blinking {
-  transform-origin: 100% 60%;
-  animation: blink 8000ms infinite;
+  transform-origin: 100% 80%;
+  animation: blink 12000ms infinite;
 }
 </style>

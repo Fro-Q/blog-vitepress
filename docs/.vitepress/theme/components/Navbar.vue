@@ -17,7 +17,7 @@ const socialLinks = site.value.themeConfig.socialLinks;
             class="font-['noteworthy'] font-light text-neutral-600 transition duration-200 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200"
           >
             <!-- {{ site.title }} -->
-            <Logo></Logo>
+            <Logo blinking="true"></Logo>
           </a>
         </h1>
       </div>
