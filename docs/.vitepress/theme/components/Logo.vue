@@ -6,18 +6,18 @@ const props = defineProps(["blinking"]);
 const logoHead = ref("fr");
 const logoTail = ref("oQ");
 
-if (props.blinking) {
-  setInterval(() => {
-    if (logoTail.value === "oQ") {
-      logoTail.value = "-Q";
-      setTimeout(() => {
-        logoTail.value = "oQ";
-      }, 300);
-    } else {
-      logoTail.value = "oQ";
-    }
-  }, 8000);
-}
+// if (props.blinking) {
+//   setInterval(() => {
+//     if (logoTail.value === "oQ") {
+//       logoTail.value = "-Q";
+//       setTimeout(() => {
+//         logoTail.value = "oQ";
+//       }, 300);
+//     } else {
+//       logoTail.value = "oQ";
+//     }
+//   }, 8000);
+// }
 </script>
 
 <template>
