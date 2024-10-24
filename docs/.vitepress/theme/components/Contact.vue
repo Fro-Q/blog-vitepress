@@ -15,9 +15,7 @@ const { site } = useData();
 </script>
 
 <template>
-  <div
-    class="mx-auto flex h-[calc(100vh-100px)] w-[calc(100%-60px)] max-w-[800px] flex-col justify-start px-6"
-  >
+  <div class="mx-auto flex h-[calc(100vh-100px)] w-[calc(100%-60px)] max-w-[800px] flex-col justify-start px-6">
     <div
       class="sticky top-0 z-10 mb-5 bg-neutral-50 py-10 after:absolute after:-bottom-8 after:left-0 after:z-[-1] after:h-8 after:w-full after:bg-gradient-to-t after:from-transparent after:to-neutral-50"
     >

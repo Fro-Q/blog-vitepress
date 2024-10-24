@@ -13,9 +13,7 @@ export default createContentLoader("blog/*.md", {
         url,
         excerpt,
         date: formatDate(frontmatter.created),
-        dateString: formatDate(frontmatter.created)
-          .string.replace(/年|月/g, "/")
-          .replace(/日/g, ""),
+        dateString: formatDate(frontmatter.created).string.replace(/年|月/g, "/").replace(/日/g, ""),
         readingInfo: getReadingTime(src),
       }))
       .sort((a, b) => b.date.time - a.date.time);

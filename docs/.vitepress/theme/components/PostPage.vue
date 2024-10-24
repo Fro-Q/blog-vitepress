@@ -45,9 +45,7 @@ onMounted(() => {
     return;
   }
 
-  var thisHead = document.querySelector(
-    `meta[name="id"][content="${page.value.frontmatter.timestampId}"]`,
-  ).parentElement;
+  var thisHead = document.querySelector(`meta[name="id"][content="${page.value.frontmatter.timestampId}"]`).parentElement;
   var thisBody = thisHead.nextElementSibling;
   var toc = thisBody.getElementsByClassName("table-of-contents")[0];
   if (toc) {
@@ -81,16 +79,12 @@ const prevPost = computed(() => {
   if (frontmatter.value.category === "扉") {
     return;
   }
-  let thisPostIndex = posts.findIndex(
-    (post) => post.frontmatter.timestampId === frontmatter.value.timestampId,
-  );
+  let thisPostIndex = posts.findIndex((post) => post.frontmatter.timestampId === frontmatter.value.timestampId);
   if (thisPostIndex === posts.length - 1) {
     return;
   }
 
-  while (
-    posts[thisPostIndex + 1].frontmatter.category !== frontmatter.value.category
-  ) {
+  while (posts[thisPostIndex + 1].frontmatter.category !== frontmatter.value.category) {
     thisPostIndex++;
     if (thisPostIndex === posts.length - 1) {
       return;
@@ -104,16 +98,12 @@ const nextPost = computed(() => {
   if (frontmatter.value.category === "扉") {
     return;
   }
-  let thisPostIndex = posts.findIndex(
-    (post) => post.frontmatter.timestampId === frontmatter.value.timestampId,
-  );
+  let thisPostIndex = posts.findIndex((post) => post.frontmatter.timestampId === frontmatter.value.timestampId);
   if (thisPostIndex <= 0) {
     return;
   }
 
-  while (
-    posts[thisPostIndex - 1].frontmatter.category !== frontmatter.value.category
-  ) {
+  while (posts[thisPostIndex - 1].frontmatter.category !== frontmatter.value.category) {
     thisPostIndex--;
     if (thisPostIndex === 0) {
       return;
@@ -127,9 +117,7 @@ const thisPostReadingInfo = computed(() => {
   if (frontmatter.value.category === "扉" || page.value.isNotFound) {
     return;
   }
-  const thisPostIndex = posts.findIndex(
-    (post) => post.frontmatter.timestampId === frontmatter.value.timestampId,
-  );
+  const thisPostIndex = posts.findIndex((post) => post.frontmatter.timestampId === frontmatter.value.timestampId);
 
   if (thisPostIndex === -1) {
     return { totalTime: 0, wordCount: 0 };
@@ -151,9 +139,7 @@ const thisPostExcerpt = computed(() => {
     return;
   }
 
-  const rawExcerpt = frontmatter.value.head.filter(
-    (item) => item[1].name === "description",
-  )[0][1].content;
+  const rawExcerpt = frontmatter.value.head.filter((item) => item[1].name === "description")[0][1].content;
 
   return markdownIt().render(rawExcerpt);
 });
@@ -164,9 +150,7 @@ const thisPostExcerpt = computed(() => {
     class="post-wrapper"
     v-if="frontmatter.category !== '扉' && !page.isNotFound"
   >
-    <div
-      class="post-title mx-auto my-10 w-[calc(100%-60px)] max-w-[700px] font-serif text-5xl/relaxed"
-    >
+    <div class="post-title mx-auto my-10 w-[calc(100%-60px)] max-w-[700px] font-serif text-5xl/relaxed">
       <h1 v-html="thisPostTitle"></h1>
     </div>
     <div
@@ -177,12 +161,8 @@ const thisPostExcerpt = computed(() => {
         <span>{{ dateInfo }}</span>
       </div>
       <div class="post-reading-info flex flex-row gap-5">
-        <span class="post-reading-time">
-          约 {{ thisPostReadingInfo.totalTime }} 分钟
-        </span>
-        <span class="post-word-count">
-          {{ thisPostReadingInfo.wordCount }} 字
-        </span>
+        <span class="post-reading-time">约 {{ thisPostReadingInfo.totalTime }} 分钟</span>
+        <span class="post-word-count">{{ thisPostReadingInfo.wordCount }} 字</span>
       </div>
     </div>
     <div
@@ -194,9 +174,7 @@ const thisPostExcerpt = computed(() => {
       class="content-wrapper relative"
       id="content"
     />
-    <div
-      class="content-footer mx-auto my-10 w-[calc(100%-60px)] max-w-[700px] font-serif"
-    >
+    <div class="content-footer mx-auto my-10 w-[calc(100%-60px)] max-w-[700px] font-serif">
       <div class="mt-5 text-sm">
         <span>最后更新于：</span>
         <span>{{ lastUpdatedInfo }}</span>

@@ -5,7 +5,7 @@ const config = {
   // boolean
   // default: false
 
-  printWidth: 80,
+  printWidth: 200,
   // int
   // default: 80
   tabWidth: 2,

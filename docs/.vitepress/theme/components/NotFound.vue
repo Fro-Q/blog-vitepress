@@ -3,9 +3,7 @@ import StyledULink from "./StyledULink.vue";
 </script>
 
 <template>
-  <div
-    class="mx-auto my-10 min-h-screen w-[calc(100%-60px)] max-w-[700px] font-serif"
-  >
+  <div class="mx-auto my-10 min-h-screen w-[calc(100%-60px)] max-w-[700px] font-serif">
     <div class="nf-title mb-10 text-5xl">
       <h1>404</h1>
     </div>

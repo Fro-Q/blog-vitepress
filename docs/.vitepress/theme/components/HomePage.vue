@@ -106,9 +106,7 @@ const blogCategory = [
     />
   </div>
 
-  <div
-    class="table-of-contents mx-auto flex w-[calc(100%-60px)] max-w-[800px] flex-col justify-start px-6"
-  >
+  <div class="table-of-contents mx-auto flex w-[calc(100%-60px)] max-w-[800px] flex-col justify-start px-6">
     <div
       class="toc-title sticky top-0 z-10 mb-5 bg-neutral-50 py-10 after:absolute after:-bottom-8 after:left-0 after:z-[-1] after:h-8 after:w-full after:bg-gradient-to-b after:from-neutral-50 dark:bg-neutral-950 dark:after:bg-gradient-to-b dark:after:from-neutral-950"
     >
@@ -150,18 +148,14 @@ const blogCategory = [
           type="checkbox"
           class="relative mr-2 inline-block h-4 w-4 cursor-pointer appearance-none border border-neutral-600 before:absolute before:left-1/2 before:top-1/2 before:block before:h-2 before:w-2 before:-translate-x-1/2 before:-translate-y-1/2 before:scale-0 before:bg-neutral-700 before:transition before:duration-200 checked:before:scale-100 hover:border-neutral-900 hover:before:scale-[0.3] checked:hover:before:scale-[0.7] dark:border-neutral-400 before:dark:bg-neutral-300 dark:hover:border-neutral-100"
           id="show-excerpt"
-          v-model="
-            showExcerpt.find((item) => item.title === category.title).show
-          "
+          v-model="showExcerpt.find((item) => item.title === category.title).show"
         />
         <label for="show-excerpt">摘要</label>
       </div>
     </div>
 
     <div
-      v-for="post of category.id == 'qr' ?
-        posts.filter((post) => post.frontmatter.category !== '格外')
-      : posts.filter((post) => post.frontmatter.category === category.title)"
+      v-for="post of category.id == 'qr' ? posts.filter((post) => post.frontmatter.category !== '格外') : posts.filter((post) => post.frontmatter.category === category.title)"
       class="post-container flex h-auto w-full flex-col flex-wrap justify-start py-2"
     >
       <!-- <div
@@ -177,9 +171,7 @@ const blogCategory = [
         <div
           v-html="post.excerpt"
           class="post-excerpt mt-2 pl-8 text-neutral-600 dark:text-neutral-400"
-          v-show="
-            showExcerpt.find((item) => item.title === category.title).show
-          "
+          v-show="showExcerpt.find((item) => item.title === category.title).show"
         ></div>
       </div>
       <div
@@ -190,12 +182,8 @@ const blogCategory = [
           {{ post.dateString }}
         </div>
         <div class="post-reading-info flex gap-5">
-          <span class="post-reading-time">
-            约 {{ post.readingInfo.totalTime }} 分钟
-          </span>
-          <span class="post-word-count">
-            {{ post.readingInfo.wordCount }} 字
-          </span>
+          <span class="post-reading-time">约 {{ post.readingInfo.totalTime }} 分钟</span>
+          <span class="post-word-count">{{ post.readingInfo.wordCount }} 字</span>
         </div>
       </div>
     </div>

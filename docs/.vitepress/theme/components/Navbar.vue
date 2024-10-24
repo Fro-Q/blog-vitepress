@@ -8,19 +8,16 @@ const socialLinks = site.value.themeConfig.socialLinks;
 </script>
 
 <template>
-  <div
-    class="navbar sticky z-40 h-auto w-full bg-neutral-50 p-5 dark:bg-neutral-950"
-  >
-    <div
-      class="navbar-inner box-border flex h-full flex-row items-center justify-between"
-    >
+  <div class="navbar sticky z-40 h-auto w-full bg-neutral-50 p-5 dark:bg-neutral-950">
+    <div class="navbar-inner box-border flex h-full flex-row items-center justify-between">
       <div class="brand">
         <h1 class="brand-title flex px-2 text-5xl">
           <a
             href="/"
             class="font-['noteworthy'] font-light text-neutral-600 transition duration-200 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200"
           >
-            {{ site.title }}
+            <!-- {{ site.title }} -->
+            <Logo></Logo>
           </a>
         </h1>
       </div>
