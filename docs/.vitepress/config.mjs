@@ -39,9 +39,7 @@ export default defineConfig({
     },
     toc: {
       level: [2, 3, 4, 5],
-      format: (str) => {
-        console.log(str);
-      },
+      // format: (str) => {},
     },
     lineNumbers: true,
     math: true,
