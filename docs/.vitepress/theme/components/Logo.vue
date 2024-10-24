@@ -7,22 +7,16 @@ const logoHead = ref("fr");
 const logoTail = ref("oQ");
 
 if (props.blinking) {
-  setInterval(
-    () => {
-      if (logoTail.value === "oQ") {
-        logoTail.value = "-Q";
-        setTimeout(
-          () => {
-            logoTail.value = "oQ";
-          },
-          Math.floor(Math.random() * 100) + 200,
-        );
-      } else {
+  setInterval(() => {
+    if (logoTail.value === "oQ") {
+      logoTail.value = "-Q";
+      setTimeout(() => {
         logoTail.value = "oQ";
-      }
-    },
-    Math.floor(Math.random() * 10000) + 5000,
-  );
+      }, 300);
+    } else {
+      logoTail.value = "oQ";
+    }
+  }, 8000);
 }
 </script>
 
