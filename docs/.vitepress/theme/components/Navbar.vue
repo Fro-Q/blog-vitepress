@@ -16,13 +16,12 @@ const socialLinks = site.value.themeConfig.socialLinks;
             href="/"
             class="font-['noteworthy'] font-light text-neutral-600 transition duration-200 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200"
           >
-            <!-- {{ site.title }} -->
             <Logo blinking="true"></Logo>
           </a>
         </h1>
       </div>
-      <div class="flex flex-row gap-4">
-        <div class="links flex flex-row">
+      <div class="flex flex-row gap-6">
+        <div class="links flex flex-row gap-4">
           <div
             class="link-wrapper align-middle"
             v-for="link in socialLinks"
@@ -35,7 +34,7 @@ const socialLinks = site.value.themeConfig.socialLinks;
             >
               <div
                 v-html="link.icon.svg"
-                class="icon h-full align-middle"
+                class="icon flex h-6 w-6 items-center justify-center"
               ></div>
             </a>
           </div>
@@ -46,7 +45,7 @@ const socialLinks = site.value.themeConfig.socialLinks;
               href="/blog/contact"
               class="utility m-1 text-2xl text-neutral-500 transition duration-200 hover:text-neutral-800 dark:text-neutral-500 dark:hover:text-neutral-200"
             >
-              Contact
+              相与
             </a>
           </div>
         </div>
