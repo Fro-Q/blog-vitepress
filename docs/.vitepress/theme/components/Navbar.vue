@@ -31,7 +31,6 @@ const socialLinks = site.value.themeConfig.socialLinks;
             <a
               :href="link.link"
               class="link m-1 block text-xl text-neutral-500 transition duration-200 hover:text-neutral-800 dark:text-neutral-500 dark:hover:text-neutral-200"
-              v-show="link.ariaLabel != 'RSS'"
               :title="link.ariaLabel"
             >
               <div

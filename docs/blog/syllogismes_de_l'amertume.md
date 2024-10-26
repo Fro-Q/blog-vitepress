@@ -16,7 +16,7 @@ created: 2024-10-23 14:36
 last_modified: 2024-10-23 14:36
 ---
 
-读书笔记——《苦论》(*Syllogismes de l'amertume*) · E.M. Cioran
+摘抄——《苦论》(*Syllogismes de l'amertume*) · E.M. Cioran
 
 ---
 
