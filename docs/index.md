@@ -21,7 +21,7 @@ last_modified: 2024-10-26 23:56
 
 <script setup>
 import { ref, watch } from 'vue';
-import { selfDescription } from ".vitepress/theme/utils/selfDescription.js";
+import { selfDescription } from "/.vitepress/theme/utils/selfDescription.js";
 
 </script>
 
