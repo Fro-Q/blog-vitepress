@@ -25,6 +25,7 @@ export default defineConfigWithTheme({
     resolve: {
       alias: {
         "@utils": path.resolve("./docs/.vitepress/theme/utils"),
+        // "@utils": path.resolve(".vitepress/theme/utils"),
       },
     },
     build: {

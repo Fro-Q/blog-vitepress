@@ -21,13 +21,13 @@ last_modified: 2024-10-26 23:56
 
 <script setup>
 import { ref, watch } from 'vue';
-import { selfDescription } from "@utils/selfDescription.js";
+// import { selfDescription } from "@utils/selfDescription";
 
 </script>
 
 您好。
 
-我是 <Logo />，一位 <input type="text" class="input-text" id="self-description" autocomplete="off" maxlength="10" v-model="selfDescription.content" />。
+<!-- 我是 <Logo />，一位 <input type="text" class="input-text" id="self-description" autocomplete="off" maxlength="10" v-model="selfDescription.content" />。 -->
 
 不太擅长给自己贴标签，或许您可以在我的文章中找到一些线索。
 
