@@ -1,6 +1,6 @@
 <script setup>
 import { data as posts } from "./posts.data.js";
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { Content } from "vitepress";
 import StyledULink from "./StyledULink.vue";
 
@@ -102,7 +102,7 @@ const blogCategory = [
   <div class="post-wrapper">
     <Content
       id="home"
-      class="content-wrapper weight-600 mx-auto flex h-[calc(100vh-100px)] w-[calc(100%-60px)] max-w-[800px] items-center px-6 text-3xl/[4rem] font-black antialiased"
+      class="content-wrapper weight-600 mx-auto flex h-[calc(100vh-100px)] w-[calc(100%-60px)] max-w-[800px] items-center px-6 text-3xl/[4rem] font-thin antialiased"
     />
   </div>
 
@@ -188,5 +188,4 @@ const blogCategory = [
       </div>
     </div>
   </div>
-  <!-- <Contact /> -->
 </template>

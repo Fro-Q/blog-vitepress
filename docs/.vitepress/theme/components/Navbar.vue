@@ -1,6 +1,7 @@
 <script setup>
 import { useData } from "vitepress";
 import { ref, watch } from "vue";
+import { selfDescription } from "../utils/selfDescription.js";
 
 const { page, site, frontmatter } = useData();
 
@@ -10,7 +11,7 @@ const socialLinks = site.value.themeConfig.socialLinks;
 <template>
   <div class="navbar sticky z-40 h-auto w-full bg-neutral-50 p-5 dark:bg-neutral-950">
     <div class="navbar-inner box-border flex h-full flex-row items-center justify-between">
-      <div class="brand">
+      <div class="brand flex flex-row items-end gap-4">
         <h1 class="brand-title flex px-2 text-5xl">
           <a
             href="/"
@@ -19,6 +20,12 @@ const socialLinks = site.value.themeConfig.socialLinks;
             <Logo blinking="true"></Logo>
           </a>
         </h1>
+        <div
+          class="brand-description rounded-sm border border-emerald-500 px-2 py-1 text-2xl font-bold text-emerald-500"
+          v-if="selfDescription.content"
+        >
+          {{ selfDescription.content }}
+        </div>
       </div>
       <div class="flex flex-row gap-6">
         <div class="links flex flex-row gap-4">
@@ -39,16 +46,16 @@ const socialLinks = site.value.themeConfig.socialLinks;
             </a>
           </div>
         </div>
-        <div class="utilities flex flex-row">
+        <!-- <div class="utilities flex flex-row">
           <div class="utility-wrapper">
             <a
-              href="/blog/contact"
+              href="/blog/get_along"
               class="utility m-1 text-2xl text-neutral-500 transition duration-200 hover:text-neutral-800 dark:text-neutral-500 dark:hover:text-neutral-200"
             >
               相与
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

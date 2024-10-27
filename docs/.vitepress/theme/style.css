@@ -35,16 +35,13 @@
     font-family: "MaterialIcons";
     font-style: normal;
     font-weight: 400;
-    src: url("https://fonts.gstatic.com/s/materialicons/v92/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2")
-      format("woff2");
+    src: url("https://fonts.gstatic.com/s/materialicons/v92/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2") format("woff2");
   }
 }
 
 :root {
-  --font: "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica,
-    Arial, sans-serif;
-  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
-    monospace;
+  --font: "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   scroll-behavior: smooth;
 }
 
@@ -248,7 +245,7 @@
       }
     }
 
-    & a:not([href^="#"]) {
+    & a:not([href^="#"], .unstyled) {
       @apply relative inline-block text-neutral-600 transition duration-200 before:absolute before:bottom-2 before:h-[1px] before:w-full before:bg-neutral-600 before:transition-all before:duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-["open\_in\_new"] hover:text-neutral-950 hover:before:bg-neutral-950 dark:text-neutral-400 dark:before:bg-neutral-400 dark:hover:text-neutral-50 dark:hover:before:bg-neutral-50;
     }
 
