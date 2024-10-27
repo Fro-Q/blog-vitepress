@@ -67,6 +67,7 @@ const selfDescription = ref('');
   text-align: center;
   color: var(--text-muted-color);
   font-weight: 100;
+  border-radius: 0;
 }
 
 </style>

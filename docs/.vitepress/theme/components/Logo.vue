@@ -10,7 +10,7 @@ const blinkingLetter = ref("o");
   <div class="group inline">
     <span class="text text-neutral-400 transition-opacity delay-100 duration-200 hover:delay-0 group-hover:opacity-20">fr</span>
     <span
-      class="text inline text-end text-neutral-400 transition duration-200 group-hover:text-emerald-500"
+      class="text inline-block text-end text-neutral-400 transition duration-200 group-hover:text-emerald-500"
       :class="props.blinking ? 'blinking' : ''"
     >
       {{ blinkingLetter }}

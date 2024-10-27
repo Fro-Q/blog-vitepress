@@ -145,7 +145,7 @@ const blogCategory = [
       >
         <input
           type="checkbox"
-          class="relative mr-2 inline-block h-4 w-4 cursor-pointer appearance-none border border-neutral-600 before:absolute before:left-1/2 before:top-1/2 before:block before:h-2 before:w-2 before:-translate-x-1/2 before:-translate-y-1/2 before:scale-0 before:bg-neutral-700 before:transition before:duration-200 checked:before:scale-100 hover:border-neutral-900 hover:before:scale-[0.3] checked:hover:before:scale-[0.7] dark:border-neutral-400 before:dark:bg-neutral-300 dark:hover:border-neutral-100"
+          class="relative mr-2 inline-block h-4 w-4 cursor-pointer appearance-none rounded-none border border-neutral-600 before:absolute before:left-1/2 before:top-1/2 before:block before:h-2 before:w-2 before:-translate-x-1/2 before:-translate-y-1/2 before:scale-0 before:bg-neutral-700 before:transition before:duration-200 checked:before:scale-100 hover:border-neutral-900 hover:before:scale-[0.3] checked:hover:before:scale-[0.7] dark:border-neutral-400 before:dark:bg-neutral-300 dark:hover:border-neutral-100"
           id="show-excerpt"
           v-model="showExcerpt.find((item) => item.title === category.title).show"
         />
