@@ -1,7 +1,6 @@
 <script setup>
 import { data as posts } from "./posts.data.js";
 import { computed, ref, watch } from "vue";
-import { Content } from "vitepress";
 import StyledULink from "./StyledULink.vue";
 
 const showExcerpt = ref([

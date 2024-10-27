@@ -1,5 +1,4 @@
 <script setup>
-import { Content } from "vitepress";
 import { useData } from "vitepress";
 import { computed } from "vue";
 import { data as posts } from "./posts.data.js";
