@@ -1,8 +1,8 @@
 <script setup>
 import { useData } from "vitepress";
 import { ref, watch } from "vue";
-// import { selfDescription } from "../utils/selfDescription";
-import { selfDescription } from "@utils/selfDescription";
+import { selfDescription } from "../utils/selfDescription";
+// import { selfDescription } from "@utils/selfDescription";
 
 const { page, site, frontmatter } = useData();
 
