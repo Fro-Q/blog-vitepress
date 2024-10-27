@@ -22,17 +22,6 @@ export default defineConfigWithTheme({
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   vite: {
     plugins: [RssPlugin(rssOptions)],
-    resolve: {
-      alias: {
-        "@utils": path.resolve("./docs/.vitepress/theme/utils"),
-        // "@utils": path.resolve(".vitepress/theme/utils"),
-      },
-    },
-    build: {
-      rollupOptions: {
-        external: ["./docs/.vitepress/theme/utils/selfDescription"],
-      },
-    },
   },
   title: "froQ",
   description: "froQ's personal blog",

@@ -1,8 +1,6 @@
 <script setup>
 import { useData } from "vitepress";
 import { ref, watch } from "vue";
-import { selfDescription } from "../utils/selfDescription.js";
-// import { selfDescription } from "@utils/selfDescription";
 
 const { page, site, frontmatter } = useData();
 
@@ -21,12 +19,6 @@ const socialLinks = site.value.themeConfig.socialLinks;
             <Logo blinking="true"></Logo>
           </a>
         </h1>
-        <div
-          class="brand-description rounded-sm border border-emerald-500 px-2 py-1 text-2xl font-bold text-emerald-500"
-          v-if="selfDescription.content"
-        >
-          {{ selfDescription.content }}
-        </div>
       </div>
       <div class="flex flex-row gap-6">
         <div class="links flex flex-row gap-4">
