@@ -3,6 +3,7 @@ import { RssPlugin } from "vitepress-plugin-rss";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItMark from "markdown-it-mark";
 import anchor from "markdown-it-anchor";
+import path from "path";
 
 const rssOptions = {
   baseUrl: "https://fro-blo.com/",
@@ -21,6 +22,16 @@ export default defineConfigWithTheme({
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   vite: {
     plugins: [RssPlugin(rssOptions)],
+    resolve: {
+      alias: {
+        "@utils": path.resolve("./docs/.vitepress/theme/utils"),
+      },
+    },
+    build: {
+      rollupOptions: {
+        external: ["./docs/.vitepress/theme/utils/selfDescription"],
+      },
+    },
   },
   title: "froQ",
   description: "froQ's personal blog",
