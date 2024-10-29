@@ -17,7 +17,7 @@ last_modified: 2024-09-09 20:02
 ---
 
 <script setup>
-import GetAlong from '../.vitepress/theme/components/GetAlong.vue';
+import GetAlong from './GetAlong.vue';
 </script>
 
 <GetAlong />
