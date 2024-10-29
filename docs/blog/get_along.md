@@ -33,7 +33,7 @@ const colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 
 <p />
 <p>
   <div
-    class="link-wrapper inline-block"
+    class="contact-wrapper inline-block"
     v-for="contact in contacts"
     :key="contact.icon"
   >
@@ -55,7 +55,7 @@ const colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 
         :key="link.link"
       >
         <a
-          :href="link.link"
+          :href="link.link ? link.link : null"
           target="_blank"
           rel="noopener noreferrer"
           class="link unstyled transition duration-200"
@@ -69,6 +69,7 @@ const colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 
     </div>
   </div>
 </p>
+
 
 <style lang="scss">
 
@@ -92,9 +93,16 @@ const colorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 
   }
 }
 
+.contact-wrapper {
+  &:hover {
+    & .contact-title {
+
+    }
+  }
+}
+
 .contact-title {
   color: var(--text-normal-color);
-  /* color: var(--text-muted-color); */
 }
 
 .contact-url {
