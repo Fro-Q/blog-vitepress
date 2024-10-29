@@ -11,6 +11,9 @@
   },
   "author": "froq",
   "license": "ISC",
+  "imports": {
+    "@theme/*": "./docs/.vitepress/theme/*"
+  },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
     "@stylistic/eslint-plugin": "^2.3.0",
