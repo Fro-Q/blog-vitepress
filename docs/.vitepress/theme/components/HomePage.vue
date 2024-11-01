@@ -1,7 +1,7 @@
 <script setup>
 import { data as posts } from "./posts.data.js";
 import { computed, ref, watch } from "vue";
-import StyledULink from "./StyledULink.vue";
+import { selfDesc } from "../utils/selfDesc.js";
 
 const showExcerpt = ref([
   {
@@ -98,11 +98,29 @@ const blogCategory = [
 </script>
 
 <template>
-  <div class="post-wrapper">
-    <Content
-      id="home"
-      class="content-wrapper weight-600 mx-auto flex h-[calc(100vh-100px)] w-[calc(100%-60px)] max-w-[800px] items-center px-6 text-3xl/[4rem] font-thin antialiased"
-    />
+  <div class="mx-auto flex h-[calc(100vh-100px)] w-[calc(100vh-60px)] max-w-[800px] items-center px-6 font-serif text-3xl/[4rem] font-bold antialiased">
+    <div class="">
+      <div class="mb-10">
+        您好。<br />我是 <span class="font-[noteworthy]">froQ</span>，一位
+
+        <div class="group relative inline h-max w-max">
+          <!-- <div class="bottom-4 w-full h-8 block bg-red-200 absolute z-10 opacity-80 mix-blend-multiply group-hover:-translate-x-1 transition-transform duration-200 group-hover:translate-y-1 rounded-sm"></div>
+            <div class="bottom-4 w-full h-8 block bg-sky-200 absolute z-10 opacity-80 mix-blend-multiply group-hover:-translate-y-1 transition-transform duration-200 group-hover:translate-x-1 rounded-sm"></div> -->
+
+          <input
+            type="text"
+            class="relative z-20 inline h-8 appearance-none rounded-none bg-transparent text-center font-thin shadow-underline shadow-emerald-500 outline-none"
+            id="self-description"
+            autocomplete="off"
+            maxlength="10"
+            v-model="selfDesc.content"
+          />
+        </div>
+        。
+      </div>
+
+      <div>不太擅长给自己贴标签，或许您可以在我的文章中找到一些线索。</div>
+    </div>
   </div>
 
   <div class="table-of-contents mx-auto flex w-[calc(100%-60px)] max-w-[800px] flex-col justify-start px-6">

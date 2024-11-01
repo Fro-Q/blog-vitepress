@@ -4,8 +4,10 @@ import "./style.css";
 import { useRoute } from "vitepress";
 import { nextTick, onMounted, watch } from "vue";
 import mediumZoom from "medium-zoom";
-import Badge from "./components/Badge.vue";
-import Logo from "./components/Logo.vue";
+
+import Badge from "@theme/components/Badge.vue";
+import Logo from "@theme/components/Logo.vue";
+import StyledULink from "@theme/components/StyledULink.vue";
 
 /** @type {import('vitepress').Theme} */
 export default {
@@ -13,6 +15,7 @@ export default {
   enhanceApp({ app, router, siteData }) {
     app.component("Badge", Badge);
     app.component("Logo", Logo);
+    app.component("StyledULink", StyledULink);
   },
   setup() {
     const route = useRoute();

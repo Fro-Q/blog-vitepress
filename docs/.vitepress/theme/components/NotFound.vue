@@ -1,6 +1,4 @@
-<script setup>
-import StyledULink from "./StyledULink.vue";
-</script>
+<script setup></script>
 
 <template>
   <div class="mx-auto my-10 min-h-screen w-[calc(100%-60px)] max-w-[700px] font-serif">

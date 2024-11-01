@@ -53,7 +53,7 @@ const config = {
   proseWrap: "never",
   // "always" | "never" | "preserve"
   // default: 'preserve'
-  htmlWhitespaceSensitivity: "ignore",
+  htmlWhitespaceSensitivity: "css",
   // "css" | "strict" | "ignore"
   // default: 'css'
   vueIndentScriptAndStyle: false,

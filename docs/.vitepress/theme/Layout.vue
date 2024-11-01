@@ -1,13 +1,15 @@
 <script setup>
 import { useData } from "vitepress";
-import { onMounted } from "vue";
+import { onMounted, watch } from "vue";
 
-import Navbar from "./components/Navbar.vue";
-import HomePage from "./components/HomePage.vue";
-import PostPage from "./components/PostPage.vue";
-import Footer from "./components/Footer.vue";
-import NotFound from "./components/NotFound.vue";
-import BtnTop from "./components/BtnTop.vue";
+import Navbar from "@theme/components/Navbar.vue";
+import HomePage from "@theme/components/HomePage.vue";
+import PostPage from "@theme/components/PostPage.vue";
+import Footer from "@theme/components/Footer.vue";
+import NotFound from "@theme/components/NotFound.vue";
+import BtnTop from "@theme/components/BtnTop.vue";
+
+import { navUtils } from "@theme/utils/navUtils";
 
 const { page, frontmatter } = useData();
 
@@ -28,6 +30,21 @@ onMounted(() => {
         backToTopButton.style.opacity = "0";
       }
     }
+  });
+
+  const isDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+  navUtils.updateDarkMode(isDarkScheme.matches);
+
+  isDarkScheme.addEventListener("change", (event) => {
+    navUtils.updateDarkMode(event.matches);
+    // add class to html element
+    document.documentElement.classList.toggle("dark", event.matches);
+  });
+
+  // add listener for navUtils.darkMode
+  watch(navUtils, (newVal) => {
+    // add class to html element
+    document.documentElement.classList.toggle("dark", newVal.darkMode);
   });
 });
 </script>
