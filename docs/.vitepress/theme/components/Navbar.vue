@@ -11,7 +11,7 @@ const navUtilsConfig = site.value.themeConfig.navUtils;
 </script>
 
 <template>
-  <div class="navbar sticky z-40 h-auto w-full bg-neutral-50 p-5 dark:bg-neutral-950">
+  <div class="navbar sticky z-40 h-auto w-full select-none bg-neutral-50 p-5 dark:bg-neutral-950">
     <div class="navbar-inner box-border flex h-full flex-row items-center justify-between">
       <div class="brand flex flex-row items-end gap-4">
         <h1 class="brand-title relative flex gap-5 px-2 text-5xl">

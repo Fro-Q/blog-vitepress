@@ -99,14 +99,11 @@ const blogCategory = [
 
 <template>
   <div class="mx-auto flex h-[calc(100vh-100px)] w-[calc(100vh-60px)] max-w-[800px] items-center px-6 font-serif text-3xl/[4rem] font-bold antialiased">
-    <div class="">
+    <div class="select-none">
       <div class="mb-10">
         您好。<br />我是 <span class="font-[noteworthy]">froQ</span>，一位
 
         <div class="group relative inline h-max w-max">
-          <!-- <div class="bottom-4 w-full h-8 block bg-red-200 absolute z-10 opacity-80 mix-blend-multiply group-hover:-translate-x-1 transition-transform duration-200 group-hover:translate-y-1 rounded-sm"></div>
-            <div class="bottom-4 w-full h-8 block bg-sky-200 absolute z-10 opacity-80 mix-blend-multiply group-hover:-translate-y-1 transition-transform duration-200 group-hover:translate-x-1 rounded-sm"></div> -->
-
           <input
             type="text"
             class="relative z-20 inline h-8 appearance-none rounded-none bg-transparent text-center font-thin shadow-underline shadow-emerald-500 outline-none"
