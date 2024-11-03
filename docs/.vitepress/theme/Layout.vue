@@ -42,10 +42,15 @@ onMounted(() => {
   });
 
   // add listener for navUtils.darkMode
-  watch(navUtils, (newVal) => {
-    // add class to html element
-    document.documentElement.classList.toggle("dark", newVal.darkMode);
-  });
+  watch(
+    navUtils,
+    (newVal) => {
+      // add class to html element
+      document.documentElement.classList.toggle("dark", newVal.darkMode);
+      document.documentElement.classList.toggle("color", newVal.colorMode);
+    },
+    { immediate: true },
+  );
 });
 </script>
 

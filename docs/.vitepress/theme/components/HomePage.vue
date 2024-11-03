@@ -98,9 +98,9 @@ const blogCategory = [
 </script>
 
 <template>
-  <div class="mx-auto flex h-[calc(100vh-100px)] w-[calc(100vh-60px)] max-w-[800px] items-center px-6 font-serif text-3xl/[4rem] font-bold antialiased">
+  <div class="mx-auto flex h-[calc(100vh-100px)] max-w-[800px] items-center px-6 font-serif text-3xl/[4rem] font-bold antialiased">
     <div class="select-none">
-      <div class="mb-10">
+      <div class="mb-10 inline">
         您好。<br />我是 <span class="font-[noteworthy]">froQ</span>，一位
 
         <div class="group relative inline h-max w-max">
@@ -116,7 +116,9 @@ const blogCategory = [
         。
       </div>
 
-      <div>不太擅长给自己贴标签，或许您可以在我的文章中找到一些线索。</div>
+      <br />
+
+      <div class="inline w-[calc(100vh-60px)] max-w-[800px]">不太擅长给自己贴标签，或许您可以在我的文章中找到一些线索。</div>
     </div>
   </div>
 
