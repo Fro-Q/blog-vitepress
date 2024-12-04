@@ -137,7 +137,7 @@
       }
 
       & span.lang {
-        @apply absolute bottom-0 right-0 z-10 m-2 px-2 text-sm text-stone-600 dark:text-neutral-400;
+        @apply absolute bottom-0 right-0 z-10 m-2 px-2 text-sm text-neutral-600 dark:text-neutral-400;
       }
 
       & pre {
@@ -250,38 +250,38 @@
     }
 
     & :is(h1, h2, h3, h4, h5, h6) {
-      @apply relative z-0 mt-10 inline-block px-1 text-neutral-800 transition before:absolute before:-translate-x-[200%] before:opacity-40 before:duration-200 before:content-['#'] after:absolute after:-bottom-1.5 after:left-0 after:-z-[1] after:h-px after:w-0 after:rounded-sm after:bg-neutral-800 after:duration-200 before:hover:opacity-100 hover:after:w-full dark:text-neutral-200 dark:after:bg-neutral-200;
+      @apply relative z-0 mt-10 inline-block px-1 text-neutral-800 transition before:absolute before:-translate-x-[150%] before:text-[0.8em] before:opacity-40 before:duration-200 after:absolute after:-bottom-1.5 after:left-0 after:-z-[1] after:h-px after:w-0 after:rounded-sm after:bg-neutral-800 after:duration-200 before:hover:opacity-100 hover:after:w-full dark:text-neutral-200 dark:after:bg-neutral-200;
     }
 
     & h1 {
-      @apply text-4xl;
+      @apply text-4xl before:content-['#1'];
     }
 
     & h2 {
-      @apply text-3xl;
+      @apply text-3xl before:content-['#2'];
     }
 
     & h3 {
-      @apply text-2xl;
+      @apply text-2xl before:content-['#3'];
     }
 
     & h4 {
-      @apply text-xl;
+      @apply text-xl before:content-['#4'];
     }
 
     & h5 {
-      @apply text-lg;
+      @apply text-lg before:content-['#5'];
     }
 
     & h6 {
-      @apply text-base;
+      @apply text-base before:content-['#6'];
     }
 
     & blockquote {
-      @apply relative my-8 rounded-sm border-l-4 border-neutral-500 bg-neutral-100 px-8 py-5 transition-colors duration-200 hover:border-neutral-600 dark:border-neutral-500 dark:bg-neutral-900 dark:hover:border-neutral-400;
+      @apply relative my-8 rounded-sm border-l-4 border-neutral-500 bg-neutral-950/5 px-8 py-5 transition-colors duration-200 hover:border-neutral-800 dark:bg-neutral-50/5 dark:hover:border-neutral-200;
 
       & > p:first-child::before {
-        @apply absolute right-10 top-[-20px] font-[MaterialIcons] text-8xl text-neutral-300 opacity-20 content-["format\_quote"] dark:text-neutral-300;
+        @apply absolute right-10 top-[-20px] font-[MaterialIcons] text-8xl text-neutral-700 opacity-20 content-["format\_quote"] dark:text-neutral-300;
       }
     }
 

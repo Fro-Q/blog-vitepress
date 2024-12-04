@@ -5,8 +5,11 @@ const props = defineProps(["text", "type"]);
 </script>
 
 <template>
-  <div class="badge">
-    <span :class="`badge-${props.type}`">
+  <div class="badge inline-block font-bold">
+    <span
+      class="my-auto px-2 py-1 align-bottom text-[0.6em] font-bold"
+      :class="`badge-${props.type}`"
+    >
       {{ props.text }}
       <slot />
     </span>
@@ -14,14 +17,6 @@ const props = defineProps(["text", "type"]);
 </template>
 
 <style scoped>
-.badge {
-  @apply inline-block align-super font-bold;
-}
-
-[class^="badge-"] {
-  @apply px-2 py-1 text-[0.6em] font-bold;
-}
-
 .badge-info {
   @apply rounded-sm border border-neutral-500 text-neutral-500;
 }
