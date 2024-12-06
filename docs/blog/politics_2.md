@@ -1,6 +1,6 @@
 ---
 title: '考研政治（二）'
-timestampId: 241027a
+timestampId: 241206a
 category: 共读
 head:
   - - meta
@@ -11,7 +11,7 @@ head:
       content: 考研政治 马克思主义基本原理 马原
   - - meta
     - name: id
-      content: 241027a
+      content: 241206a
 created: 2024-12-06 18:58
 last_modified: 2024-12-06 18:58
 ---
