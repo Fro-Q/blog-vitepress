@@ -258,7 +258,7 @@
     }
 
     & :is(h1, h2, h3, h4, h5, h6) {
-      @apply relative z-0 mt-10 inline-block px-1 text-neutral-800 transition before:absolute before:-translate-x-[150%] before:text-[0.8em] before:opacity-40 before:duration-200 after:absolute after:-bottom-1.5 after:left-0 after:-z-[1] after:h-px after:w-0 after:rounded-sm after:bg-neutral-800 after:duration-200 before:hover:opacity-100 hover:after:w-full dark:text-neutral-200 dark:after:bg-neutral-200;
+      @apply relative z-0 mt-10 block w-fit px-1 text-neutral-800 transition before:absolute before:-translate-x-[150%] before:text-[0.8em] before:opacity-40 before:duration-200 after:absolute after:-bottom-1.5 after:left-0 after:-z-[1] after:h-px after:w-0 after:rounded-sm after:bg-neutral-800 after:duration-200 before:hover:opacity-100 hover:after:w-full dark:text-neutral-200 dark:after:bg-neutral-200;
     }
 
     & h1 {
@@ -355,7 +355,9 @@
       @apply after:mx-auto after:mt-10 after:block after:h-auto after:w-[60%] after:text-center after:text-sm after:text-neutral-700 after:content-[attr(alt)] dark:after:text-neutral-300;
     }
 
-    & p {
+    & p,
+    & :is(h1, h2, h3, h4, h5, h6) + ul,
+    & :is(h1, h2, h3, h4, h5, h6) + ol {
       @apply my-8;
     }
 
