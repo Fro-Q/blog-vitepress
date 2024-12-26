@@ -24,13 +24,13 @@ last_modified: 2024-10-01 19:25
 
 ## `LaTeX` 中的公式 <Badge text="Unfinished" type="warning" />
 
-::: tip  
-本节仅介绍 $\LaTeX$ 中的数学公式部分。有关 $\LaTeX$ 使用方法（排版、页码管理等）的内容，请阅读其它文章或访问 [The $\LaTeX$ Project 官网](https://www.latex-project.org/)。  
+::: tip
+本节仅介绍 $\LaTeX$ 中的数学公式部分。有关 $\LaTeX$ 使用方法（排版、页码管理等）的内容，请阅读其它文章或访问 [The $\LaTeX$ Project 官网](https://www.latex-project.org/)。
 :::
 
 ### 希腊字母｜Greek Letters
 
-| 渲染                              | 输入                              | 渲染                        | 输入                        |
+| 渲染                            | 输入                            | 渲染                      | 输入                      |
 | ------------------------------- | ------------------------------- | ------------------------- | ------------------------- |
 | $\alpha$, $A$                   | `\alpha`, `A`                   | $\nu$, $N$                | `\nu`, `N`                |
 | $\beta$, $B$                    | `\beta`, `B`                    | $\xi$, $\Xi$              | `\xi`, `\Xi`              |
@@ -51,7 +51,7 @@ last_modified: 2024-10-01 19:25
 
 ### 二元与关系｜Binary Operators and Relations
 
-| 渲染                                                                               | 输入                                                                               |
+| 渲染                                                                             | 输入                                                                             |
 | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
 | $+$, $-$, $\times$, $\div$                                                       | `+`, `-`, `\times`. `\div`                                                       |
 | $\cdot$, $\ast$, $\colon$                                                        | `\cdot`, `\ast`, `\colon`                                                        |
@@ -91,7 +91,7 @@ last_modified: 2024-10-01 19:25
 
 ### 箭头｜Arrows
 
-| 渲染                                                                             | 输入                                                                             |
+| 渲染                                                                           | 输入                                                                           |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
 | $\leftarrow$, $\rightarrow$, $\leftrightarrow$                                 | `\leftarrow`, `\rightarrow`, `\leftrightarrow`                                 |
 | $\Leftarrow$, $\Rightarrow$, $\Leftrightarrow$                                 | `\Leftarrow`, `\Rightarrow`, `\Leftrightarrow`                                 |

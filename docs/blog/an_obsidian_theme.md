@@ -26,11 +26,11 @@ last_modified: 2024-09-09 21:35
 
 ## metion——初识 Markdown
 
-我用 [Obsidian](https://obsidian.md/) 快一年了，但是第一次接触它是在高考完的暑假。当时通过 [metion](https://apps.apple.com/cn/app/metion-中文写作者的笔记工具/id1530965242)（由于没找到官网所以放了 App Store 的链接）第一次接触到 Markdown，心想文本编辑还能这么玩？
+我用 [Obsidian](https://obsidian.md/) 快一年了，但是第一次接触它是在高考完的暑假。当时通过 [metion](https://www.markeditor.com/page/doc/metion.md)（非安全链接，斟酌）第一次接触到 Markdown，心想文本编辑还能这么玩？
 
 ![metion for Mac 的 UI](an_obsidian_theme_assets/ATTCH_20240924170959938.png)
 
-> metion 宣传为「颜值高也好用，懂中文也懂 Markdown」。它的确成功地为中文写作进行了很大程度的优化：它支持在中英文字词之间自动添加空格；它支持中文的词性分析；它使用左右 shift 键能够在不切换输入法的情况下键入不同的符号（如对于中文的左书名号键，使用 `左shift` 能够键入 `《` ，而使用 `右shift` 能够键入 `>` ）；它支持将文本直接导出为公众号格式（懒得调格式的公众号作者福音）……
+> metion 宣传为「颜值高也好用，懂中文也懂 Markdown」。它的确成功地为中文写作进行了很大程度的优化：它支持在中英文字词之间自动添加空格；它支持中文的词性分析；它使用左右 `shift` 键能够在不切换输入法的情况下键入不同的符号（如对于中文的左书名号键，使用 左 `shift` 能够键入 `《` ，而使用 右 `shift` 能够键入 `>` ）；它支持将文本直接导出为公众号格式（懒得调格式的公众号作者福音）……
 
 在那之后，我陷入了一阵对 Markdown 的狂热。我在 iPad 上下载了一大批支持 Markdown 的笔记软件，其中就包括 Obsidian。但是当时由于不太会用，加上 iPadOS 端的 Obsidian 还存在一些 bug，导致当时没有能够成功使用。其他的诸如 [Bear](https://bear.app/cn/)、 [Notion](https://www.notion.so/product?fredir=1)、 [Aganda](https://agenda.com)（严格意义上来说不算笔记软件）、 [MWeb](https://www.mweb.im/cn/index.html) 等等，我都进行了一定程度的体验。它们都是合格的 Markdown 编辑器，只是我口味比较刁。所以在一番尝试之后，我暂时还是用着 iPad 上的 metion 作为码字工具。
 
@@ -38,7 +38,7 @@ last_modified: 2024-09-09 21:35
 
 metion 在很长一段时间内是我的主力写作工具，公众号前期的文章也都是用 metion 直接导出的格式。后来由于转战 Windows 平台，我又开始了一波试用和筛选，尝试了 [Typora](https://typora.io/#download)、 [Effie](https://www.effie.co)、 [CMD Markdown](https://www.zybuluo.com/cmd/) 等软件。后来由于 Typora 收费与不开源、Effie 对 Markdown 不完整的支持、CMD Markdown 不支持即时渲染等原因，我选择了一款号称 Typora 平替的开源免费 Markdown 编辑器： [MarkText](https://github.com/marktext/marktext)。
 
-作为一个免费的软件，MarkText 几乎是超出了我的预期。在将近半年的使用中，我感到相当的舒适。在主要的编辑功能中，它与 Typora 基本无异，至少我没发现什么特别残缺的功能与特别恶性的 bug。但是由于失去了 metion 的「导出为公众号格式」，我需要折腾文章的格式的再复制上去。这个时期我用到了两个 Markdown 转公众号格式的网页来帮我进行格式化： [Md2All](http://md.aclickall.com) 和 [openwrite](https://md.openwrite.cn)。Generally speaking，后者的默认格式更符合我的审美，但是其缺少了对部分 Markdown 语法的支持，如使用 `[TOC]` 来生成一个 TOC 的功能 [^1]。所以在后期，我放弃了 openwrite，被迫学习了一部分 CSS 知识，用于在 Md2All 里对样式、排版等进行设计。
+作为一个免费的软件，MarkText 几乎是超出了我的预期。在将近半年的使用中，我感到相当的舒适。在主要的编辑功能中，它与 Typora 基本无异，至少我没发现什么特别残缺的功能与特别恶性的 bug。但是由于失去了 metion 的「导出为公众号格式」，我需要折腾文章的格式的再复制上去。这个时期我用到了两个 Markdown 转公众号格式的网页来帮我进行格式化： [Md2All](http://md.aclickall.com) 和 [openwrite](https://md.openwrite.cn)。总的来说，后者的默认格式更符合我的审美，但是其缺少了对部分 Markdown 语法的支持，如使用 `[TOC]` 来生成一个 TOC 的功能 [^1]。所以在后期，我放弃了 openwrite，被迫学习了一部分 CSS 知识，用于在 Md2All 里对样式、排版等进行设计。
 
 ![Md2All 里的 CSS 片段](an_obsidian_theme_assets/ATTCH_20240924170959971.png)
 

@@ -1,6 +1,6 @@
 <script setup>
 import { data as posts } from "./posts.data.js";
-import { computed, ref, watch } from "vue";
+import { computed, ref, watch, onMounted } from "vue";
 import { selfDesc } from "../utils/selfDesc.js";
 
 const showExcerpt = ref([
@@ -118,7 +118,7 @@ const blogCategory = [
 
       <br />
 
-      <div class="inline w-[calc(100vh-60px)] max-w-[800px]">不太擅长给自己贴标签，或许您可以在我的文章中找到一些线索。</div>
+      <div class="inline w-[calc(100vh-60px)] max-w-[800px]">不太擅长给自己贴标签，或许您能帮我贴一个。</div>
     </div>
   </div>
 
@@ -128,11 +128,11 @@ const blogCategory = [
     >
       <h2 class="font-serif text-4xl">目录</h2>
     </div>
-    <div class="toc-content">
+    <div class="toc-content flex flex-col">
       <div
         v-for="toc of tocContents"
         :key="toc.title"
-        class="link-wrapper pl-2"
+        class="link-wrapper ml-[25%] even:pl-10"
       >
         <StyledULink
           :href="toc.link"
@@ -170,37 +170,41 @@ const blogCategory = [
       </div>
     </div>
 
-    <div
-      v-for="post of category.id == 'qr' ? posts.filter((post) => post.frontmatter.category !== '格外') : posts.filter((post) => post.frontmatter.category === category.title)"
-      class="post-container flex h-auto w-full flex-col flex-wrap justify-start py-2"
-    >
-      <!-- <div
-      v-for="post of posts"
-      class="post-container flex h-auto w-full flex-col flex-wrap justify-start py-2"
-    > -->
-      <div class="post-info">
-        <StyledULink
-          :href="post.url"
-          :text="post.frontmatter.title"
-          class="post-title font-serif text-2xl"
-        />
-        <div
-          v-html="post.excerpt"
-          class="post-excerpt mt-2 pl-8 text-neutral-600 dark:text-neutral-400"
-          v-show="showExcerpt.find((item) => item.title === category.title).show"
-        ></div>
-      </div>
+    <div class="px-1 pb-4">
       <div
-        class="post-other-info relative flex h-max flex-row py-2 font-serif"
-        v-if="category.title !== '格外'"
+        v-for="post of category.id == 'qr' ? posts.filter((post) => post.frontmatter.category !== '格外') : posts.filter((post) => post.frontmatter.category === category.title)"
+        class="post-container flex h-auto w-full flex-row flex-wrap justify-end gap-2"
       >
-        <div class="post-date mr-5">
-          {{ post.dateString }}
+        <div class="peer max-w-[80%] py-4">
+          <div class="post-info flex flex-row justify-end">
+            <StyledULink
+              :href="post.url"
+              :text="post.frontmatter.title"
+              class="post-title font-serif text-2xl"
+            />
+          </div>
+          <div
+            v-html="post.excerpt"
+            class="post-excerpt mt-2 flex flex-row justify-end text-neutral-400 dark:text-neutral-600"
+            v-show="showExcerpt.find((item) => item.title === category.title).show"
+          ></div>
+          <div
+            class="post-other-info relative flex h-max flex-row justify-end py-2 font-serif text-neutral-500"
+            v-if="category.title !== '格外'"
+          >
+            <!-- if the screen width is wide, hide this -->
+            <div class="post-date mr-5">
+              {{ post.dateString }}
+            </div>
+            <div class="post-reading-info flex gap-5">
+              <span class="post-reading-time">约 {{ post.readingInfo.totalTime }} 分钟</span>
+              <span class="post-word-count">{{ post.readingInfo.wordCount }} 字</span>
+            </div>
+          </div>
         </div>
-        <div class="post-reading-info flex gap-5">
-          <span class="post-reading-time">约 {{ post.readingInfo.totalTime }} 分钟</span>
-          <span class="post-word-count">{{ post.readingInfo.wordCount }} 字</span>
-        </div>
+        <div
+          class="relative w-10 before:absolute before:left-[50%] before:block before:h-full before:w-px before:-translate-x-[50%] before:bg-neutral-500 after:absolute after:left-[50%] after:top-[50%] after:block after:h-px after:w-2 after:-translate-x-[50%] after:-translate-y-[50%] after:rounded-full after:border after:border-neutral-800 after:bg-neutral-200 after:transition-all hover:after:h-4 hover:after:w-4 peer-hover:after:h-4 peer-hover:after:w-4 dark:after:border-neutral-200 dark:after:bg-neutral-800"
+        ></div>
       </div>
     </div>
   </div>

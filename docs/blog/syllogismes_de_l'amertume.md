@@ -1,14 +1,14 @@
 ---
-title: "《苦论》(*Syllogismes de l'amertume*) · E.M. Cioran"
+title: "*Syllogismes de l'amertume* · E.M. Cioran《苦论》"
 timestampId: 241023b
 category: 前脩
 head:
   - - meta
     - name: description
-      content: 摘抄——《苦论》(*Syllogismes de l'amertume*) · E.M. Cioran
+      content: 摘抄——*Syllogismes de l'amertume* · E.M. Cioran《苦论》
   - - meta
     - name: keywords
-      content: 摘抄 excerpt 苦论 syllogismes_de_l'amertume 齐奥朗 萧沆 e.m.Cioran
+      content: 摘抄 excerpt 苦论 syllogismes_de_l'amertume 齐奥朗 萧沆 e.m.cioran
   - - meta
     - name: id
       content: 241023b
@@ -16,7 +16,7 @@ created: 2024-10-23 14:36
 last_modified: 2024-10-23 14:36
 ---
 
-摘抄——《苦论》(*Syllogismes de l'amertume*) · E.M. Cioran
+摘抄——*Syllogismes de l'amertume* · E.M. Cioran《苦论》
 
 ---
 

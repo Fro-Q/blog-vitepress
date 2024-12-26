@@ -22,7 +22,7 @@ const navUtilsConfig = site.value.themeConfig.navUtils;
             <Logo blinking="true"></Logo>
           </a>
           <div
-            class="m-auto inline-block h-max rounded-sm border border-emerald-500 px-2 py-1 align-bottom text-[0.4em] font-bold text-emerald-500"
+            class="m-auto inline-block h-max rotate-3 rounded-sm border border-emerald-500 px-2 py-1 align-bottom text-[0.4em] font-bold text-emerald-500"
             v-if="selfDesc.content"
           >
             #{{ selfDesc.content }}
