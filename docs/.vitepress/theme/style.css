@@ -82,7 +82,11 @@
     @apply relative m-auto min-h-screen w-[calc(100%-60px)] max-w-[700px] items-center text-base/10;
 
     & hr {
-      @apply my-4 h-px border-none bg-neutral-300 dark:bg-neutral-700;
+      @apply mx-auto my-16 h-px border-none bg-neutral-300 dark:bg-neutral-700;
+
+      &.footnotes-sep {
+        @apply w-[80%];
+      }
     }
 
     & > div {
@@ -254,7 +258,7 @@
     }
 
     & a:not([href^="#"], .unstyled) {
-      @apply relative inline-block text-neutral-600 transition duration-200 before:absolute before:bottom-2 before:h-[1px] before:w-full before:bg-neutral-600 before:transition-all before:duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-["open\_in\_new"] hover:text-neutral-950 hover:before:bg-neutral-950 dark:text-neutral-400 dark:before:bg-neutral-400 dark:hover:text-neutral-50 dark:hover:before:bg-neutral-50;
+      @apply relative inline-block text-neutral-800 transition duration-200 before:absolute before:bottom-2 before:h-[1px] before:w-full before:bg-neutral-600 before:transition-all before:duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-["open\_in\_new"] hover:text-neutral-950 hover:before:bg-neutral-950 dark:text-neutral-200 dark:before:bg-neutral-400 dark:hover:text-neutral-50 dark:hover:before:bg-neutral-50;
     }
 
     & :is(h1, h2, h3, h4, h5, h6) {
@@ -294,10 +298,11 @@
     }
 
     & table {
-      @apply my-8 border-collapse text-center;
+      @apply my-8 w-full border-collapse border-b border-t-2 border-neutral-700 dark:border-neutral-300;
 
       & th {
-        @apply font-bold text-neutral-900 dark:text-neutral-100;
+        @apply border-b border-neutral-700 text-center font-bold text-neutral-900 dark:border-neutral-300 dark:text-neutral-100;
+        text-align: center !important;
       }
 
       & td {
@@ -355,7 +360,7 @@
       @apply after:mx-auto after:mt-10 after:block after:h-auto after:w-[60%] after:text-center after:text-sm after:text-neutral-700 after:content-[attr(alt)] dark:after:text-neutral-300;
     }
 
-    & p,
+    & :not(li) > p,
     & :is(h1, h2, h3, h4, h5, h6) + ul,
     & :is(h1, h2, h3, h4, h5, h6) + ol {
       @apply my-8;

@@ -18,7 +18,7 @@ const dateInfo = computed(() => {
         month: "long",
         day: "numeric",
       })
-      .replace(/年|月/g, "/")
+      .replace(/年|月/g, " / ")
       .replace(/日/g, "");
   }
   return "";
@@ -153,7 +153,7 @@ const thisPostExcerpt = computed(() => {
       <h1 v-html="thisPostTitle"></h1>
     </div>
     <div
-      class="post-info mx-auto mb-5 flex w-[calc(100%-60px)] max-w-[700px] flex-row justify-end font-serif"
+      class="post-info mx-auto mb-5 flex w-[calc(100%-60px)] max-w-[700px] flex-row justify-end font-serif text-neutral-500"
       v-if="frontmatter.category !== '格外'"
     >
       <div class="post-date mr-5">
@@ -165,7 +165,7 @@ const thisPostExcerpt = computed(() => {
       </div>
     </div>
     <div
-      class="post-info mx-auto mb-5 flex w-[calc(100%-60px)] max-w-[700px] flex-row font-serif"
+      class="post-info mx-auto mb-5 flex w-[calc(100%-60px)] max-w-[700px] flex-row font-serif text-neutral-400 dark:text-neutral-600"
       v-html="thisPostExcerpt"
     />
 
