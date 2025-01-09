@@ -13,7 +13,7 @@ head:
     - name: id
       content: 220323a
 created: 2022-03-23 22:43
-last_modified: 2023-10-30 06:17:03
+last_modified: 2023-10-30 06:17
 ---
 
 摘抄——*The Moon and Sixpence* · W.S. Maugham《月亮与六便士》

@@ -5,10 +5,10 @@ category: 前脩
 head:
   - - meta
     - name: description
-      content: 摘抄——*L'Étranger* · A. Camus《局外人》
+      content: "摘抄——*L'Étranger* · A. Camus《局外人》"
   - - meta
     - name: keywords
-      content: 摘抄 excerpt 局外人 l'étranger 加缪 a.camus
+      content: "摘抄 excerpt 局外人 l'étranger 加缪 a.camus"
   - - meta
     - name: id
       content: 220406a

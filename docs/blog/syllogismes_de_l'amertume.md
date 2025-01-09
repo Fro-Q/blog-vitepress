@@ -5,10 +5,10 @@ category: 前脩
 head:
   - - meta
     - name: description
-      content: 摘抄——*Syllogismes de l'amertume* · E.M. Cioran《苦论》
+      content: "摘抄——*Syllogismes de l'amertume* · E.M. Cioran《苦论》"
   - - meta
     - name: keywords
-      content: 摘抄 excerpt 苦论 syllogismes_de_l'amertume 齐奥朗 萧沆 e.m.cioran
+      content: "摘抄 excerpt 苦论 syllogismes_de_l'amertume 齐奥朗 萧沆 e.m.cioran"
   - - meta
     - name: id
       content: 241023b

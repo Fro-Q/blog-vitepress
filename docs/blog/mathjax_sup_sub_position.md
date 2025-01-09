@@ -43,4 +43,4 @@ last_modified: 2025-01-01 21:42
 
 ## 使用 `\limits` 强制在上方和下方显示
 
-由上文可知，text style 和 display style 不仅影响上下标位置，而且影响可变尺寸符号的相对大小。在上面的例子中，求和符号在 text style 下几乎与 $A_i$ 具有相同的高度，而在 display style 下则显然大于 $A_i$ 的高度。若要在保持可变尺寸符号较小高度的同时，在上方和下方显示极限，可以使用 `\limits`。如 $\sum \limits_{i=1}^{\infty} A_i$ (`\sum \limits_{i=1}^{\infty} A_i`)，与 $\sum_{i=1}^{\infty} A_i$ (`\sum_{i=1}^{\infty} A_i`) 具有相同的运算符高度，和 $\displaystyle \sum_{i=1}^{\infty} A_i$ (`\displaystyle \sum_{i=1}^{\infty} A_i`) 具有相同的极限位置和更小的高度。
+由上文可知，text style 和 display style 不仅影响上下标位置，而且影响可变尺寸符号的相对大小。在上面的例子中，求和符号在 text style 下几乎与 $A_i$ 具有相同的高度，而在 display style 下则显然大于 $A_i$ 的高度。若要在保持可变尺寸符号较小高度的同时，在上方和下方显示极限，可以使用 `\limits`。如 $\sum \limits_{i=1}^{\infty} A_i$ (`\sum \limits_{i=1}^{\infty} A_i`)，与 $\sum_{i=1}^{\infty} A_i$ (`\sum_{i=1}^{\infty} A_i`) 具有相同的运算符高度，和 $\displaystyle \sum_{i=1}^{\infty} A_i$ (`\displaystyle \sum_{i=1}^{\infty} A_i`) j，
