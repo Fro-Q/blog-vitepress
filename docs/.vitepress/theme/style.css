@@ -217,6 +217,38 @@
       }
     }
 
+    & .vp-code-group {
+      @apply relative my-8 w-full overflow-x-auto rounded-md bg-neutral-100 text-sm dark:bg-neutral-900;
+
+      & .tabs {
+        @apply flex items-center justify-start border-b border-neutral-300 dark:border-neutral-700;
+
+        & input {
+          @apply opacity-0;
+
+          &:checked + label {
+            @apply border-t-2 border-neutral-700 text-neutral-900 dark:border-neutral-300 dark:text-neutral-100;
+          }
+        }
+
+        & label {
+          @apply inline-block cursor-pointer border-t-2 border-transparent px-4 py-2 text-neutral-600 transition-colors duration-200 dark:text-neutral-400;
+        }
+      }
+
+      & .blocks {
+        @apply relative;
+
+        & > div {
+          @apply my-0 hidden;
+
+          &.active {
+            @apply block;
+          }
+        }
+      }
+    }
+
     & .custom-block {
       @apply my-8 rounded-sm border border-neutral-500 px-8 py-5;
 

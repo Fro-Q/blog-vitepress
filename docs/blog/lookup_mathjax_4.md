@@ -44,7 +44,6 @@ last_modified: 2025-01-09 08:54
 | $\max$, $\min$                                   | `\max`, `\min`                                   |
 
 部分符号的含义如下：
-
 - $\arg$：argument：
     - 复数的辐角；
     - 极值点，如 $\underset {x \in S} {\arg \max} \,f(x)$ 表示 $f(x)$ 在 $S$ 上的极大值点或点集；
