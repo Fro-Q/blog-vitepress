@@ -8,8 +8,6 @@ const { page, site, frontmatter } = useData();
 const socialLinks = site.value.themeConfig.socialLinks;
 const navUtilsConfig = site.value.themeConfig.navUtils;
 
-const htmlEl = window.document.querySelector("html");
-
 const navUtilsState = ref(
   navUtilsConfig.reduce((acc, util) => {
     acc[util.id] = false;
@@ -23,6 +21,7 @@ const toggleNavUtil = (id, className) => {
 };
 
 onMounted(() => {
+  const htmlEl = document.querySelector("html");
   const isDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
   isDarkScheme.addEventListener("change", (event) => {
