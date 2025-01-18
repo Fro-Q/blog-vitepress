@@ -18,6 +18,7 @@
     "@shikijs/vitepress-twoslash": "^1.27.2",
     "@stylistic/eslint-plugin": "^2.3.0",
     "autoprefixer": "^10.4.20",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint-plugin-vue": "^9.27.0",
     "feed": "^4.2.2",
     "globals": "^15.8.0",
@@ -40,5 +41,10 @@
     "markdown-it-mark": "^4.0.0",
     "markdown-it-mathjax3": "^4.3.2",
     "vitepress-plugin-rss": "^0.2.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

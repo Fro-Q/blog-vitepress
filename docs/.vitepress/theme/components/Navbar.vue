@@ -8,7 +8,7 @@ const { page, site, frontmatter } = useData();
 const socialLinks = site.value.themeConfig.socialLinks;
 const navUtilsConfig = site.value.themeConfig.navUtils;
 
-const htmlEl = document.querySelector("html");
+const htmlEl = window.document.querySelector("html");
 
 const navUtilsState = ref(
   navUtilsConfig.reduce((acc, util) => {
