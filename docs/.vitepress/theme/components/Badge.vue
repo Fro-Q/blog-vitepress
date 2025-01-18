@@ -1,7 +1,10 @@
 <script setup>
 import { defineProps } from "vue";
 
-const props = defineProps(["text", "type"]);
+const props = defineProps([
+  "text",
+  "type",
+]);
 </script>
 
 <template>

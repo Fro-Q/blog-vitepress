@@ -165,7 +165,7 @@ const thisPostExcerpt = computed(() => {
       </div>
     </div>
     <div
-      class="post-info mx-auto mb-5 flex w-[calc(100%-60px)] max-w-[700px] flex-row font-serif text-neutral-400 dark:text-neutral-600"
+      class="post-info mx-auto mb-5 flex w-[calc(100%-60px)] max-w-[700px] flex-row font-serif text-neutral-500"
       v-html="thisPostExcerpt"
     />
 

@@ -1,5 +1,10 @@
 const config = {
-  plugins: ["prettier-plugin-tailwindcss"],
+  plugins: [
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-multiline-arrays",
+  ],
+
+  multilineArraysWrapThreshold: 1,
 
   experimentalTernaries: true,
   // boolean

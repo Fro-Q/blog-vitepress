@@ -3,8 +3,12 @@ import { RssPlugin } from "vitepress-plugin-rss";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItMark from "markdown-it-mark";
 import anchor from "markdown-it-anchor";
-import path from "path";
-import { navUtils } from "./theme/utils/navUtils";
+import { transformerRenderWhitespace, transformerMetaHighlight, transformerNotationWordHighlight, transformerMetaWordHighlight } from "@shikijs/transformers";
+import { transformerColorizedBrackets } from "@shikijs/colorized-brackets";
+import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
+import { createFileSystemTypesCache } from "@shikijs/vitepress-twoslash/cache-fs";
+
+import { customTransformerNotationDiff } from "./theme/utils/customTransformers";
 
 const rssOptions = {
   baseUrl: "https://fro-blo.com/",
@@ -20,7 +24,12 @@ const rssOptions = {
 };
 
 export default defineConfigWithTheme({
-  head: [["link", { rel: "icon", href: "/favicon.ico" }]],
+  head: [
+    [
+      "link",
+      { rel: "icon", href: "/favicon.ico" },
+    ],
+  ],
   vite: {
     plugins: [RssPlugin(rssOptions)],
   },
@@ -32,7 +41,11 @@ export default defineConfigWithTheme({
   cleanUrls: true,
 
   // markdown files to be excluded when building
-  srcExclude: ["**/README.md", "**/_dictionary.md", "**/_template/*.md"],
+  srcExclude: [
+    "**/README.md",
+    "**/_dictionary.md",
+    "**/_template/*.md",
+  ],
   metaChunks: true,
 
   themeConfig: {
@@ -107,26 +120,28 @@ export default defineConfigWithTheme({
       {
         ariaLabel: "Dark Mode",
         id: "darkMode",
+        className: "dark",
         icon: {
           svg: {
             on: '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M11 19H8a1 1 0 0 0 0 2h3a1 1 0 0 0 0-2m9-4h-1.16A8.2 8.2 0 0 0 20 12.05a1 1 0 0 0-.34-.93a1 1 0 0 0-1-.19a6 6 0 0 1-1.92.32a6.06 6.06 0 0 1-6.06-6a7 7 0 0 1 .1-1a1 1 0 0 0-.35-.92a1 1 0 0 0-1-.18A8.06 8.06 0 0 0 4 10.68A8 8 0 0 0 5.27 15H4a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2m-3.72 0H7.83a6 6 0 0 1 .88-9.36a8.06 8.06 0 0 0 8.05 7.61a7 7 0 0 0 .79 0A6.1 6.1 0 0 1 16.28 15M16 19h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2"/></svg>',
             off: '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M17.66 8.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41a1 1 0 0 0 .66.29M12 6a1 1 0 0 0 1-1V4a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1m-8 6H3a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m1.64-3.95a1 1 0 0 0 .7.29a1 1 0 0 0 .71-.29a1 1 0 0 0 0-1.41l-.71-.71a1 1 0 0 0-1.41 1.41ZM21 12h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2m-10 7H8a1 1 0 0 0 0 2h3a1 1 0 0 0 0-2m7-4h-.88a5.4 5.4 0 0 0 .38-2a5.5 5.5 0 0 0-11 0a5.4 5.4 0 0 0 .38 2H6a1 1 0 0 0 0 2h12a1 1 0 0 0 0-2m-3.15 0h-5.7a3.44 3.44 0 0 1-.65-2a3.5 3.5 0 0 1 7 0a3.44 3.44 0 0 1-.65 2M16 19h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2"/></svg>',
           },
         },
-        toggle: navUtils.darkMode,
-        update: navUtils.updateDarkMode,
+        // toggle: navUtils.darkMode,
+        // update: navUtils.updateDarkMode,
       },
       {
         ariaLabel: "Color Mode",
         id: "colorMode",
+        className: "color",
         icon: {
           svg: {
             on: '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.51 9.54a1.9 1.9 0 0 1-1 1.09A7 7 0 0 0 15.37 17q.002.707.14 1.4a2.16 2.16 0 0 1-.31 1.65a1.8 1.8 0 0 1-1.21.8q-.804.15-1.62.15a9 9 0 0 1-9-9.28A9.05 9.05 0 0 1 11.85 3h.51a9 9 0 0 1 8.06 5a2 2 0 0 1 .09 1.52z"/><path stroke-linecap="round" stroke-linejoin="round" d="m8 16.01l.01-.011M6 12.01l.01-.011M8 8.01l.01-.011M12 6.01l.01-.011M16 8.01l.01-.011"/></g></svg>',
             off: '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.51 9.54a1.9 1.9 0 0 1-1 1.09A7 7 0 0 0 15.37 17q.002.707.14 1.4a2.16 2.16 0 0 1-.31 1.65a1.8 1.8 0 0 1-1.21.8q-.804.15-1.62.15a9 9 0 0 1-9-9.28A9.05 9.05 0 0 1 11.85 3h.51a9 9 0 0 1 8.06 5a2 2 0 0 1 .09 1.52z"/><path stroke-linecap="round" stroke-linejoin="round" d="m8 16.01l.01-.011M6 12.01l.01-.011M8 8.01l.01-.011M12 6.01l.01-.011M16 8.01l.01-.011"/></g></svg>',
           },
         },
-        toggle: navUtils.colorMode,
-        update: navUtils.updateColorMode,
+        // toggle: navUtils.colorMode,
+        // update: navUtils.updateColorMode,
       },
     ],
   },
@@ -135,15 +150,35 @@ export default defineConfigWithTheme({
       permalink: anchor.permalink.headerLink(),
     },
     toc: {
-      level: [2, 3, 4, 5],
+      level: [
+        2,
+        3,
+        4,
+        5,
+      ],
       // format: (str) => {},
     },
-    lineNumbers: true,
+    // lineNumbers: true,
     math: true,
     config: (md) => {
       md.use(markdownItFootnote);
       md.use(markdownItMark);
     },
+    theme: {
+      light: "vitesse-light",
+      dark: "vitesse-black",
+    },
+    codeTransformers: [
+      transformerRenderWhitespace(),
+      transformerNotationWordHighlight(),
+      transformerMetaWordHighlight(),
+      transformerColorizedBrackets(),
+      transformerMetaHighlight(),
+      transformerTwoslash({
+        typesCache: createFileSystemTypesCache(),
+      }),
+      customTransformerNotationDiff(),
+    ],
     container: {
       tipLabel: "点触",
       warningLabel: "备患",

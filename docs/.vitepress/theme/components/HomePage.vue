@@ -185,7 +185,7 @@ const blogCategory = [
           </div>
           <div
             v-html="post.excerpt"
-            class="post-excerpt mt-2 flex flex-row justify-end font-serif text-neutral-400 dark:text-neutral-600"
+            class="post-excerpt mt-2 flex flex-row justify-end font-serif text-neutral-500"
             v-show="showExcerpt.find((item) => item.title === category.title).show"
           ></div>
           <div

@@ -37,6 +37,48 @@
     font-weight: 400;
     src: url("https://fonts.gstatic.com/s/materialicons/v92/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2") format("woff2");
   }
+
+  @font-face {
+    font-family: "Fira Code Nerd Font";
+    font-style: normal;
+    font-weight: 100;
+    src: url("fonts/FiraCodeNerdFontMono-Light.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Fira Code Nerd Font";
+    font-style: normal;
+    font-weight: 300;
+    src: url("fonts/FiraCodeNerdFontMono-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Fira Code Nerd Font";
+    font-style: normal;
+    font-weight: 400;
+    src: url("fonts/FiraCodeNerdFontMono-Retina.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Fira Code Nerd Font";
+    font-style: normal;
+    font-weight: 500;
+    src: url("fonts/FiraCodeNerdFontMono-Medium.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Fira Code Nerd Font";
+    font-style: normal;
+    font-weight: 700;
+    src: url("fonts/FiraCodeNerdFontMono-SemiBold.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Fira Code Nerd Font";
+    font-style: normal;
+    font-weight: 900;
+    src: url("fonts/FiraCodeNerdFontMono-Bold.ttf") format("truetype");
+  }
 }
 
 :root {
@@ -46,8 +88,40 @@
 }
 
 @layer base {
+  :root * {
+    font-feature-settings:
+      "ss01" 1,
+      /* "ss02" 1, */ "ss03" 1,
+      "ss04" 1,
+      /* "ss05" 1, */ "ss06" 1,
+      "ss07" 1,
+      "ss08" 1,
+      "ss09" 1,
+      /* "ss10" 1, */ /* "cv01" 1, */ /* "cv02" 1, */ /* "cv03" 1, */ "cv04" 1,
+      /* "cv05" 1, */ /* "cv06" 1, */ /* "cv07" 1, */ "cv08" 1,
+      /* "cv09" 1, */ /* "cv10" 1, */ "zero" 1,
+      /* "cv11" 1, */ /* "cv12" 1, */ /* "cv13" 1, */ "cv14" 1,
+      /* "cv15" 1, */ "cv16" 1,
+      /* "cv17" 1, */ "cv18" 1,
+      /* "cv19" 1, */ /* "cv20" 1, */ /* "cv21" 1, */ /* "cv22" 1, */ /* "cv23" 1, */ /* "cv24" 1, */ "cv25" 1,
+      "cv26" 1,
+      "cv27" 1,
+      "cv28" 1,
+      "cv29" 1,
+      "cv30" 1,
+      "cv31" 1,
+      "cv32" 1,
+      "onum" 1;
+
+    caret-color: auto;
+  }
+
+  body {
+    @apply bg-neutral-50 text-base text-neutral-700 dark:bg-neutral-950 dark:text-neutral-300;
+  }
+
   #app {
-    @apply flex min-h-screen flex-col bg-neutral-50 text-base text-neutral-700 dark:bg-neutral-950 dark:text-neutral-300;
+    @apply flex min-h-screen flex-col;
 
     &::-webkit-scrollbar {
       @apply w-px;
@@ -73,342 +147,520 @@
   }
 }
 
-@layer components {
-  :not(pre) > code {
-    @apply rounded-sm bg-neutral-200/50 px-1 text-neutral-600 before:content-["`"] after:content-["`"] dark:bg-neutral-800/50 dark:text-neutral-400;
+:is(p, li) code:not(.twoslash-popup-code) {
+  @apply rounded-sm bg-neutral-200/50 px-1 text-neutral-600 before:content-["`"] after:content-["`"] dark:bg-neutral-800/50 dark:text-neutral-400;
+}
+
+#content {
+  @apply relative m-auto min-h-screen w-[calc(100%-80px)] items-center text-base/10 md:w-[700px];
+}
+
+#content,
+.vp-doc {
+  & hr {
+    @apply mx-auto my-16 h-px border-none bg-neutral-300 dark:bg-neutral-700;
+
+    &.footnotes-sep {
+      @apply w-[80%];
+    }
   }
 
-  #content {
-    @apply relative m-auto min-h-screen w-[calc(100%-60px)] max-w-[700px] items-center text-base/10;
+  & > div {
+    @apply w-full;
+  }
 
-    & hr {
-      @apply mx-auto my-16 h-px border-none bg-neutral-300 dark:bg-neutral-700;
+  & > div > p {
+    @apply first:hidden;
+  }
 
-      &.footnotes-sep {
-        @apply w-[80%];
-      }
+  & mjx-container svg {
+    @apply inline-block;
+  }
+
+  & .table-of-contents {
+    @apply fixed left-0 top-[100px] z-50 flex max-h-[320px] min-w-[200px] max-w-[400px] -translate-x-[90%] flex-col items-start overflow-auto border border-neutral-700 bg-neutral-50 bg-opacity-80 text-sm text-neutral-300 opacity-20 transition-all duration-200 hover:translate-x-0 hover:opacity-100 hover:backdrop-blur-sm md:translate-x-0 dark:border-neutral-300 dark:bg-neutral-950 dark:text-neutral-700;
+
+    &::-webkit-scrollbar {
+      @apply w-px;
     }
 
-    & > div {
-      @apply w-full;
+    &::-webkit-scrollbar-thumb {
+      @apply bg-neutral-100 dark:bg-neutral-900;
     }
 
-    & > div > p {
-      @apply first:hidden;
-    }
-
-    & mjx-container svg {
-      @apply inline-block;
-    }
-
-    & .table-of-contents {
-      @apply fixed left-0 top-[100px] z-50 flex max-h-[320px] min-w-[200px] max-w-[400px] -translate-x-[90%] flex-col items-start overflow-auto border border-neutral-700 bg-neutral-50 bg-opacity-80 text-sm text-neutral-300 opacity-20 transition-all duration-200 hover:translate-x-0 hover:opacity-100 hover:backdrop-blur-sm md:translate-x-0 dark:border-neutral-300 dark:bg-neutral-950 dark:text-neutral-700;
+    & ul {
+      @apply m-0 list-none px-5;
 
       &::-webkit-scrollbar {
         @apply w-px;
       }
 
       &::-webkit-scrollbar-thumb {
-        @apply bg-neutral-100 dark:bg-neutral-900;
+        @apply bg-neutral-700 dark:bg-neutral-300;
       }
-
-      & ul {
-        @apply m-0 list-none px-5;
-
-        &::-webkit-scrollbar {
-          @apply w-px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          @apply bg-neutral-700 dark:bg-neutral-300;
-        }
-
-        & li {
-          @apply my-4;
-
-          & a {
-            @apply text-neutral-600 no-underline transition-colors duration-200 after:hidden hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100;
-          }
-        }
-      }
-    }
-
-    & div[class*="language-"] {
-      @apply relative my-8 w-full overflow-x-auto rounded-md bg-neutral-100 text-sm dark:bg-neutral-900;
-
-      &:hover button.copy {
-        @apply opacity-100;
-      }
-
-      & button.copy {
-        @apply absolute right-0 top-0 z-10 m-2 h-6 w-12 appearance-none rounded-sm border border-neutral-300 bg-neutral-100 opacity-0 transition-all duration-200 after:content-["相袭"] hover:border-neutral-600 hover:after:text-neutral-950 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-400 dark:hover:after:text-neutral-50;
-
-        &.copied {
-          @apply after:text-neutral-950 after:content-["\2713"] dark:after:text-neutral-50;
-        }
-      }
-
-      & span.lang {
-        @apply absolute bottom-0 right-0 z-10 m-2 px-2 text-sm text-neutral-600 dark:text-neutral-400;
-      }
-
-      & pre {
-        @apply overflow-x-auto py-5;
-
-        &::-webkit-scrollbar {
-          @apply h-px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-          @apply bg-neutral-300 dark:bg-neutral-700;
-        }
-
-        & code {
-          @apply block px-8 font-mono;
-
-          & span {
-            @apply whitespace-nowrap text-[var(--shiki-light,inherit)] dark:text-[var(--shiki-dark,inherit)];
-          }
-        }
-
-        &.has-highlighted .line.highlighted {
-          @apply -mx-8 inline-block w-[calc(100%+200px)] bg-neutral-200 px-8 dark:bg-neutral-800;
-
-          &.error {
-            @apply bg-red-500/25 dark:bg-red-500/25;
-          }
-
-          &.warning {
-            @apply bg-yellow-500/25 dark:bg-yellow-500/25;
-          }
-        }
-
-        &.has-focused-lines {
-          & .line:not(.has-focus) {
-            @apply opacity-50 blur-sm transition-all duration-200;
-          }
-
-          &:hover {
-            .line:not(.has-focus) {
-              @apply opacity-100 blur-none;
-            }
-          }
-        }
-
-        &.has-diff .line.diff {
-          @apply -mx-8 inline-block w-[calc(100%+200px)] px-8 before:absolute before:-translate-x-5;
-
-          &.remove {
-            @apply relative bg-red-500/25 before:text-red-500 before:content-["-"] dark:bg-red-500/25;
-          }
-
-          &.add {
-            @apply relative bg-green-500/25 before:text-green-500 before:content-["+"] dark:bg-green-500/25;
-          }
-        }
-      }
-
-      &.line-numbers-mode {
-        @apply pl-[2.4rem];
-
-        & .line-numbers-wrapper {
-          @apply absolute bottom-0 left-0 top-0 z-10 w-[2.4rem] border-r border-neutral-600 pt-5 text-center text-neutral-600 transition-colors duration-200 dark:border-neutral-400 dark:text-neutral-400;
-        }
-      }
-    }
-
-    & .vp-code-group {
-      @apply relative my-8 w-full overflow-x-auto rounded-md bg-neutral-100 text-sm dark:bg-neutral-900;
-
-      & .tabs {
-        @apply flex items-center justify-start border-b border-neutral-300 dark:border-neutral-700;
-
-        & input {
-          @apply opacity-0;
-
-          &:checked + label {
-            @apply border-t-2 border-neutral-700 text-neutral-900 dark:border-neutral-300 dark:text-neutral-100;
-          }
-        }
-
-        & label {
-          @apply inline-block cursor-pointer border-t-2 border-transparent px-4 py-2 text-neutral-600 transition-colors duration-200 dark:text-neutral-400;
-        }
-      }
-
-      & .blocks {
-        @apply relative;
-
-        & > div {
-          @apply my-0 hidden;
-
-          &.active {
-            @apply block;
-          }
-        }
-      }
-    }
-
-    & .custom-block {
-      @apply my-8 rounded-sm border border-neutral-500 px-8 py-5;
-
-      &.info {
-        @apply bg-neutral-200 dark:bg-neutral-800;
-      }
-
-      &.tip {
-        @apply bg-sky-100 dark:bg-sky-900;
-      }
-
-      &.warning {
-        @apply bg-yellow-100 dark:bg-yellow-900;
-      }
-
-      &.danger {
-        @apply bg-red-100 dark:bg-red-900;
-      }
-
-      &.details {
-        @apply bg-neutral-100 dark:bg-neutral-900;
-      }
-
-      &.note {
-        @apply bg-neutral-100 dark:bg-neutral-900;
-      }
-
-      &.important {
-        @apply bg-violet-100 dark:bg-violet-900;
-      }
-
-      &.caution {
-        @apply bg-red-100 dark:bg-red-900;
-      }
-
-      & .custom-block-title {
-        @apply text-lg font-bold;
-      }
-    }
-
-    & a:not([href^="#"], .unstyled) {
-      @apply relative inline-block text-neutral-800 transition duration-200 before:absolute before:bottom-2 before:h-[1px] before:w-full before:bg-neutral-600 before:transition-all before:duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-["open\_in\_new"] hover:text-neutral-950 hover:before:bg-neutral-950 dark:text-neutral-200 dark:before:bg-neutral-400 dark:hover:text-neutral-50 dark:hover:before:bg-neutral-50;
-    }
-
-    & :is(h1, h2, h3, h4, h5, h6) {
-      @apply relative z-0 mt-10 block w-fit px-1 text-neutral-800 transition before:absolute before:-translate-x-[150%] before:text-[0.8em] before:opacity-40 before:duration-200 after:absolute after:-bottom-1.5 after:left-0 after:-z-[1] after:h-px after:w-0 after:rounded-sm after:bg-neutral-800 after:duration-200 before:hover:opacity-100 hover:after:w-full dark:text-neutral-200 dark:after:bg-neutral-200;
-    }
-
-    & h1 {
-      @apply text-4xl before:content-['#1'];
-    }
-
-    & h2 {
-      @apply text-3xl before:content-['#2'];
-    }
-
-    & h3 {
-      @apply text-2xl before:content-['#3'];
-    }
-
-    & h4 {
-      @apply text-xl before:content-['#4'];
-    }
-
-    & h5 {
-      @apply text-lg before:content-['#5'];
-    }
-
-    & h6 {
-      @apply text-base before:content-['#6'];
-    }
-
-    & blockquote {
-      @apply relative my-8 rounded-sm border-l-4 border-neutral-500 bg-neutral-950/5 px-8 py-5 transition-colors duration-200 hover:border-neutral-800 dark:bg-neutral-50/5 dark:hover:border-neutral-200;
-
-      & > p:first-child::before {
-        @apply absolute right-10 top-[-20px] font-[MaterialIcons] text-8xl text-neutral-700 opacity-20 content-["format\_quote"] dark:text-neutral-300;
-      }
-    }
-
-    & table {
-      @apply my-8 w-full border-collapse border-b border-t-2 border-neutral-700 dark:border-neutral-300;
-
-      & th {
-        @apply border-b border-neutral-700 text-center font-bold text-neutral-900 dark:border-neutral-300 dark:text-neutral-100;
-        text-align: center !important;
-      }
-
-      & td {
-        @apply border-t border-neutral-300 dark:border-neutral-700;
-      }
-
-      & th,
-      & td {
-        @apply px-4 py-2;
-      }
-    }
-
-    & strong {
-      @apply font-black text-neutral-900 dark:text-neutral-100;
-    }
-
-    & u {
-      @apply decoration-wavy decoration-1 underline-offset-4;
-    }
-
-    & mark {
-      @apply mx-1 rounded-sm bg-neutral-800 px-1 py-0.5 text-neutral-50 dark:bg-neutral-200 dark:text-neutral-900;
-    }
-
-    & sup {
-      @apply top-1 align-top text-sm;
-
-      & a {
-        @apply text-neutral-600 transition-colors duration-200 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100;
-      }
-    }
-
-    & ul {
-      @apply list-disc;
-    }
-
-    & ol {
-      @apply list-decimal;
-    }
-
-    & ul,
-    & ol {
-      @apply pl-8;
 
       & li {
-        @apply marker:text-neutral-900 dark:marker:text-neutral-100;
-      }
-    }
+        @apply my-4;
 
-    & img {
-      @apply mx-auto my-8 rounded-sm;
-    }
-
-    & p:has(> img) {
-      @apply after:mx-auto after:mt-10 after:block after:h-auto after:w-[60%] after:text-center after:text-sm after:text-neutral-700 after:content-[attr(alt)] dark:after:text-neutral-300;
-    }
-
-    & :not(li) > p,
-    & :is(h1, h2, h3, h4, h5, h6) + ul,
-    & :is(h1, h2, h3, h4, h5, h6) + ol {
-      @apply my-8;
-    }
-
-    & section.footnotes {
-      @apply my-8 text-sm/8 before:mb-10 before:block before:text-3xl before:font-bold before:content-["据引"];
-
-      & ol,
-      & ul {
-        @apply pl-4;
-      }
-
-      & .footnote-backref {
-        @apply text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100;
+        & a {
+          @apply text-neutral-600 no-underline transition-colors duration-200 after:hidden hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100;
+        }
       }
     }
   }
+
+  & div[class*="language-"] {
+    @apply relative my-8 w-full overflow-x-auto rounded-md bg-neutral-100 text-sm dark:bg-neutral-900;
+    @apply border border-neutral-300 dark:border-neutral-700;
+
+    &:hover button.copy {
+      @apply opacity-100;
+    }
+
+    & button.copy {
+      @apply absolute right-0 top-0 z-10 m-2 h-6 w-12 appearance-none rounded-sm border border-neutral-300 bg-neutral-100 opacity-0 transition-all duration-200 after:content-["相袭"] hover:border-neutral-600 hover:after:text-neutral-950 dark:border-neutral-700 dark:bg-neutral-900 dark:hover:border-neutral-400 dark:hover:after:text-neutral-50;
+
+      &.copied {
+        @apply after:text-neutral-950 after:content-["\2713"] dark:after:text-neutral-50;
+      }
+    }
+
+    & span.lang {
+      @apply absolute bottom-0 right-0 z-10 m-2 px-2 text-sm text-neutral-600 dark:text-neutral-400;
+    }
+
+    & pre {
+      @apply overflow-x-auto py-5;
+
+      &::-webkit-scrollbar {
+        @apply h-px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        @apply bg-neutral-300 dark:bg-neutral-700;
+      }
+
+      & code {
+        @apply block w-fit min-w-full px-8 font-mono;
+
+        & span {
+          &.space {
+            @apply before:absolute before:opacity-10 before:content-["·"];
+          }
+
+          &.highlighted-word {
+            @apply bg-yellow-500/25;
+          }
+        }
+      }
+
+      & .line.highlighted {
+        @apply -mx-8 inline-block w-[calc(100%+4rem)] bg-neutral-200 px-8 before:absolute before:-translate-x-5 dark:bg-neutral-800;
+
+        &.error {
+          @apply relative bg-red-500/10 before:text-red-500 before:content-["×"];
+        }
+
+        &.warning {
+          @apply relative bg-yellow-500/10 before:text-yellow-500 before:content-["!"];
+        }
+      }
+
+      &.has-focused-lines {
+        & .line:not(.has-focus) {
+          @apply opacity-50 blur-sm transition-all duration-200;
+        }
+
+        &:hover {
+          .line:not(.has-focus) {
+            @apply opacity-100 blur-none;
+          }
+        }
+      }
+
+      & .line.diff {
+        @apply -mx-8 inline-block w-[calc(100%+4rem)] px-8 before:absolute before:-translate-x-5;
+
+        &.remove {
+          @apply relative bg-red-500/10 opacity-70 before:text-red-500 before:content-["-"];
+        }
+
+        &.add {
+          @apply relative bg-green-500/10 before:text-green-500 before:content-["+"];
+        }
+      }
+    }
+
+    &.line-numbers-mode {
+      @apply pl-[2.4rem];
+
+      & .line-numbers-wrapper {
+        @apply absolute bottom-0 left-0 top-0 z-10 w-[2.4rem] border-r border-neutral-300 pt-5 text-center font-mono text-neutral-400 transition-colors duration-200 dark:border-neutral-700 dark:text-neutral-400;
+      }
+    }
+  }
+
+  & .vp-code-group {
+    @apply relative my-8 w-full overflow-x-auto rounded-md bg-neutral-100 text-sm dark:bg-neutral-900;
+
+    & [class*="language-"] {
+      @apply rounded-t-none border-t-0;
+    }
+
+    & .tabs {
+      @apply flex items-center justify-start border-b border-neutral-300 dark:border-neutral-700;
+      @apply rounded-t-md border border-neutral-300 dark:border-neutral-700;
+
+      & input {
+        @apply opacity-0;
+
+        &:checked + label {
+          @apply border-t-2 border-neutral-700 text-neutral-900 dark:border-neutral-300 dark:text-neutral-100;
+        }
+      }
+
+      & label {
+        @apply inline-block cursor-pointer border-t-2 border-transparent px-4 py-2 font-mono text-neutral-600 transition-colors duration-200 dark:text-neutral-400;
+      }
+    }
+
+    & .blocks {
+      @apply relative;
+
+      & > div {
+        @apply my-0 hidden;
+
+        &.active {
+          @apply block;
+        }
+      }
+    }
+  }
+
+  & .custom-block {
+    @apply my-8 rounded-sm border border-neutral-500 px-8 py-5;
+
+    &.info {
+      @apply bg-neutral-200 dark:bg-neutral-800;
+    }
+
+    &.tip {
+      @apply bg-sky-100 dark:bg-sky-900;
+    }
+
+    &.warning {
+      @apply bg-yellow-100 dark:bg-yellow-900;
+    }
+
+    &.danger {
+      @apply bg-red-100 dark:bg-red-900;
+    }
+
+    &.details {
+      @apply bg-neutral-100 dark:bg-neutral-900;
+    }
+
+    &.note {
+      @apply bg-neutral-100 dark:bg-neutral-900;
+    }
+
+    &.important {
+      @apply bg-violet-100 dark:bg-violet-900;
+    }
+
+    &.caution {
+      @apply bg-red-100 dark:bg-red-900;
+    }
+
+    & .custom-block-title {
+      @apply text-lg font-bold;
+    }
+  }
+
+  & a:not([href^="#"], .unstyled) {
+    @apply relative inline-block text-neutral-800 transition duration-200 before:absolute before:bottom-2 before:h-[1px] before:w-full before:bg-neutral-600 before:transition-all before:duration-200 after:ml-1 after:inline-block after:align-top after:font-[MaterialIcons] after:opacity-100 after:transition-opacity after:duration-200 after:content-["open\_in\_new"] hover:text-neutral-950 hover:before:bg-neutral-950 dark:text-neutral-200 dark:before:bg-neutral-400 dark:hover:text-neutral-50 dark:hover:before:bg-neutral-50;
+  }
+
+  & :is(h1, h2, h3, h4, h5, h6) {
+    @apply relative z-0 mt-10 block w-fit px-4 text-neutral-800 transition before:absolute before:-translate-x-[150%] before:text-[0.8em] before:opacity-40 before:duration-200 after:absolute after:-bottom-1.5 after:left-0 after:-z-[1] after:h-px after:w-0 after:rounded-sm after:bg-neutral-800 after:duration-200 before:hover:opacity-100 hover:after:w-full dark:text-neutral-200 dark:after:bg-neutral-200;
+  }
+
+  & h1 {
+    @apply text-4xl before:content-['#1'];
+  }
+
+  & h2 {
+    @apply text-3xl before:content-['#2'];
+  }
+
+  & h3 {
+    @apply text-2xl before:content-['#3'];
+  }
+
+  & h4 {
+    @apply text-xl before:content-['#4'];
+  }
+
+  & h5 {
+    @apply text-lg before:content-['#5'];
+  }
+
+  & h6 {
+    @apply text-base before:content-['#6'];
+  }
+
+  & blockquote {
+    @apply relative my-8 rounded-sm border-l-4 border-neutral-500 bg-neutral-950/5 px-8 py-5 transition-colors duration-200 hover:border-neutral-800 dark:bg-neutral-50/5 dark:hover:border-neutral-200;
+
+    & > p:first-child::before {
+      @apply absolute right-10 top-[-20px] font-[MaterialIcons] text-8xl text-neutral-700 opacity-20 content-["format\_quote"] dark:text-neutral-300;
+    }
+  }
+
+  & table {
+    @apply my-8 w-full border-collapse border-b border-t-2 border-neutral-700 dark:border-neutral-300;
+
+    & th {
+      @apply border-b border-neutral-700 text-center font-bold text-neutral-900 dark:border-neutral-300 dark:text-neutral-100;
+      text-align: center !important;
+    }
+
+    & td {
+      @apply border-t border-neutral-300 dark:border-neutral-700;
+    }
+
+    & th,
+    & td {
+      @apply px-4 py-2;
+    }
+  }
+
+  & strong {
+    @apply font-black text-neutral-900 dark:text-neutral-100;
+  }
+
+  & u {
+    @apply decoration-wavy decoration-1 underline-offset-4;
+  }
+
+  & mark {
+    @apply mx-1 rounded-sm bg-neutral-800 px-1 py-0.5 text-neutral-50 dark:bg-neutral-200 dark:text-neutral-900;
+  }
+
+  & sup {
+    @apply top-1 align-top text-sm;
+
+    & a {
+      @apply text-neutral-600 transition-colors duration-200 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100;
+    }
+  }
+
+  & ul {
+    @apply list-disc;
+  }
+
+  & ol {
+    @apply list-decimal;
+  }
+
+  & ul,
+  & ol {
+    @apply pl-8;
+
+    & li {
+      @apply marker:text-neutral-900 dark:marker:text-neutral-100;
+    }
+  }
+
+  & img {
+    @apply mx-auto my-8 rounded-sm;
+  }
+
+  & p:has(> img) {
+    @apply after:mx-auto after:mt-10 after:block after:h-auto after:w-[60%] after:text-center after:text-sm after:text-neutral-700 after:content-[attr(alt)] dark:after:text-neutral-300;
+  }
+
+  & :not(li) > p,
+  & :is(h1, h2, h3, h4, h5, h6) + ul,
+  & :is(h1, h2, h3, h4, h5, h6) + ol {
+    @apply my-8;
+  }
+
+  & section.footnotes {
+    @apply my-8 text-sm/8 before:mb-10 before:block before:text-3xl before:font-bold before:content-["据引"];
+
+    & ol,
+    & ul {
+      @apply pl-4;
+    }
+
+    & .footnote-backref {
+      @apply text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100;
+    }
+  }
+}
+
+.vp-doc.twoslash-popup-docs {
+  & a:not([href^="#"], .unstyled) {
+    @apply before:bottom-1 !important;
+    @apply after:hidden !important;
+  }
+}
+
+:root {
+  --vp-c-white: #ffffff;
+  --vp-c-black: #000000;
+  --vp-c-neutral: var(--vp-c-black);
+  --vp-c-neutral-inverse: var(--vp-c-white);
+}
+
+.dark {
+  --vp-c-neutral: var(--vp-c-white);
+  --vp-c-neutral-inverse: var(--vp-c-black);
+}
+
+:root {
+  --vp-c-gray-1: #dddde3;
+  --vp-c-gray-2: #e4e4e9;
+  --vp-c-gray-3: #ebebef;
+  --vp-c-gray-soft: rgba(142, 150, 170, 0.14);
+  --vp-c-indigo-1: #3451b2;
+  --vp-c-indigo-2: #3a5ccc;
+  --vp-c-indigo-3: #5672cd;
+  --vp-c-indigo-soft: rgba(100, 108, 255, 0.14);
+  --vp-c-purple-1: #6f42c1;
+  --vp-c-purple-2: #7e4cc9;
+  --vp-c-purple-3: #8e5cd9;
+  --vp-c-purple-soft: rgba(159, 122, 234, 0.14);
+  --vp-c-green-1: #18794e;
+  --vp-c-green-2: #299764;
+  --vp-c-green-3: #30a46c;
+  --vp-c-green-soft: rgba(16, 185, 129, 0.14);
+  --vp-c-yellow-1: #915930;
+  --vp-c-yellow-2: #946300;
+  --vp-c-yellow-3: #9f6a00;
+  --vp-c-yellow-soft: rgba(234, 179, 8, 0.14);
+  --vp-c-red-1: #b8272c;
+  --vp-c-red-2: #d5393e;
+  --vp-c-red-3: #e0575b;
+  --vp-c-red-soft: rgba(244, 63, 94, 0.14);
+  --vp-c-sponsor: #db2777;
+}
+
+.dark {
+  --vp-c-gray-1: #515c67;
+  --vp-c-gray-2: #414853;
+  --vp-c-gray-3: #32363f;
+  --vp-c-gray-soft: rgba(101, 117, 133, 0.16);
+  --vp-c-indigo-1: #a8b1ff;
+  --vp-c-indigo-2: #5c73e7;
+  --vp-c-indigo-3: #3e63dd;
+  --vp-c-indigo-soft: rgba(100, 108, 255, 0.16);
+  --vp-c-purple-1: #c8abfa;
+  --vp-c-purple-2: #a879e6;
+  --vp-c-purple-3: #8e5cd9;
+  --vp-c-purple-soft: rgba(159, 122, 234, 0.16);
+  --vp-c-green-1: #3dd68c;
+  --vp-c-green-2: #30a46c;
+  --vp-c-green-3: #298459;
+  --vp-c-green-soft: rgba(16, 185, 129, 0.16);
+  --vp-c-yellow-1: #f9b44e;
+  --vp-c-yellow-2: #da8b17;
+  --vp-c-yellow-3: #a46a0a;
+  --vp-c-yellow-soft: rgba(234, 179, 8, 0.16);
+  --vp-c-red-1: #f66f81;
+  --vp-c-red-2: #f14158;
+  --vp-c-red-3: #b62a3c;
+  --vp-c-red-soft: rgba(244, 63, 94, 0.16);
+}
+
+:root {
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #f6f6f7;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-soft: #f6f6f7;
+}
+
+.dark {
+  --vp-c-bg: #1b1b1f;
+  --vp-c-bg-alt: #161618;
+  --vp-c-bg-elv: #202127;
+  --vp-c-bg-soft: #202127;
+}
+
+:root {
+  --vp-c-border: #c2c2c4;
+  --vp-c-divider: #e2e2e3;
+  --vp-c-gutter: #e2e2e3;
+}
+
+.dark {
+  --vp-c-border: #3c3f44;
+  --vp-c-divider: #2e2e32;
+  --vp-c-gutter: #000000;
+}
+
+:root {
+  --vp-c-text-1: #404040;
+  --vp-c-text-2: rgba(60, 60, 67, 0.78);
+  --vp-c-text-3: rgba(60, 60, 67, 0.56);
+}
+
+.dark {
+  --vp-c-text-1: #d4d4d4;
+  --vp-c-text-2: rgba(235, 235, 245, 0.78);
+  --vp-c-text-3: rgba(235, 235, 245, 0.56);
+}
+
+:root {
+  --vp-c-default-1: var(--vp-c-gray-1);
+  --vp-c-default-2: var(--vp-c-gray-2);
+  --vp-c-default-3: var(--vp-c-gray-3);
+  --vp-c-default-soft: var(--vp-c-gray-soft);
+  --vp-c-brand-1: var(--vp-c-indigo-1);
+  --vp-c-brand-2: var(--vp-c-indigo-2);
+  --vp-c-brand-3: var(--vp-c-indigo-3);
+  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+  --vp-c-brand: var(--vp-c-brand-1);
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+  --vp-c-note-1: var(--vp-c-brand-1);
+  --vp-c-note-2: var(--vp-c-brand-2);
+  --vp-c-note-3: var(--vp-c-brand-3);
+  --vp-c-note-soft: var(--vp-c-brand-soft);
+  --vp-c-success-1: var(--vp-c-green-1);
+  --vp-c-success-2: var(--vp-c-green-2);
+  --vp-c-success-3: var(--vp-c-green-3);
+  --vp-c-success-soft: var(--vp-c-green-soft);
+  --vp-c-important-1: var(--vp-c-purple-1);
+  --vp-c-important-2: var(--vp-c-purple-2);
+  --vp-c-important-3: var(--vp-c-purple-3);
+  --vp-c-important-soft: var(--vp-c-purple-soft);
+  --vp-c-warning-1: var(--vp-c-yellow-1);
+  --vp-c-warning-2: var(--vp-c-yellow-2);
+  --vp-c-warning-3: var(--vp-c-yellow-3);
+  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+  --vp-c-danger-1: var(--vp-c-red-1);
+  --vp-c-danger-2: var(--vp-c-red-2);
+  --vp-c-danger-3: var(--vp-c-red-3);
+  --vp-c-danger-soft: var(--vp-c-red-soft);
+  --vp-c-caution-1: var(--vp-c-red-1);
+  --vp-c-caution-2: var(--vp-c-red-2);
+  --vp-c-caution-3: var(--vp-c-red-3);
+  --vp-c-caution-soft: var(--vp-c-red-soft);
+}
+
+:root {
+  --vp-z-index-footer: 10;
+  --vp-z-index-local-nav: 20;
+  --vp-z-index-nav: 30;
+  --vp-z-index-layout-top: 40;
+  --vp-z-index-backdrop: 50;
+  --vp-z-index-sidebar: 60;
+}
+
+code span {
+  @apply text-[var(--shiki-light,inherit)] dark:text-[var(--shiki-dark,inherit)];
 }

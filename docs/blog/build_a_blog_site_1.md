@@ -13,7 +13,7 @@ head:
     - name: id
       content: 250109a
 created: 2025-01-09 10:34
-last_modified: 2025-01-13 13:34
+last_modified: 2025-01-18 18:59
 ---
 
 从零开始搭建博客网站（一）：预备知识与安装。
@@ -46,8 +46,10 @@ last_modified: 2025-01-13 13:34
 
 本站并没有使用 TypeScript，但是文章中会同时提供 TypeScript 和 JavaScript 的代码示例。
 
-::: warning
-由于本站开发使用 macOS 系统，本文中的操作可能会有一些与 Windows 以及 Linux 系统不同的地方。
+正文中，统一使用 TypeScript 行文。代码块中，如果区别较大，会同时提供二者代码示例；如果区别不大，则 JavaScript 代码示例以注释形式给出于 TypeScript 代码示例中；如果完全一致，仅给出 TypeScript 代码示例。
+
+::: warning  
+由于本站开发使用 macOS 系统，本文中的操作可能会有一些与 Windows 以及 Linux 系统不同的地方。  
 :::
 
 ### 你应该知道的
@@ -63,7 +65,7 @@ last_modified: 2025-01-13 13:34
 
 你也会在这个过程中学到关于它们的更多知识。
 
-## 安装一堆
+## 安装和初始化
 
 ### 安装 Node.js
 
@@ -71,31 +73,39 @@ VitePress 基于 18+ 版本的 [Node.js](https://nodejs.org/)，截至 2025 年 
 
 如果使用 nvm 管理 Node.js 版本，可以使用以下命令安装 Node.js：
 
-```bash:no-line-numbers
+```bash
 nvm install 22
 ```
 
 如果需要使用 pnpm 或 yarn 作为包管理器，可以用以下命令安装并启用：
 
-::: code-group
-
-```bash:no-line-numbers [pnpm]
+```bash
 corepack enable pnpm
+# corepack enable yarn
 ```
-
-```bash:no-line-numbers [yarn]
-corepack enable yarn
-```
-
-:::
 
 以下操作均以 npm 为例。
 
-### 安装 VitePress
+### 初始化 git 仓库
 
-定位到你想要创建博客的目录，然后使用运行 VitePress 的初始化命令：
+首先，你应该了解 git 的基本操作。可以参考 [git 官方文档](https://git-scm.com/book/zh/v2) 来学习。
 
-```bash:no-line-numbers
+在本系列文章中，由于使用 GitHub Pages 来托管静态文件，所以我们需要将静态文件推送到 GitHub 仓库。
+
+首先，可以在 GitHub 上创建一个新的仓库——我姑且命名为 `javascript_example_site` / `typescript_example_site`。然后将其克隆到本地。这将作为博客网站的根目录。
+
+```bash
+git clone https://github.com/Fro-Q/typescript_example_site.git
+# .../javascript_example_site.git
+```
+
+不知道有没有必要提醒一下，请注意不要复制上面的命令，那是我的仓库 :sweat_smile: 。
+
+### 安装 VitePress 与初始化
+
+定位到根目录，然后使用运行 VitePress 的初始化命令：
+
+```bash
 npx vitepress init
 ```
 
@@ -105,13 +115,13 @@ VitePress 官网提供了详细的安装与初始化配置说明，可以参考 
 
 setup 时还需要设置一些基本信息：
 
-```:no-line-numbers
+```
 │
 ◇  Where should VitePress initialize the config?
 │  ./docs
 │
 ◇  Site title:
-│  TypeScript Example Site / JavaScript Example Site
+│  Example Site
 │
 ◇  Site description:
 │  A VitePress Site.
@@ -128,13 +138,15 @@ setup 时还需要设置一些基本信息：
 └  Done! Now run npm run docs:dev and start writing.
 ```
 
+虽然可以在后续进行修改，但还是建议在 setup 阶段填写正确的信息以省去不必要的麻烦。（除了 Initail directory、 Site title 和 Site description 因为这仨真的很好改 :innocent: ）
+
 以上操作将会生成这样的文件树：
 
-```tree:no-line-numbers
+```tree
 .
 ├── docs
 │   ├── .vitepress
-│   │   ├── config.mjs  // 如果使用 TypeScript，则为 config.ts
+│   │   ├── config.mjs  // 如果使用 TypeScript，则为 config.mts
 │   │   └── theme
 │   │       ├── Layout.vue
 │   │       ├── index.js // 如果使用 TypeScript，则为 index.ts
@@ -149,7 +161,7 @@ setup 时还需要设置一些基本信息：
 
 此外，由于选择了 Custom Theme，则需要显式安装 Vue 3：
 
-```bash:no-line-numbers
+```bash
 npm install vue@latest
 ```
 
@@ -157,15 +169,14 @@ npm install vue@latest
 
 对于一个博客网站来说，元素样式的复用通常并不常见。使用 Tailwind CSS 可以专注于页面的布局和排版，同时不用过多担心复用导致的样式冲突。
 
-使用 npm 安装 Tailwind CSS：
+使用 npm 安装 Tailwind CSS、PostCSS 和 Autoprefixer：
 
-```bash:no-line-numbers
-npm install -D tailwindcss
-
-npx tailwindcss init
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 ```
 
-以上操作将会生成一个 `tailwind.config.js` 文件，其中包含了 Tailwind CSS 的配置。
+以上操作将会生成 `tailwind.config.js` 和 `postcss.config.js` 配置文件。
 
 ## 结
 

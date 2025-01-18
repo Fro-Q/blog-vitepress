@@ -1,52 +1,58 @@
 {
-  "hash": "1220adfc",
+  "hash": "dab10c95",
   "configHash": "2a3acb79",
-  "lockfileHash": "9ea1e8a5",
-  "browserHash": "c6375f22",
+  "lockfileHash": "c35f0ed7",
+  "browserHash": "dab5ae63",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "f7f32e62",
+      "fileHash": "15671870",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "7c918814",
+      "fileHash": "807ff57a",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "4a2e22cb",
+      "fileHash": "977e58d9",
       "needsInterop": false
     },
     "medium-zoom": {
       "src": "../../../../node_modules/medium-zoom/dist/medium-zoom.esm.js",
       "file": "medium-zoom.js",
-      "fileHash": "9cbfd9e3",
+      "fileHash": "7229d438",
+      "needsInterop": false
+    },
+    "@shikijs/vitepress-twoslash/client": {
+      "src": "../../../../node_modules/@shikijs/vitepress-twoslash/dist/client.mjs",
+      "file": "@shikijs_vitepress-twoslash_client.js",
+      "fileHash": "8eebc134",
       "needsInterop": false
     },
     "markdown-it": {
       "src": "../../../../node_modules/markdown-it/index.mjs",
       "file": "markdown-it.js",
-      "fileHash": "bf130a74",
+      "fileHash": "f22fdc15",
       "needsInterop": false
     },
     "@giscus/vue": {
       "src": "../../../../node_modules/@giscus/vue/dist/index.js",
       "file": "@giscus_vue.js",
-      "fileHash": "16d994ae",
+      "fileHash": "e207454f",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-HQVAGNKX": {
-      "file": "chunk-HQVAGNKX.js"
+    "chunk-LW4I4DCF": {
+      "file": "chunk-LW4I4DCF.js"
     },
-    "giscus-BNK3dBIH-7TIMRLNB": {
-      "file": "giscus-BNK3dBIH-7TIMRLNB.js"
+    "giscus-Ci9LqPcC-QT67HERR": {
+      "file": "giscus-Ci9LqPcC-QT67HERR.js"
     },
     "chunk-PZ5AY32C": {
       "file": "chunk-PZ5AY32C.js"

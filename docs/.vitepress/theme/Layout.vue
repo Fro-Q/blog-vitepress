@@ -9,8 +9,6 @@ import Footer from "@theme/components/Footer.vue";
 import NotFound from "@theme/components/NotFound.vue";
 import BtnArrow from "@theme/components/BtnArrow.vue";
 
-import { navUtils } from "@theme/utils/navUtils";
-
 const { page, frontmatter } = useData();
 
 const ScrollToTop = () => {
@@ -50,26 +48,6 @@ onMounted(() => {
       }
     }
   });
-
-  const isDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-  navUtils.updateDarkMode(isDarkScheme.matches);
-
-  isDarkScheme.addEventListener("change", (event) => {
-    navUtils.updateDarkMode(event.matches);
-    // add class to html element
-    document.documentElement.classList.toggle("dark", event.matches);
-  });
-
-  // add listener for navUtils.darkMode
-  watch(
-    navUtils,
-    (newVal) => {
-      // add class to html element
-      document.documentElement.classList.toggle("dark", newVal.darkMode);
-      document.documentElement.classList.toggle("color", newVal.colorMode);
-    },
-    { immediate: true },
-  );
 });
 </script>
 

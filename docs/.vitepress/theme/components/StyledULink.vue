@@ -1,6 +1,9 @@
 <script setup>
 import markdownit from "markdown-it";
-const props = defineProps(["href", "text"]);
+const props = defineProps([
+  "href",
+  "text",
+]);
 </script>
 
 <template>

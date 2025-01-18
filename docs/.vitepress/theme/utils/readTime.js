@@ -27,8 +27,7 @@ export function getReadingTime(content) {
     : 0;
   const codeTime = codeCharCount / codeCharPerMin;
 
-  const picCount = (processContent.match(/!\[[^\n]*?\]\([^\n]*?\)/g) || [])
-    .length;
+  const picCount = (processContent.match(/!\[[^\n]*?\]\([^\n]*?\)/g) || []).length;
   const picTime = picCount / picPerMin;
 
   const math = processContent.match(/\${1,2}[\s\S]*?\${1,2}/g);
