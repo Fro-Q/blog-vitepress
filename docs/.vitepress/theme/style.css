@@ -308,8 +308,16 @@
     }
 
     & .tabs {
-      @apply flex items-center justify-start border-b border-neutral-300 dark:border-neutral-700;
+      @apply flex items-center justify-start overflow-x-auto border-b border-neutral-300 dark:border-neutral-700;
       @apply rounded-t-md border border-neutral-300 dark:border-neutral-700;
+
+      &::-webkit-scrollbar {
+        @apply h-px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        @apply bg-neutral-700 dark:bg-neutral-300;
+      }
 
       & input {
         @apply opacity-0;

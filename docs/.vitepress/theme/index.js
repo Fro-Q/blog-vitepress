@@ -8,12 +8,9 @@ import { nextTick, onMounted, watch } from "vue";
 import mediumZoom from "medium-zoom";
 import TwoslashFloatingVue from "@shikijs/vitepress-twoslash/client";
 
-// import Badge from "@theme/components/Badge.vue";
-// import Logo from "@theme/components/Logo.vue";
-// import StyledULink from "@theme/components/StyledULink.vue";
-import Badge from "../theme/components/Badge.vue";
-import Logo from "../theme/components/Logo.vue";
-import StyledULink from "../theme/components/StyledULink.vue";
+import Badge from "@theme/components/Badge.vue";
+import Logo from "@theme/components/Logo.vue";
+import StyledULink from "@theme/components/StyledULink.vue";
 
 /** @type {import('vitepress').Theme} */
 export default {

@@ -58,7 +58,7 @@ function transformerNotationMap(options = {}, name = "@shikijs/transformers:nota
       const lineNum = Number.parseInt(range.slice(1), 10);
       const sign = range[1];
       if (sign) {
-        if (index + lineNum >= lines.length) return false;
+        if (index + lineNum >= lines.length) return true;
         this.addClassToHast(lines[index + lineNum], classMap[match]);
       } else {
         lines.slice(index, index + lineNum).forEach((line) => {

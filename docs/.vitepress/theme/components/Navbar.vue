@@ -21,7 +21,7 @@ const toggleNavUtil = (id, className) => {
 };
 
 onMounted(() => {
-  const htmlEl = document.querySelector("html");
+  const htmlEl = document.documentElement;
   const isDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
   isDarkScheme.addEventListener("change", (event) => {
