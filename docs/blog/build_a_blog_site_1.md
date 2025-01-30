@@ -46,10 +46,10 @@ last_modified: 2025-01-18 18:59
 
 本站并没有使用 TypeScript，但是文章中会同时提供 TypeScript 和 JavaScript 的代码示例。
 
-正文中，统一使用 TypeScript 行文。代码块中，如果区别较大，会同时提供二者代码示例；如果区别不大，则 JavaScript 代码示例以注释形式给出于 TypeScript 代码示例中；如果完全一致，仅给出 TypeScript 代码示例。
+正文中，统一使用 TypeScript 行文。涉及到修改操作的代码块中，如果区别较大，会同时提供二者代码示例；如果区别不大，则 JavaScript 代码示例以注释形式给出于 TypeScript 代码示例中；如果完全一致，仅给出 TypeScript 代码示例。
 
-::: warning  
-由于本站开发使用 macOS 系统，本文中的操作可能会有一些与 Windows 以及 Linux 系统不同的地方。  
+::: warning
+由于本站开发使用 macOS 系统，本文中的操作可能会有一些与 Windows 以及 Linux 系统不同的地方。
 :::
 
 ### 你应该知道的

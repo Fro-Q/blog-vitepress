@@ -13,7 +13,7 @@ head:
     - name: id
       content: 250114a
 created: 2025-01-14 20:21
-last_modified: 2025-01-19 03:01
+last_modified: 2025-01-20 04:12
 ---
 
 从零开始搭建博客网站（二）：开发环境、`.gitignore`、格式化与黑暗模式。
@@ -21,10 +21,6 @@ last_modified: 2025-01-19 03:01
 ---
 
 [[toc]]
-
-## 承
-
-上一篇文章中，我们完成了 VitePress 的安装和初始化。本篇文章中，我们将初步认识 VitePress 的路由。
 
 ## 开发环境
 
@@ -239,7 +235,7 @@ export default {
 // https://vitepress.dev/guide/custom-theme
 import Layout from "./Layout.vue";
 import type { Theme } from "vitepress";
-import "./style.css";  // [!code highlight]
+import "./style.css";  // [!code focus]
 
 export default {
   Layout,
@@ -252,7 +248,7 @@ export default {
 ```js [./docs/.vitepress/theme/index.js]
 // https://vitepress.dev/guide/custom-theme
 import Layout from './Layout.vue'
-import './style.css'  // [!code highlight]
+import './style.css'  // [!code focus]
 
 /** @type {import('vitepress').Theme} */
 export default {

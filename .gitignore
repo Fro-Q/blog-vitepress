@@ -8,3 +8,4 @@ docs/.DS_Store
 docs/.vitepress/dist/*
 docs/blog/_config/_complement_config/_dictionary.md
 node_modules/
+.vitepress/cache/
