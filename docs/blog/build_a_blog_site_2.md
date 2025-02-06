@@ -291,7 +291,7 @@ const { site, frontmatter } = useData();
 
 :::
 
-可以看到，默认的 DOM 结构中并没有将整个页面包裹在一个 `div` 中，也就意味着我们无法直接在 `Layout.vue` 中为整个页面添加样式。第一种方案是在 `Layout.vue` 中添加一个 `div`，将整个页面包裹在这个 `div` 中，然后使用 Tailwind CSS 为这个 `div` 添加样式。第二种方案是在 `style.css` 中为 `body` 添加样式。这里我们选择第二种方案。
+可以看到，默认的 DOM 结构中并没有将整个页面包裹在一个 `<div>` 中，也就意味着我们无法直接在 `Layout.vue` 中为整个页面添加样式。第一种方案是在 `Layout.vue` 中添加一个 `<div>`，将整个页面包裹在这个 `<div>` 中，然后使用 Tailwind CSS 为这个 `<div>` 添加样式。第二种方案是在 `style.css` 中为 `<body>` 添加样式。这里我们选择第二种方案。
 
 ### 添加黑暗模式样式
 
@@ -336,17 +336,17 @@ export default {
 
 :::
 
-这样配置之后，`dark:` 的应用条件将变为 `.dark` 选择器的存在。可以自己写函数来向 `html` 元素添加 `dark` 类名，从而手动切换黑暗模式。同时 VitePress 的站点配置中有一项 `appearance`，可以根据用户偏好模式来向 `html` 元素添加 `dark` 类名。这个配置项默认为 `true`。打开浏览器的开发者工具，可以看到当用户偏好模式设置为深色时，`html` 元素会添加 `dark` 类名。这样一来，我们可以在尊重用户偏好模式的同时，进行手动切换。
+这样配置之后，`dark:` 的应用条件将变为 `.dark` 选择器的存在。可以自己写函数来向 `<html>` 元素添加 `dark` 类名，从而手动切换黑暗模式。同时 VitePress 的站点配置中有一项 `appearance`，可以根据用户偏好模式来向 `<html>` 元素添加 `dark` 类名。这个配置项默认为 `true`。打开浏览器的开发者工具，可以看到当用户偏好模式设置为深色时，`<html>` 元素会添加 `dark` 类名。这样一来，我们可以在尊重用户偏好模式的同时，进行手动切换。
 
 具体怎么实现，接着看看。
 
 #### 其中一种实现方式
 
-在 `Layout.vue` 中添加一个「按钮」（任意位置都可以，反正以后要改 :joy: ），并监听 `click` 事件，切换 `html` 元素的 `dark` 类名：
+在 `Layout.vue` 中添加一个「按钮」（任意位置都可以，反正以后要改 :joy: ），并监听 `click` 事件，切换 `<html>` 元素的 `dark` 类名：
 
 ::: code-group
 
-```vue [./docs/.vitepress/theme/Layout.vue(ts)]
+```vue [Layout.vue (ts)]
 <script setup lang="ts">
 import { useData } from "vitepress";
 
@@ -381,7 +381,7 @@ const switchDarkMode = (): void => {  // [!code ++:4]
 </template>
 ```
 
-```vue [./docs/.vitepress/theme/Layout.vue(js)]
+```vue [Layout.vue (js)]
 <script setup>
 import { useData } from "vitepress";
 

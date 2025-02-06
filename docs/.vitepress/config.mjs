@@ -3,7 +3,7 @@ import { RssPlugin } from "vitepress-plugin-rss";
 import markdownItFootnote from "markdown-it-footnote";
 import markdownItMark from "markdown-it-mark";
 import anchor from "markdown-it-anchor";
-import { transformerRenderWhitespace, transformerMetaHighlight, transformerNotationWordHighlight, transformerMetaWordHighlight } from "@shikijs/transformers";
+import { transformerMetaHighlight, transformerNotationWordHighlight, transformerMetaWordHighlight } from "@shikijs/transformers";
 import { transformerColorizedBrackets } from "@shikijs/colorized-brackets";
 import { transformerTwoslash } from "@shikijs/vitepress-twoslash";
 import { createFileSystemTypesCache } from "@shikijs/vitepress-twoslash/cache-fs";
@@ -164,7 +164,6 @@ export default defineConfigWithTheme({
       dark: "vitesse-black",
     },
     codeTransformers: [
-      transformerRenderWhitespace(),
       transformerNotationWordHighlight(),
       transformerMetaWordHighlight(),
       transformerColorizedBrackets(),

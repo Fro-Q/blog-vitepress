@@ -244,12 +244,8 @@
         @apply block w-fit min-w-full px-8 font-mono;
 
         & span {
-          &.space {
-            @apply before:absolute before:opacity-10 before:content-["·"];
-          }
-
           &.highlighted-word {
-            @apply bg-yellow-500/25;
+            @apply border-b-2 border-yellow-500 bg-yellow-500/10;
           }
         }
       }
